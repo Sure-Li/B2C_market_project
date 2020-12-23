@@ -8,14 +8,14 @@
 			<div class="row">
 				<div class="header-top-left col-lg-7 col-md-8 col-sm-6 col-xs-4">
 					<div class="hidden-md hidden-sm hidden-xs welcome-msg">
-						Welcome to SuperMarket! Wrap new offers / gift every single day on Weekends - New Coupon code: <span>Happy2018</span>
+						Welcome to SuperMarket! Wrap new offers / gift every single day on Weekends - New Coupon code: <span>Sure_Li</span>
 					</div>
 					<ul class="top-link list-inline hidden-lg ">
 						<li class="account" id="my_account"><a href="#" title="My Account " class="btn-xs dropdown-toggle" data-toggle="dropdown"> <span class="hidden-xs">My Account </span> <span class="fa fa-caret-down"></span>
 						</a>
 							<ul class="dropdown-menu ">
-								<li><a href="register.html"><i class="fa fa-user"></i> Register</a></li>
-								<li><a href="login.html"><i class="fa fa-pencil-square-o"></i> Login</a></li>
+								<li><a href="register"><i class="fa fa-user"></i> Register</a></li>
+								<li><a href="login"><i class="fa fa-pencil-square-o"></i> Login</a></li>
 							</ul></li>
 					</ul>
 				</div>
@@ -133,21 +133,21 @@
 									<table class="table table-striped">
 										<tbody>
 											<tr>
-												<td class="text-center" style="width: 70px"><a href="product.html"> <img src="image/catalog/demo/product/80/1.jpg" style="width: 70px" alt="Yutculpa ullamcon" title="Yutculpa ullamco" class="preview">
+												<td class="text-center" style="width: 70px"><a href="product"> <img src="image/catalog/demo/product/80/1.jpg" style="width: 70px" alt="Yutculpa ullamcon" title="Yutculpa ullamco" class="preview">
 												</a></td>
-												<td class="text-left"><a class="cart_product_name" href="product.html">Yutculpa ullamco</a></td>
+												<td class="text-left"><a class="cart_product_name" href="product">Yutculpa ullamco</a></td>
 												<td class="text-center">x1</td>
 												<td class="text-center">$80.00</td>
-												<td class="text-right"><a href="product.html" class="fa fa-edit"></a></td>
+												<td class="text-right"><a href="product" class="fa fa-edit"></a></td>
 												<td class="text-right"><a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a></td>
 											</tr>
 											<tr>
-												<td class="text-center" style="width: 70px"><a href="product.html"> <img src="image/catalog/demo/product/80/2.jpg" style="width: 70px" alt="Xancetta bresao" title="Xancetta bresao" class="preview">
+												<td class="text-center" style="width: 70px"><a href="product"> <img src="image/catalog/demo/product/80/2.jpg" style="width: 70px" alt="Xancetta bresao" title="Xancetta bresao" class="preview">
 												</a></td>
-												<td class="text-left"><a class="cart_product_name" href="product.html">Xancetta bresao</a></td>
+												<td class="text-left"><a class="cart_product_name" href="product">Xancetta bresao</a></td>
 												<td class="text-center">x1</td>
 												<td class="text-center">$60.00</td>
-												<td class="text-right"><a href="product.html" class="fa fa-edit"></a></td>
+												<td class="text-right"><a href="product" class="fa fa-edit"></a></td>
 												<td class="text-right"><a onclick="cart.remove('1');" class="fa fa-times fa-delete"></a></td>
 											</tr>
 										</tbody>
@@ -176,7 +176,7 @@
 											</tbody>
 										</table>
 										<p class="text-right">
-											<a class="btn view-cart" href="cart.html"><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href="checkout.html"><i class="fa fa-share"></i>Checkout</a>
+											<a class="btn view-cart" href="cart"><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href="checkout"><i class="fa fa-share"></i>Checkout</a>
 										</p>
 									</div>
 								</li>
@@ -513,49 +513,8 @@
 									<div class="megamenu-pattern">
 										<div class="container-mega">
 											<ul class="megamenu" data-transition="slide" data-animationtime="250">
-												<li class="home hover"><a href="index">Home <b class="caret"></b></a>
-													<div class="sub-menu" style="width: 100%;">
-														<div class="content">
-															<div class="row">
-																<div class="col-md-3">
-																	<a href="index" class="image-link"> <span class="thumbnail"> <img class="img-responsive img-border" src="image/catalog/menu/home-1.jpg" alt="">
-
-																	</span>
-																		<h3 class="figcaption">Home page - (Default)</h3>
-																	</a>
-
-																</div>
-																<div class="col-md-3">
-																	<a href="home2.html" class="image-link"> <span class="thumbnail"> <img class="img-responsive img-border" src="image/catalog/menu/home-2.jpg" alt="">
-
-																	</span>
-																		<h3 class="figcaption">Home page - Layout 2</h3>
-																	</a>
-
-																</div>
-																<div class="col-md-3">
-																	<a href="home3.html" class="image-link"> <span class="thumbnail"> <img class="img-responsive img-border" src="image/catalog/menu/home-3.jpg" alt="">
-
-																	</span>
-																		<h3 class="figcaption">Home page - Layout 3</h3>
-																	</a>
-
-																</div>
-
-
-																<!-- <div class="col-md-15">
-                                                                        <a href="#" class="image-link"> 
-                                                                            <span class="thumbnail">
-                                                                                <img class="img-responsive img-border" src="image/demo/feature/comming-soon.png" alt="">
-                                                                                
-                                                                            </span> 
-                                                                            <h3 class="figcaption">Comming soon</h3> 
-                                                                        </a> 
-                                                                        
-                                                                    </div> -->
-															</div>
-														</div>
-													</div></li>
+												<li class="home hover"><a href="index">Home</a>
+													</li>
 												<li class="with-sub-menu hover">
 													<p class="close-menu"></p> <a href="#" class="clearfix"> <strong>Features</strong> <img class="label-hot" src="image/catalog/menu/new-icon.png" alt="icon items"> <b class="caret"></b>
 												</a>
@@ -567,7 +526,7 @@
 																		<a href="#" class="title-submenu">Listing pages</a>
 																		<div>
 																			<ul class="row-list">
-																				<li><a href="category.html">Category Page 1 </a></li>
+																				<li><a href="category">Category Page 1 </a></li>
 																				<li><a href="category-v2.html">Category Page 2</a></li>
 																				<li><a href="category-v3.html">Category Page 3</a></li>
 																			</ul>
@@ -580,7 +539,7 @@
 																		<a href="#" class="title-submenu">Product pages</a>
 																		<div>
 																			<ul class="row-list">
-																				<li><a href="product.html">Product page 1</a></li>
+																				<li><a href="product">Product page 1</a></li>
 																				<li><a href="product-v2.html">Product page 2</a></li>
 																				<!-- <li><a href="product-v3.html">Image size - small</a></li> -->
 																			</ul>
@@ -592,10 +551,10 @@
 																		<a href="#" class="title-submenu">Shopping pages</a>
 																		<div>
 																			<ul class="row-list">
-																				<li><a href="cart.html">Shopping Cart Page</a></li>
-																				<li><a href="checkout.html">Checkout Page</a></li>
+																				<li><a href="cart">Shopping Cart Page</a></li>
+																				<li><a href="checkout">Checkout Page</a></li>
 																				<li><a href="compare.html">Compare Page</a></li>
-																				<li><a href="wishlist.html">Wishlist Page</a></li>
+																				<li><a href="wishlist">Wishlist Page</a></li>
 
 																			</ul>
 																		</div>
@@ -606,8 +565,8 @@
 																		<a href="#" class="title-submenu">My Account pages</a>
 																		<div>
 																			<ul class="row-list">
-																				<li><a href="login.html">Login Page</a></li>
-																				<li><a href="register.html">Register Page</a></li>
+																				<li><a href="login">Login Page</a></li>
+																				<li><a href="register">Register Page</a></li>
 																				<li><a href="my-account.html">My Account</a></li>
 																				<li><a href="order-history.html">Order History</a></li>
 																				<li><a href="order-information.html">Order Information</a></li>
@@ -768,7 +727,7 @@
 					</div>
 					<div class="signin-w hidden-md hidden-sm hidden-xs">
 						<ul class="signin-link blank">
-							<li class="log login"><i class="fa fa-lock"></i> <a class="link-lg" href="login.html">Login </a> or <a href="register.html">Register</a></li>
+							<li class="log login"><i class="fa fa-lock"></i> <a class="link-lg" href="login">Login </a> or <a href="register">Register</a></li>
 						</ul>
 					</div>
 				</div>

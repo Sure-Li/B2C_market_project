@@ -108,14 +108,14 @@ body {
 													<div class="product-layout item-inner style1 ">
 														<div class="item-image">
 															<div class="item-img-info">
-																<a href="product.html" target="_self" title="Mandouille short "> <img src="image/catalog/demo/product/80/1.jpg" alt="Mandouille short">
+																<a href="product" target="_self" title="Mandouille short "> <img src="image/catalog/demo/product/80/1.jpg" alt="Mandouille short">
 																</a>
 															</div>
 
 														</div>
 														<div class="item-info">
 															<div class="item-title">
-																<a href="product.html" target="_self" title="Mandouille short">Mandouille short </a>
+																<a href="product" target="_self" title="Mandouille short">Mandouille short </a>
 															</div>
 															<div class="rating">
 																<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
@@ -132,14 +132,14 @@ body {
 													<div class="product-layout item-inner style1 ">
 														<div class="item-image">
 															<div class="item-img-info">
-																<a href="product.html" target="_self" title="Xancetta bresao "> <img src="image/catalog/demo/product/80/2.jpg" alt="Xancetta bresao">
+																<a href="product" target="_self" title="Xancetta bresao "> <img src="image/catalog/demo/product/80/2.jpg" alt="Xancetta bresao">
 																</a>
 															</div>
 
 														</div>
 														<div class="item-info">
 															<div class="item-title">
-																<a href="product.html" target="_self" title="Xancetta bresao"> Xancetta bresao </a>
+																<a href="product" target="_self" title="Xancetta bresao"> Xancetta bresao </a>
 															</div>
 															<div class="rating">
 																<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
@@ -158,14 +158,14 @@ body {
 													<div class="product-layout item-inner style1 ">
 														<div class="item-image">
 															<div class="item-img-info">
-																<a href="product.html" target="_self" title="Sausage cowbee "> <img src="image/catalog/demo/product/80/3.jpg" alt="Sausage cowbee">
+																<a href="product" target="_self" title="Sausage cowbee "> <img src="image/catalog/demo/product/80/3.jpg" alt="Sausage cowbee">
 																</a>
 															</div>
 
 														</div>
 														<div class="item-info">
 															<div class="item-title">
-																<a href="product.html" target="_self" title="Sausage cowbee"> Sausage cowbee </a>
+																<a href="product" target="_self" title="Sausage cowbee"> Sausage cowbee </a>
 															</div>
 															<div class="rating">
 																<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
@@ -367,12 +367,12 @@ body {
 											<div class="product-layout item-inner style1 ">
 												<div class="item-image">
 													<div class="item-img-info">
-														<a href="product.html" target="_self" title="Mandouille short "><img src="image/catalog/demo/product/80/5.jpg" alt="Mandouille short"></a>
+														<a href="product" target="_self" title="Mandouille short "><img src="image/catalog/demo/product/80/5.jpg" alt="Mandouille short"></a>
 													</div>
 												</div>
 												<div class="item-info">
 													<div class="item-title">
-														<a href="product.html" target="_self" title="Mandouille short">Mandouille short </a>
+														<a href="product" target="_self" title="Mandouille short">Mandouille short </a>
 													</div>
 													<div class="rating">
 														<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
@@ -389,13 +389,13 @@ body {
 											<div class="product-layout item-inner style1 ">
 												<div class="item-image">
 													<div class="item-img-info">
-														<a href="product.html" target="_self" title="Xancetta bresao "><img src="image/catalog/demo/product/80/3.jpg" alt="Xancetta bresao"></a>
+														<a href="product" target="_self" title="Xancetta bresao "><img src="image/catalog/demo/product/80/3.jpg" alt="Xancetta bresao"></a>
 													</div>
 
 												</div>
 												<div class="item-info">
 													<div class="item-title">
-														<a href="product.html" target="_self" title="Xancetta bresao">Xancetta bresao</a>
+														<a href="product" target="_self" title="Xancetta bresao">Xancetta bresao</a>
 													</div>
 													<div class="rating">
 														<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
@@ -414,13 +414,13 @@ body {
 											<div class="product-layout item-inner style1 ">
 												<div class="item-image">
 													<div class="item-img-info">
-														<a href="product.html" target="_self" title="Sausage cowbee "><img src="image/catalog/demo/product/80/4.jpg" alt="Sausage cowbee"></a>
+														<a href="product" target="_self" title="Sausage cowbee "><img src="image/catalog/demo/product/80/4.jpg" alt="Sausage cowbee"></a>
 													</div>
 
 												</div>
 												<div class="item-info">
 													<div class="item-title">
-														<a href="product.html" target="_self" title="Sausage cowbee">Sausage cowbee</a>
+														<a href="product" target="_self" title="Sausage cowbee">Sausage cowbee</a>
 													</div>
 													<div class="rating">
 														<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
@@ -437,13 +437,13 @@ body {
 											<div class="product-layout item-inner style1 ">
 												<div class="item-image">
 													<div class="item-img-info">
-														<a href="product.html" target="_self" title="Chicken swinesha "><img src="image/catalog/demo/product/80/7.jpg" alt="Chicken swinesha"></a>
+														<a href="product" target="_self" title="Chicken swinesha "><img src="image/catalog/demo/product/80/7.jpg" alt="Chicken swinesha"></a>
 													</div>
 
 												</div>
 												<div class="item-info">
 													<div class="item-title">
-														<a href="product.html" target="_self" title="Chicken swinesha"> Chicken swinesha </a>
+														<a href="product" target="_self" title="Chicken swinesha"> Chicken swinesha </a>
 													</div>
 													<div class="rating">
 														<span class="fa fa-stack"> <i class="fa fa-star fa-stack-2x"></i>
@@ -652,7 +652,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Duis aute irure "> <img src="image/catalog/demo/product/270/e10.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e7.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Duis aute irure "> <img src="image/catalog/demo/product/270/e10.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e7.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -681,7 +681,7 @@ body {
 																<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Duis aute irure </a>
+																<a href="product" title="Pastrami bacon" target="_self">Duis aute irure </a>
 															</h4>
 
 														</div>
@@ -702,7 +702,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/f5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f6.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/f5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f6.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -731,7 +731,7 @@ body {
 																<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
+																<a href="product" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
 															</h4>
 
 														</div>
@@ -751,7 +751,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Cenison meatloa"> <img src="image/catalog/demo/product/270/e3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e4.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Cenison meatloa"> <img src="image/catalog/demo/product/270/e3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e4.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -780,7 +780,7 @@ body {
 																<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Cenison meatloa</a>
+																<a href="product" title="Pastrami bacon" target="_self">Cenison meatloa</a>
 															</h4>
 
 														</div>
@@ -948,7 +948,7 @@ body {
 															<span class="label-product label-sale">-11%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Pastrami bacon"> <img src="image/catalog/demo/product/270/h1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/h2.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Pastrami bacon"> <img src="image/catalog/demo/product/270/h1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/h2.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -980,7 +980,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Pastrami bacon</a>
+																<a href="product" title="Pastrami bacon" target="_self">Pastrami bacon</a>
 															</h4>
 
 														</div>
@@ -1009,7 +1009,7 @@ body {
 															<span class="label-product label-sale">-15%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Lommodo quiutvenia"> <img src="image/catalog/demo/product/270/f1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Lommodo quiutvenia"> <img src="image/catalog/demo/product/270/f1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1041,7 +1041,7 @@ body {
 																<span class="rating-num">( 3 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Lommodo quiutvenia</a>
+																<a href="product" title="Pastrami bacon" target="_self">Lommodo quiutvenia</a>
 															</h4>
 
 														</div>
@@ -1070,7 +1070,7 @@ body {
 															<span class="label-product label-sale">-12%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Mapicola incidid"> <img src="image/catalog/demo/product/270/fu1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu2.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Mapicola incidid"> <img src="image/catalog/demo/product/270/fu1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu2.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1102,7 +1102,7 @@ body {
 																<span class="rating-num">( 1 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Mapicola incidid</a>
+																<a href="product" title="Pastrami bacon" target="_self">Mapicola incidid</a>
 															</h4>
 
 														</div>
@@ -1131,7 +1131,7 @@ body {
 															<span class="label-product label-sale">-8%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Duis aute irure"> <img src="image/catalog/demo/product/270/f3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f4.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Duis aute irure"> <img src="image/catalog/demo/product/270/f3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f4.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1163,7 +1163,7 @@ body {
 																<span class="rating-num">( 5 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Duis aute irure </a>
+																<a href="product" title="Pastrami bacon" target="_self">Duis aute irure </a>
 															</h4>
 
 														</div>
@@ -1192,7 +1192,7 @@ body {
 															<span class="label-product label-sale">-10%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/e1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e2.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/e1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e2.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1224,7 +1224,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
+																<a href="product" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
 															</h4>
 
 														</div>
@@ -1253,7 +1253,7 @@ body {
 															<span class="label-product label-sale">-11%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Cenison meatloa"> <img src="image/catalog/demo/product/270/h3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/h4.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Cenison meatloa"> <img src="image/catalog/demo/product/270/h3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/h4.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1285,7 +1285,7 @@ body {
 																<span class="rating-num">( 1 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Cenison meatloa</a>
+																<a href="product" title="Pastrami bacon" target="_self">Cenison meatloa</a>
 															</h4>
 
 														</div>
@@ -1314,7 +1314,7 @@ body {
 															<span class="label-product label-sale">-9%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Ninim spareri sed"> <img src="image/catalog/demo/product/270/e3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e4.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Ninim spareri sed"> <img src="image/catalog/demo/product/270/e3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e4.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1346,7 +1346,7 @@ body {
 																<span class="rating-num">( 3 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Ninim spareri sed</a>
+																<a href="product" title="Pastrami bacon" target="_self">Ninim spareri sed</a>
 															</h4>
 
 														</div>
@@ -1416,7 +1416,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Lastrami bacon"> <img src="image/catalog/demo/product/270/e1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e10.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Lastrami bacon"> <img src="image/catalog/demo/product/270/e1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e10.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1448,7 +1448,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Lastrami bacon</a>
+																<a href="product" title="Pastrami bacon" target="_self">Lastrami bacon</a>
 															</h4>
 
 														</div>
@@ -1470,7 +1470,7 @@ body {
 															<span class="label-product label-sale">-15%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Exceeur sint occaecat"> <img src="image/catalog/demo/product/270/e2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e9.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Exceeur sint occaecat"> <img src="image/catalog/demo/product/270/e2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e9.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1501,7 +1501,7 @@ body {
 																<span class="rating-num">( 3 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Exceeur sint occaecat</a>
+																<a href="product" title="Pastrami bacon" target="_self">Exceeur sint occaecat</a>
 															</h4>
 
 														</div>
@@ -1519,7 +1519,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Mapicola incidid"> <img src="image/catalog/demo/product/270/e3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e8.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Mapicola incidid"> <img src="image/catalog/demo/product/270/e3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e8.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1551,7 +1551,7 @@ body {
 																<span class="rating-num">( 5 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Mapicola incidid</a>
+																<a href="product" title="Pastrami bacon" target="_self">Mapicola incidid</a>
 															</h4>
 
 														</div>
@@ -1572,7 +1572,7 @@ body {
 															<span class="label-product label-new">New</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Duis aute irure "> <img src="image/catalog/demo/product/270/e4.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e7.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Duis aute irure "> <img src="image/catalog/demo/product/270/e4.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e7.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1604,7 +1604,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Duis aute irure </a>
+																<a href="product" title="Pastrami bacon" target="_self">Duis aute irure </a>
 															</h4>
 
 														</div>
@@ -1623,7 +1623,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/e5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e6.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/e5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e6.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1655,7 +1655,7 @@ body {
 																<span class="rating-num">( 4 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
+																<a href="product" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
 															</h4>
 
 														</div>
@@ -1674,7 +1674,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="PCenison meatloa"> <img src="image/catalog/demo/product/270/e6.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e2.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="PCenison meatloa"> <img src="image/catalog/demo/product/270/e6.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e2.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1706,7 +1706,7 @@ body {
 																<span class="rating-num">( 6 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Cenison meatloa</a>
+																<a href="product" title="Pastrami bacon" target="_self">Cenison meatloa</a>
 															</h4>
 
 														</div>
@@ -1757,7 +1757,7 @@ body {
 															<span class="label-product label-new">New</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Sunt inculpa qui"> <img src="image/catalog/demo/product/270/fu1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu10.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Sunt inculpa qui"> <img src="image/catalog/demo/product/270/fu1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu10.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1789,7 +1789,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Sunt inculpa qui</a>
+																<a href="product" title="Pastrami bacon" target="_self">Sunt inculpa qui</a>
 															</h4>
 
 														</div>
@@ -1809,7 +1809,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Chicken swinesha"> <img src="image/catalog/demo/product/270/fu2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu9.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Chicken swinesha"> <img src="image/catalog/demo/product/270/fu2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu9.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1840,7 +1840,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Chicken swinesha</a>
+																<a href="product" title="Pastrami bacon" target="_self">Chicken swinesha</a>
 															</h4>
 
 														</div>
@@ -1861,7 +1861,7 @@ body {
 															<span class="label-product label-sale">-10%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Mapicola incidid"> <img src="image/catalog/demo/product/270/fu3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu8.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Mapicola incidid"> <img src="image/catalog/demo/product/270/fu3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu8.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1893,7 +1893,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Mapicola incidid</a>
+																<a href="product" title="Pastrami bacon" target="_self">Mapicola incidid</a>
 															</h4>
 
 														</div>
@@ -1911,7 +1911,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Dormd dea irure"> <img src="image/catalog/demo/product/270/fu4.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu7.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Dormd dea irure"> <img src="image/catalog/demo/product/270/fu4.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu7.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1943,7 +1943,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Dormd dea irure </a>
+																<a href="product" title="Pastrami bacon" target="_self">Dormd dea irure </a>
 															</h4>
 
 														</div>
@@ -1962,7 +1962,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Mecepteur sint rew"> <img src="image/catalog/demo/product/270/fu5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu6.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Mecepteur sint rew"> <img src="image/catalog/demo/product/270/fu5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu6.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -1994,7 +1994,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Mecepteur sint rew</a>
+																<a href="product" title="Pastrami bacon" target="_self">Mecepteur sint rew</a>
 															</h4>
 
 														</div>
@@ -2014,7 +2014,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Sed ut perspicia"> <img src="image/catalog/demo/product/270/fu6.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu2.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Sed ut perspicia"> <img src="image/catalog/demo/product/270/fu6.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu2.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -2046,7 +2046,7 @@ body {
 																<span class="rating-num">( 1 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Sed ut perspicia</a>
+																<a href="product" title="Pastrami bacon" target="_self">Sed ut perspicia</a>
 															</h4>
 
 														</div>
@@ -2093,7 +2093,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Lastrami bacon"> <img src="image/catalog/demo/product/270/f1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f7.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Lastrami bacon"> <img src="image/catalog/demo/product/270/f1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f7.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -2125,7 +2125,7 @@ body {
 																<span class="rating-num">( 3 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Lastrami bacon</a>
+																<a href="product" title="Pastrami bacon" target="_self">Lastrami bacon</a>
 															</h4>
 
 														</div>
@@ -2147,7 +2147,7 @@ body {
 															<span class="label-product label-sale">-15%</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Exceeur sint occaecat"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f4.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Exceeur sint occaecat"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f4.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -2178,7 +2178,7 @@ body {
 																<span class="rating-num">( 7 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Exceeur sint occaecat</a>
+																<a href="product" title="Pastrami bacon" target="_self">Exceeur sint occaecat</a>
 															</h4>
 
 														</div>
@@ -2198,7 +2198,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Mapicola incidid"> <img src="image/catalog/demo/product/270/f3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f8.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Mapicola incidid"> <img src="image/catalog/demo/product/270/f3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f8.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -2230,7 +2230,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Mapicola incidid</a>
+																<a href="product" title="Pastrami bacon" target="_self">Mapicola incidid</a>
 															</h4>
 
 														</div>
@@ -2253,7 +2253,7 @@ body {
 															<span class="label-product label-new">New</span>
 														</div>
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Duis aute irure "> <img src="image/catalog/demo/product/270/f4.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f7.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Duis aute irure "> <img src="image/catalog/demo/product/270/f4.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f7.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -2285,7 +2285,7 @@ body {
 																<span class="rating-num">( 8 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Duis aute irure </a>
+																<a href="product" title="Pastrami bacon" target="_self">Duis aute irure </a>
 															</h4>
 
 														</div>
@@ -2306,7 +2306,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/f5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f6.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/f5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f6.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -2338,7 +2338,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
+																<a href="product" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
 															</h4>
 
 														</div>
@@ -2358,7 +2358,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="PCenison meatloa"> <img src="image/catalog/demo/product/270/f6.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="PCenison meatloa"> <img src="image/catalog/demo/product/270/f6.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -2390,7 +2390,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Cenison meatloa</a>
+																<a href="product" title="Pastrami bacon" target="_self">Cenison meatloa</a>
 															</h4>
 
 														</div>
@@ -2407,7 +2407,7 @@ body {
 													<div class="left-block left-b">
 
 														<div class="product-image-container second_img">
-															<a href="product.html" target="_self" title="Chicken swinesha"> <img src="image/catalog/demo/product/270/fu2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu9.jpg" class="img-2 img-responsive" alt="image2">
+															<a href="product" target="_self" title="Chicken swinesha"> <img src="image/catalog/demo/product/270/fu2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu9.jpg" class="img-2 img-responsive" alt="image2">
 															</a>
 														</div>
 														<!--quickview-->
@@ -2438,7 +2438,7 @@ body {
 																<span class="rating-num">( 2 )</span>
 															</div>
 															<h4>
-																<a href="product.html" title="Pastrami bacon" target="_self">Chicken swinesha</a>
+																<a href="product" title="Pastrami bacon" target="_self">Chicken swinesha</a>
 															</h4>
 
 														</div>
@@ -2503,7 +2503,7 @@ body {
 															<div class="left-block left-b">
 
 																<div class="product-image-container second_img">
-																	<a href="product.html" target="_self" title="Ullamco occaeca"> <img src="image/catalog/demo/product/270/h1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/h7.jpg" class="img-2 img-responsive" alt="image2">
+																	<a href="product" target="_self" title="Ullamco occaeca"> <img src="image/catalog/demo/product/270/h1.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/h7.jpg" class="img-2 img-responsive" alt="image2">
 																	</a>
 																</div>
 																<!--quickview-->
@@ -2532,7 +2532,7 @@ body {
 																		<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
 																	</div>
 																	<h4>
-																		<a href="product.html" title="Pastrami bacon" target="_self">Ullamco occaeca </a>
+																		<a href="product" title="Pastrami bacon" target="_self">Ullamco occaeca </a>
 																	</h4>
 
 																</div>
@@ -2552,7 +2552,7 @@ body {
 															<div class="left-block left-b">
 
 																<div class="product-image-container second_img">
-																	<a href="product.html" target="_self" title="Eiusmod tempor incid"> <img src="image/catalog/demo/product/270/e3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e8.jpg" class="img-2 img-responsive" alt="image2">
+																	<a href="product" target="_self" title="Eiusmod tempor incid"> <img src="image/catalog/demo/product/270/e3.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e8.jpg" class="img-2 img-responsive" alt="image2">
 																	</a>
 																</div>
 																<!--quickview-->
@@ -2581,7 +2581,7 @@ body {
 																		<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
 																	</div>
 																	<h4>
-																		<a href="product.html" title="Pastrami bacon" target="_self">Eiusmod tempor incid</a>
+																		<a href="product" title="Pastrami bacon" target="_self">Eiusmod tempor incid</a>
 																	</h4>
 
 																</div>
@@ -2602,7 +2602,7 @@ body {
 															<div class="left-block left-b">
 
 																<div class="product-image-container second_img">
-																	<a href="product.html" target="_self" title="Duis aute irure "> <img src="image/catalog/demo/product/270/e4.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e7.jpg" class="img-2 img-responsive" alt="image2">
+																	<a href="product" target="_self" title="Duis aute irure "> <img src="image/catalog/demo/product/270/e4.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e7.jpg" class="img-2 img-responsive" alt="image2">
 																	</a>
 																</div>
 																<!--quickview-->
@@ -2631,7 +2631,7 @@ body {
 																		<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
 																	</div>
 																	<h4>
-																		<a href="product.html" title="Pastrami bacon" target="_self">Duis aute irure </a>
+																		<a href="product" title="Pastrami bacon" target="_self">Duis aute irure </a>
 																	</h4>
 
 																</div>
@@ -2652,7 +2652,7 @@ body {
 															<div class="left-block left-b">
 
 																<div class="product-image-container second_img">
-																	<a href="product.html" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/fu5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu6.jpg" class="img-2 img-responsive" alt="image2">
+																	<a href="product" target="_self" title="Excepteur sint occ"> <img src="image/catalog/demo/product/270/fu5.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/fu6.jpg" class="img-2 img-responsive" alt="image2">
 																	</a>
 																</div>
 																<!--quickview-->
@@ -2681,7 +2681,7 @@ body {
 																		<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
 																	</div>
 																	<h4>
-																		<a href="product.html" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
+																		<a href="product" title="Pastrami bacon" target="_self">Excepteur sint occ</a>
 																	</h4>
 
 																</div>
@@ -2701,7 +2701,7 @@ body {
 															<div class="left-block left-b">
 
 																<div class="product-image-container second_img">
-																	<a href="product.html" target="_self" title="PCenison meatloa"> <img src="image/catalog/demo/product/270/f6.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-2 img-responsive" alt="image2">
+																	<a href="product" target="_self" title="PCenison meatloa"> <img src="image/catalog/demo/product/270/f6.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-2 img-responsive" alt="image2">
 																	</a>
 																</div>
 																<!--quickview-->
@@ -2730,7 +2730,7 @@ body {
 																		<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
 																	</div>
 																	<h4>
-																		<a href="product.html" title="Pastrami bacon" target="_self">Cenison meatloa</a>
+																		<a href="product" title="Pastrami bacon" target="_self">Cenison meatloa</a>
 																	</h4>
 
 																</div>
@@ -2748,7 +2748,7 @@ body {
 																	<span class="label-product label-sale">-10%</span>
 																</div>
 																<div class="product-image-container second_img">
-																	<a href="product.html" target="_self" title="Quis nostrud exercita"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f4.jpg" class="img-2 img-responsive" alt="image2">
+																	<a href="product" target="_self" title="Quis nostrud exercita"> <img src="image/catalog/demo/product/270/f2.jpg" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/f4.jpg" class="img-2 img-responsive" alt="image2">
 																	</a>
 																</div>
 																<!--quickview-->
@@ -2776,7 +2776,7 @@ body {
 																		<span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
 																	</div>
 																	<h4>
-																		<a href="product.html" title="Pastrami bacon" target="_self">Quis nostrud exercita</a>
+																		<a href="product" title="Pastrami bacon" target="_self">Quis nostrud exercita</a>
 																	</h4>
 
 																</div>
