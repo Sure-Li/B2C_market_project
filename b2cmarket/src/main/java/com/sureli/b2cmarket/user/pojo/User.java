@@ -20,7 +20,7 @@ import com.sureli.b2cmarket.base.pojo.BaseClass;
 public class User extends BaseClass {
 
 	private static final long serialVersionUID = 1L;
-	// 用户类型 1，商家（如：客服，仓储）。2，买家。
+	// 用户类型 1，商家（如：客服，仓储）。0，买家。
 	private Integer userType;
 	// 用户姓名
 	private String userName;

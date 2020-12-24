@@ -30,4 +30,13 @@ public interface UserService {
 	 */ 
 	Integer doRegister(User user);
 
+	/** 
+	 * @Title: findUserByCodeAndPassword 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param userCode
+	 * @param userPassword
+	 * @return  
+	 */ 
+	User findUserByCodeAndPassword(String userCode, String userPassword);
+
 }

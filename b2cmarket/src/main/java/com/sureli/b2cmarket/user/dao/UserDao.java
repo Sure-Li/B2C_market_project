@@ -6,6 +6,7 @@
  */
 package com.sureli.b2cmarket.user.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.sureli.b2cmarket.base.dao.BaseDao;
@@ -17,5 +18,14 @@ import com.sureli.b2cmarket.user.pojo.User;
  */
 @Repository
 public interface UserDao extends BaseDao<User> {
+
+	/** 
+	 * @Title: findUserByCodeAndPassword 
+	 * @Description:(通过账号和密码进行在数据库里查找出对象)
+	 * @param userCode
+	 * @param userPassword
+	 * @return  
+	 */ 
+	User findUserByCodeAndPassword(@Param("userCode") String userCode,@Param("userPassword") String userPassword);
 
 }

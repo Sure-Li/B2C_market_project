@@ -513,8 +513,7 @@
 									<div class="megamenu-pattern">
 										<div class="container-mega">
 											<ul class="megamenu" data-transition="slide" data-animationtime="250">
-												<li class="home hover"><a href="index">Home</a>
-													</li>
+												<li class="home hover"><a href="index">Home</a></li>
 												<li class="with-sub-menu hover">
 													<p class="close-menu"></p> <a href="#" class="clearfix"> <strong>Features</strong> <img class="label-hot" src="image/catalog/menu/new-icon.png" alt="icon items"> <b class="caret"></b>
 												</a>
@@ -726,7 +725,8 @@
 						</ul>
 					</div>
 					<div class="signin-w hidden-md hidden-sm hidden-xs">
-						<ul class="signin-link blank">
+						<input type="hidden" value="${sessionScope.loginUser.userName}" id="userLoginName">
+						<ul class="signin-link blank" id="showLoginUlId">
 							<li class="log login"><i class="fa fa-lock"></i> <a class="link-lg" href="login">Login </a> or <a href="register">Register</a></li>
 						</ul>
 					</div>
@@ -737,4 +737,6 @@
 
 	</div>
 </header>
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/page/header.js"></script>
 <!-- //Header Container  -->
