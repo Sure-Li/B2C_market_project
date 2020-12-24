@@ -38,6 +38,14 @@
 			<version>1.2</version>
 		</dependency>
 		<!-- jstl结束 -->
+		<!-- lombok 开始 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.16</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- lombok 结束 -->
 		<!-- slf4j begin 日志处理 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
