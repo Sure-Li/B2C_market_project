@@ -75,8 +75,9 @@
 		<div class="row">
 			<div id="content" class="col-sm-12">
 				<h2 class="title">Register Account</h2>
-				<p>If you already have an account with us, please login at the <a href="#">login page</a>.</p>
-				<form action="" method="post" enctype="multipart/form-data" class="form-horizontal account-register clearfix">
+				<p>If you already have an account with us, please login at the <a href="login">login page</a>.</p>
+				<!-- enctype="multipart/form-data" -->
+				<form action="user/doRegister" method="post"  class="form-horizontal account-register clearfix">
 					<fieldset id="account">
 						<legend>Your Personal Details</legend>
 						<div class="form-group required" style="display: none;">
@@ -90,72 +91,30 @@
 							</div>
 						</div>
 						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-firstname">First Name</label>
+							<label class="col-sm-2 control-label" for="input-firstname">User Name</label>
 							<div class="col-sm-10">
-								<input type="text" name="firstname" value="" placeholder="First Name" id="input-firstname" class="form-control">
+								<input type="text" name="userName" value="" placeholder="userName" id="input-userName" class="form-control">
 							</div>
 						</div>
 						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-lastname">Last Name</label>
+							<label class="col-sm-2 control-label" for="input-email">User Code</label>
 							<div class="col-sm-10">
-								<input type="text" name="lastname" value="" placeholder="Last Name" id="input-lastname" class="form-control">
+								<input type="text" name="userCode" value="" placeholder="User Code" id="input-userCode" class="form-control">
 							</div>
 						</div>
 						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-email">E-Mail</label>
+							<label class="col-sm-2 control-label" for="input-telephone">User Phone</label>
 							<div class="col-sm-10">
-								<input type="email" name="email" value="" placeholder="E-Mail" id="input-email" class="form-control">
-							</div>
-						</div>
-						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-telephone">Telephone</label>
-							<div class="col-sm-10">
-								<input type="tel" name="telephone" value="" placeholder="Telephone" id="input-telephone" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="input-fax">Fax</label>
-							<div class="col-sm-10">
-								<input type="text" name="fax" value="" placeholder="Fax" id="input-fax" class="form-control">
+								<input type="tel" name="userPhone" value="" placeholder="User Phone" id="input-userPhone" class="form-control">
 							</div>
 						</div>
 					</fieldset>
 					<fieldset id="address">
 						<legend>Your Address</legend>
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="input-company">Company</label>
-							<div class="col-sm-10">
-								<input type="text" name="company" value="" placeholder="Company" id="input-company" class="form-control">
-							</div>
-						</div>
 						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-address-1">Address 1</label>
+							<label class="col-sm-2 control-label" for="input-country">Province</label>
 							<div class="col-sm-10">
-								<input type="text" name="address_1" value="" placeholder="Address 1" id="input-address-1" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="input-address-2">Address 2</label>
-							<div class="col-sm-10">
-								<input type="text" name="address_2" value="" placeholder="Address 2" id="input-address-2" class="form-control">
-							</div>
-						</div>
-						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-city">City</label>
-							<div class="col-sm-10">
-								<input type="text" name="city" value="" placeholder="City" id="input-city" class="form-control">
-							</div>
-						</div>
-						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-postcode">Post Code</label>
-							<div class="col-sm-10">
-								<input type="text" name="postcode" value="" placeholder="Post Code" id="input-postcode" class="form-control">
-							</div>
-						</div>
-						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-country">Country</label>
-							<div class="col-sm-10">
-								<select name="country_id" id="input-country" class="form-control">
+								<select name="addressProvinceCode" id="input-addressProviceCode" class="form-control">
 									<option value=""> --- Please Select --- </option>
 									<option value="244">Aaland Islands</option>
 									<option value="1">Afghanistan</option>
@@ -168,45 +127,75 @@
 							</div>
 						</div>
 						<div class="form-group required">
-							<label class="col-sm-2 control-label" for="input-zone">Region / State</label>
+							<label class="col-sm-2 control-label" for="input-country">City</label>
 							<div class="col-sm-10">
-								<select name="zone_id" id="input-zone" class="form-control">
+								<select name="addressCityCode" id="input-addressCityCode" class="form-control">
+									<option value=""> --- Please Select --- </option>
+									<option value="244">Aaland Islands</option>
+									<option value="1">Afghanistan</option>
+									<option value="2">Albania</option>
+									<option value="3">Algeria</option>
+									<option value="4">American Samoa</option>
+									<option value="5">Andorra</option>
+									<option value="6">Angola</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group required">
+							<label class="col-sm-2 control-label" for="input-zone">Region</label>
+							<div class="col-sm-10">
+								<select name="addressReginCode" id="input-addressReginCode" class="form-control">
 									<option value=""> --- Please Select --- </option>
 									<option value="3513">Aberdeen</option>
 									<option value="3514">Aberdeenshire</option>
 									<option value="3515">Anglesey</option>
 									<option value="3516">Angus</option>
-								  
 								</select>
 							</div>
 						</div>
+						<div class="form-group required">
+							<label class="col-sm-2 control-label" for="input-city">Address Detail</label>
+							<div class="col-sm-10">
+								<input type="text" name="addressDetail" value="" placeholder="Address Detail" id="input-addressDetail" class="form-control">
+							</div>
+						</div>
+						<div class="form-group required">
+							<label class="col-sm-2 control-label" for="input-postcode">Post Code</label>
+							<div class="col-sm-10">
+								<input type="text" name="postcode" value="" placeholder="Post Code" id="input-postcode" class="form-control">
+							</div>
+						</div>
+						<div class="form-group required">
+							<label class="col-sm-2 control-label" for="input-postcode">Phone</label>
+							<div class="col-sm-10">
+								<input type="text" name="addressPhone" value="" placeholder="Phone" id="input-postcode" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Is Default Address</label>
+							<div class="col-sm-10">
+								<label class="radio-inline">
+									<input type="radio" name="addressIsDefault" value="1"> Yes
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="addressIsDefault" value="0" checked="checked"> No
+								</label>
+							</div>
+						</div>
+						
 					</fieldset>
 					<fieldset>
 						<legend>Your Password</legend>
 						<div class="form-group required">
 							<label class="col-sm-2 control-label" for="input-password">Password</label>
 							<div class="col-sm-10">
-								<input type="password" name="password" value="" placeholder="Password" id="input-password" class="form-control">
+								<input type="password" name="userPassword" value="" placeholder="Password" id="input-password" class="form-control">
 							</div>
 						</div>
 						<div class="form-group required">
 							<label class="col-sm-2 control-label" for="input-confirm">Password Confirm</label>
 							<div class="col-sm-10">
-								<input type="password" name="confirm" value="" placeholder="Password Confirm" id="input-confirm" class="form-control">
-							</div>
-						</div>
-					</fieldset>
-					<fieldset>
-						<legend>Newsletter</legend>
-						<div class="form-group">
-							<label class="col-sm-2 control-label">Subscribe</label>
-							<div class="col-sm-10">
-								<label class="radio-inline">
-									<input type="radio" name="newsletter" value="1"> Yes
-								</label>
-								<label class="radio-inline">
-									<input type="radio" name="newsletter" value="0" checked="checked"> No
-								</label>
+								<input type="password"  value="" placeholder="Password Confirm" id="input-confirm" class="form-control">
 							</div>
 						</div>
 					</fieldset>

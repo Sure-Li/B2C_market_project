@@ -8,12 +8,15 @@ package com.sureli.b2cmarket.user.pojo;
 
 import java.util.Date;
 
+import org.apache.ibatis.type.Alias;
+
 import com.sureli.b2cmarket.base.pojo.BaseClass;
 
 /**
  * @ClassName:User
  * @Description:(这里用一句话描述这个类的作用)
  */
+@Alias("User")
 public class User extends BaseClass {
 
 	private static final long serialVersionUID = 1L;

@@ -31,7 +31,7 @@
 		`update_by` = #{updateBy} , `update_date` = #{updateDate} WHERE
 		`row_id` = #{rowId};
 	</update>
-	<select id="findOne">
+	<select id="findOne" resultType="User">
 	<include refid="baseSelect"></include> And row_id = #{rowId}
 	</select>
 	<!-- <select id="findUserByRowId" resultType="User">

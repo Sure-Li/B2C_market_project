@@ -64,7 +64,6 @@
 		<property name="annotationClass"
 			value="org.springframework.stereotype.Repository"></property>
 	</bean>
-	-->
 	<!-- 可以使用import 引入其他的配置文件 -->
 	<!-- <import resource=""/> -->
 
