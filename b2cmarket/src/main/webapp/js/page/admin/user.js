@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	//页面加载完成之后直接加载文件的数据
-	initUserData();
+	initListData();
 	//绑定查询数据
 	$('#btn_search').off('click').on('click',function(){
-		initUserData();
+		initListData();
 	});
 	$('#btn-add').off('click').on('click',function(){
 		$.ajax({
@@ -24,23 +24,23 @@ $(document).ready(function(){
 	});
 	function bindFileUpload(){
 		//绑定异步上传文件 在外面直接绑定无法绑定
-		$('#userFile').uploadifive({
+		$('#uploadFile').uploadifive({
 	        'auto': true,
 			'buttonText':'用户头像',
 	        'fileObjName'     : 'userFile', 
 	        'uploadScript'     : 'user/upload',//上传的url
 	        'onUploadComplete' : function(file, data) {//上传成功后的回调
 	        	console.log(data);
-	        	$('#userAvatar').val(data);
+	        	$('#avatar').val(data);
 	        	}
 	    });
 	}
 	function bindSubmit(){
-		$('#btn_userSubmit').off('click').on('click',function(){
+		$('#btn-add-submit').off('click').on('click',function(){
 			$.ajax({
 				type:'post',
 				url:'user',
-				data:$('#form_user').serialize(),
+				data:$('#form_add').serialize(),
 				success:function(data){
 					console.log(data);
 					if(date){
@@ -51,38 +51,38 @@ $(document).ready(function(){
 		});
 		return false;
 	}
-	function initUserData(){
+	function initListData(){
 		$.ajax({
 			url:'user/list',
 			type:'get',
 			dataType:'html',
 			data:$('#searchForm').serialize(),//将多条件查询表单
 			success:function(data){
-				$('#tbody_user').html(data);
+				$('#tbody_container').html(data);
 			}
 		});
 	}
 	var editIndex = null;
 	function bindEditSubmit(){
-		$('#btn_userSubmitEdit').off('click').on('click',function(){
+		$('#btn-edit-submit').off('click').on('click',function(){
 			$.ajax({
 				type:'post',
 				url:'user/doedit',
-				data:$('#form_user_edit').serialize(),
+				data:$('#form_edit').serialize(),
 				success:function(data){
 					console.log(data);
 					if(data){
 						layer.close(editIndex);
 						/*$('#loginUserName').text(data);*/
-						initUserData();
+						initListData();
 					}
 				}
 			})
 		});
 		return false;
 	}
-	$(document).off('click','#userEditId').on('click','#userEditId',function(){
-		console.log("userEditId");
+	$(document).off('click','#btn-edit').on('click','#btn-edit',function(){
+		console.log("btn-edit");
 		var href = $(this).attr('href');
 		console.log(href);
 		$.ajax({
@@ -104,8 +104,8 @@ $(document).ready(function(){
 		});
 		return false;
 	});
-	$(document).off('click','#userDeleteId').on('click','#userDeleteId',function(){
-		console.log("userDeleteId");
+	$(document).off('click','#btn-delete').on('click','#btn-delete',function(){
+		console.log("btn-delete");
 		var href = $(this).attr('href');
 		console.log(href);
 		layer.alert('',{

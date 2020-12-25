@@ -27,6 +27,6 @@
 			<th>账户状态</th> 
 			<th>操作</th>
 		</tr>
-		<tbody id="tbody_user"></tbody>
+		<tbody id="tbody_container"></tbody>
 </table>
 <script type="text/javascript" src="js/page/admin/user.js"></script>
