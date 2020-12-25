@@ -50,5 +50,8 @@
 		<if test="isLock!=null and isLock!=''">
 			AND IS_LOCK = #{isLock}
 		</if>
+		<if test="userType!=null and userType!=''">
+			AND user_type = #{userType}
+		</if>
 	</select>
 </mapper>

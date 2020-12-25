@@ -29,7 +29,7 @@ public class UserManageContoller {
 	@GetMapping("/list")
 	public ModelAndView getUserList(User searchUser, ModelAndView modelAndView) {
 		List<User> userList = userService.findUserBySearch(searchUser);
-		System.out.println(userList);
+		System.out.println(searchUser);
 		modelAndView.addObject("userList", userList);
 		modelAndView.setViewName("admin/user/user_list");
 		return modelAndView;

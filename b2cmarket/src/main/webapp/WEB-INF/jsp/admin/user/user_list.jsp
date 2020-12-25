@@ -6,6 +6,7 @@
 	<c:forEach items="${userList}" var="user">
 		<c:if test="${user.activeFlag==1}">
 			<tr>
+				<td>${user.userType==0?"买家":"卖家"}</td>
 				<td>${user.userName}</td>
 				<td>${user.userCode}</td>
 				<td>${user.lastLoginIp}&nbsp;<fmt:formatDate value="${user.lastLoginDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
