@@ -6,9 +6,18 @@
  */
 package com.sureli.b2cmarket.market.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.sureli.b2cmarket.user.service.UserService;
+import com.sureli.b2cmarket.util.ConfigUtil;
 
 /**
  * @ClassName:MarketController
@@ -16,6 +25,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class MarketController {
+	@Autowired
+	private UserService userService;
+
 	/**
 	 * 
 	 * @Title: goIndex
@@ -80,9 +92,10 @@ public class MarketController {
 		modelAndView.setViewName("market/category");
 		return modelAndView;
 	}
+
 	/**
 	 * 
-	 * @Title: goCheckout 
+	 * @Title: goCheckout
 	 * @Description:(跳转结账页面)
 	 * @param modelAndView
 	 * @return
@@ -92,10 +105,10 @@ public class MarketController {
 		modelAndView.setViewName("market/checkout");
 		return modelAndView;
 	}
-	
+
 	/**
 	 * 
-	 * @Title: goCheckout 
+	 * @Title: goCheckout
 	 * @Description:(跳转商品详情页面)
 	 * @param modelAndView
 	 * @return
@@ -105,9 +118,10 @@ public class MarketController {
 		modelAndView.setViewName("market/product");
 		return modelAndView;
 	}
+
 	/**
 	 * 
-	 * @Title: goWishlist 
+	 * @Title: goWishlist
 	 * @Description:(跳转收藏页面)
 	 * @param modelAndView
 	 * @return
@@ -116,5 +130,50 @@ public class MarketController {
 	public ModelAndView goWishlist(ModelAndView modelAndView) {
 		modelAndView.setViewName("market/wishlist");
 		return modelAndView;
+	}
+
+	/**
+	 * 
+	 * @Title: goWishlist
+	 * @Description:(跳转管理员页面)
+	 * @param modelAndView
+	 * @return
+	 */
+	@RequestMapping("admin")
+	public ModelAndView goAdminIndex(ModelAndView modelAndView, HttpServletRequest request,
+			HttpServletResponse response,
+			@CookieValue(name = ConfigUtil.COOKIE_NAME, required = false) String cookieValue) {
+		System.out.println("cookieValue" + cookieValue);
+//		从浏览器得到cookie 数据 并处理
+		if (cookieValue != null && !"".equals(cookieValue)) {
+			System.out.println("自动登录");
+//			indexService.autoLogin(cookieValue, request);
+		} else {
+		}
+		if (request.getSession().getAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME) == null) {
+			modelAndView.setViewName("admin/login");// 处于非登陆状态
+		} else {
+			modelAndView.setViewName("admin/index");// 登录状态页面
+			System.out.println("modelAndView.setViewName(\"index\");// 登录状态页面");
+		}
+		return modelAndView;
+	}
+
+	/**
+	 * 
+	 * @Title: doLogin
+	 * @Description:(管理员登录 并判断是否自动登录)
+	 * @param userCode
+	 * @param userPassword
+	 * @param isRemenber
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/admindologin")
+	public Integer doLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
+			HttpServletResponse response) {
+		return userService.doLogin(userCode, userPassword, isRemenber, request, response);
 	}
 }

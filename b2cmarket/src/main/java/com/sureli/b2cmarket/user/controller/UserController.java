@@ -6,10 +6,8 @@
  */
 package com.sureli.b2cmarket.user.controller;
 
-import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,15 +39,10 @@ public class UserController {
 	 * @return
 	 */
 	@PostMapping("user/doRegister")
-	public String doRegister(User user, HttpServletRequest request, HttpServletResponse response) {
-		System.out.println(user);
+	public String doRegister(User user) {
+		System.out.println("userget"+user);
 		userService.doRegister(user);
-		try {
-			response.sendRedirect("../login");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return "market/login";
+		return ConfigUtil.FUNCTION_SUCCESS;
 	}
 
 	/**

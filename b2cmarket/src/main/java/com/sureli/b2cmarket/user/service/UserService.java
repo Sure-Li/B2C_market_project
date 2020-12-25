@@ -6,6 +6,9 @@
  */
 package com.sureli.b2cmarket.user.service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.sureli.b2cmarket.user.pojo.User;
 
 /**
@@ -14,29 +17,34 @@ import com.sureli.b2cmarket.user.pojo.User;
  */
 public interface UserService {
 
-	/** 
-	 * @Title: doLogin 
-	 * @Description:(这里用一句话描述这个方法的作用)
-	 * @param user
-	 * @return  
-	 */ 
-	Integer doLogin(User user);
-
-	/** 
-	 * @Title: doRegister 
+	/**
+	 * @Title: doRegister
 	 * @Description:(用于创建用户的方法)
 	 * @param user
-	 * @return  
-	 */ 
+	 * @return
+	 */
 	Integer doRegister(User user);
 
-	/** 
-	 * @Title: findUserByCodeAndPassword 
+	/**
+	 * @Title: findUserByCodeAndPassword
 	 * @Description:(这里用一句话描述这个方法的作用)
 	 * @param userCode
 	 * @param userPassword
-	 * @return  
-	 */ 
+	 * @return
+	 */
 	User findUserByCodeAndPassword(String userCode, String userPassword);
+
+	/**
+	 * @Title: doLogin
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param userCode
+	 * @param userPassword
+	 * @param isRemenber
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	Integer doLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
+			HttpServletResponse response);
 
 }

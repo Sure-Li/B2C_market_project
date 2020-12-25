@@ -81,7 +81,7 @@ body {
 						If you already have an account with us, please login at the <a href="login">login page</a>.
 					</p>
 					<!-- enctype="multipart/form-data" -->
-					<form action="user/doRegister" id="userRegisterForm" method="post" class="form-horizontal account-register clearfix">
+					<form action="user/doRegister" id="userRegisterForm"  class="form-horizontal account-register clearfix">
 						<fieldset id="account">
 							<legend>Your Personal Details</legend>
 							<div class="form-group required" style="display: none;">
@@ -177,8 +177,8 @@ body {
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Is Default Address</label>
 								<div class="col-sm-10">
-									<label class="radio-inline"> <input type="radio" name="addressIsDefault" value="1"> Yes
-									</label> <label class="radio-inline"> <input type="radio" name="addressIsDefault" value="0" checked="checked"> No
+									<label class="radio-inline"> <input type="radio" name="addressIsDefault" value="1" checked="checked"> Yes
+									</label> <label class="radio-inline"> <input type="radio" name="addressIsDefault" value="0" > No
 									</label>
 								</div>
 							</div>

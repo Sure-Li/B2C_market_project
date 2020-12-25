@@ -8,6 +8,11 @@ package com.sureli.b2cmarket.user.service.impl;
 
 import java.util.Date;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,17 +47,6 @@ public class UserServiceImpl implements UserService {
 		return userDao.save(user);
 	}
 
-	/**
-	 * @Title: doLogin
-	 * @Description:(这里用一句话描述这个方法的作用)
-	 * @param user
-	 * @return
-	 */
-	@Override
-	public Integer doLogin(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	/**
 	 * @Title: findUserByCodeAndPassword
@@ -64,6 +58,58 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findUserByCodeAndPassword(String userCode, String userPassword) {
 		return userDao.findUserByCodeAndPassword(userCode,userPassword);
+	}
+
+
+	/** 
+	 * @Title: doLogin 
+	 * @Description:(用来执行用户登录，并完成自动登陆功能)
+	 * @param userCode
+	 * @param userPassword
+	 * @param isRemenber
+	 * @param request
+	 * @param response
+	 * @return  
+	 */  
+	@Override
+	public Integer doLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
+			HttpServletResponse response) {
+		int result = 0;
+		// 对用户密码进行md5加密 然后再去数据库里查询
+//		String userEncodePassword = MD5Util.encode(userPassword);
+		User user = userDao.findUserByCodeAndPassword(userCode, userPassword);
+//		&&user.getUserType()!=UserUtil.USER_TYPE_BUYER 
+		if (user != null) {
+			if (user.getIsLock() == UserUtil.USER_IS_LOCK_NO) {
+				user.setLastLoginDate(new Date());
+				user.setLastLoginIp(request.getRemoteAddr());
+				userDao.update(user);
+				// 向session中放实例
+				HttpSession session = request.getSession();
+				session.setAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME, user);
+//				处理自动登录
+				if (isRemenber != null && isRemenber.equals("on")) {
+					StringBuilder cookieVaule = new StringBuilder();
+					cookieVaule.append(user.getUserCode()).append(ConfigUtil.COOKIE_VALUE_SPLIT)
+							.append(user.getRowId());
+					Cookie cookie = new Cookie(ConfigUtil.COOKIE_NAME, cookieVaule.toString());
+					cookie.setMaxAge(60 * 60 * 24 * 7);
+					cookie.setPath("/");
+					response.addCookie(cookie);
+				}else {
+					Cookie cookie = new Cookie(ConfigUtil.COOKIE_NAME,"");
+					cookie.setMaxAge(0);
+					cookie.setPath("/");
+					response.addCookie(cookie);
+				}
+				result = 1;
+			} else {
+				result = 3;
+			}
+		} else {
+			result = 2;
+		}
+		return result;
 	}
 
 }
