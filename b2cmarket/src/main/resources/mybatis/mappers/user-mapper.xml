@@ -39,18 +39,16 @@
 		<include refid="baseSelect"></include>
 		and user_code = #{userCode} and user_password = #{userPassword}
 	</select>
-	<!-- <select id="findUserByRowId" resultType="User"> SELECT ROW_ID, <include 
-		refid="baseColum"></include> FROM TB_USER WHERE ACTIVE_FLAG = 1 AND ROW_ID 
-		= #{rowId}; </select> <select id="selectAll" resultType="User"> <include 
-		refid="baseSelect"></include> </select> <select id="findUserBySearch" resultType="User"> 
-		<include refid="baseSelect"></include> <if test="userName!=null and userName!=''"> 
-		AND USER_NAME = #{userName} </if> <if test="userCode!=null and userCode!=''"> 
-		AND USER_CODE = #{userCode} </if> <if test="loginCount!=null and loginCount!=''"> 
-		AND LOGIN_COUNT = #{loginCount} </if> <if test="isLock!=null and isLock!=''"> 
-		AND IS_LOCK = #{isLock} </if> </select> <select id="selectByCodeAndPassword" 
-		resultType="User"> SELECT ROW_ID, <include refid="baseColum"></include> FROM 
-		TB_USER WHERE ACTIVE_FLAG = 1 AND USER_CODE = #{userCode} AND USER_PASSWORD 
-		= #{userPassword}; </select> <select id="selectByCodeAndRowId" resultType="User"> 
-		SELECT ROW_ID, <include refid="baseColum"></include> FROM TB_USER WHERE ACTIVE_FLAG 
-		= 1 AND USER_CODE = #{userCode} AND ROW_ID = #{rowId}; </select> -->
+	<select id="findUserBySearch" resultType="User">
+		<include refid="baseSelect"></include>
+		<if test="userName!=null and userName!=''">
+			AND USER_NAME = #{userName}
+		</if>
+		<if test="userCode!=null and userCode!=''">
+			AND USER_CODE = #{userCode}
+		</if>
+		<if test="isLock!=null and isLock!=''">
+			AND IS_LOCK = #{isLock}
+		</if>
+	</select>
 </mapper>

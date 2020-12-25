@@ -7,6 +7,7 @@
 package com.sureli.b2cmarket.user.service.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -110,6 +111,18 @@ public class UserServiceImpl implements UserService {
 			result = 2;
 		}
 		return result;
+	}
+
+
+	/** 
+	 * @Title: findUserBySearch 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param searchUser
+	 * @return  
+	 */  
+	@Override
+	public List<User> findUserBySearch(User searchUser) {
+		return userDao.findUserBySearch(searchUser);
 	}
 
 }

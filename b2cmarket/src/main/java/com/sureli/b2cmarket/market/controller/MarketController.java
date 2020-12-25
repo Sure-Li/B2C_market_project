@@ -156,6 +156,7 @@ public class MarketController {
 			modelAndView.setViewName("admin/index");// 登录状态页面
 			System.out.println("modelAndView.setViewName(\"index\");// 登录状态页面");
 		}
+		modelAndView.setViewName("admin/index");// 登录状态页面
 		return modelAndView;
 	}
 

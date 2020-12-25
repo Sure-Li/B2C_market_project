@@ -13,12 +13,15 @@
 <body>
 	<div class="contaner">
 		<div class="top">
-			<h1>管理系统</h1>
+			<h1>后台管理系统</h1>
 			<span style="position: absolute; top: 10px; right: 10px"> <font id="loginUserName">${sessionScope.loginUser.userName}</font> <a href="JavaScript:;" id="btn_loginOut">退出</a>
 			</span>
 		</div>
 		<div class="left">
-			<a href="user">用户管理</a><br> <a href="role">角色管理</a><br>
+			<a href="userManage">用户管理</a><br> 
+			<a href="orderManage">订单管理</a><br>
+			<a href="catalogueManage">商品目录管理</a><br>
+			<a href="commodityManage">商品管理</a><br>
 		</div>
 		<div class="main" id="maindiv"></div>
 	</div>

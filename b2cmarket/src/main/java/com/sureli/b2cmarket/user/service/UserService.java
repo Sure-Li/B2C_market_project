@@ -6,6 +6,8 @@
  */
 package com.sureli.b2cmarket.user.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -46,5 +48,13 @@ public interface UserService {
 	 */
 	Integer doLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
 			HttpServletResponse response);
+
+	/** 
+	 * @Title: findUserBySearch 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param searchUser
+	 * @return  
+	 */ 
+	List<User> findUserBySearch(User searchUser);
 
 }
