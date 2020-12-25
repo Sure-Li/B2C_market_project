@@ -40,14 +40,12 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public Integer doRegister(User user) {
-		user.setUserType(UserUtil.USER_TYPE_BUYER);
 		user.setIsLock(UserUtil.USER_IS_LOCK_NO);
 		user.setActiveFlag(ConfigUtil.ACTIVE_FLAG_YES);
 		user.setCreateBy("Sure_li");
 		user.setCreateDate(new Date());
 		return userDao.save(user);
 	}
-
 
 	/**
 	 * @Title: findUserByCodeAndPassword
@@ -58,20 +56,19 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public User findUserByCodeAndPassword(String userCode, String userPassword) {
-		return userDao.findUserByCodeAndPassword(userCode,userPassword);
+		return userDao.findUserByCodeAndPassword(userCode, userPassword);
 	}
 
-
-	/** 
-	 * @Title: doLogin 
+	/**
+	 * @Title: doLogin
 	 * @Description:(用来执行用户登录，并完成自动登陆功能)
 	 * @param userCode
 	 * @param userPassword
 	 * @param isRemenber
 	 * @param request
 	 * @param response
-	 * @return  
-	 */  
+	 * @return
+	 */
 	@Override
 	public Integer doLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -97,8 +94,8 @@ public class UserServiceImpl implements UserService {
 					cookie.setMaxAge(60 * 60 * 24 * 7);
 					cookie.setPath("/");
 					response.addCookie(cookie);
-				}else {
-					Cookie cookie = new Cookie(ConfigUtil.COOKIE_NAME,"");
+				} else {
+					Cookie cookie = new Cookie(ConfigUtil.COOKIE_NAME, "");
 					cookie.setMaxAge(0);
 					cookie.setPath("/");
 					response.addCookie(cookie);
@@ -113,16 +110,28 @@ public class UserServiceImpl implements UserService {
 		return result;
 	}
 
-
-	/** 
-	 * @Title: findUserBySearch 
+	/**
+	 * @Title: findUserBySearch
 	 * @Description:(这里用一句话描述这个方法的作用)
 	 * @param searchUser
-	 * @return  
-	 */  
+	 * @return
+	 */
 	@Override
 	public List<User> findUserBySearch(User searchUser) {
 		return userDao.findUserBySearch(searchUser);
+	}
+
+	/**
+	 * @Title: delete
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return
+	 */
+	@Override
+	public Integer delete(Long rowId) {
+		User user = userDao.findOne(rowId);
+		user.setActiveFlag(ConfigUtil.ACTIVE_FLAG_NO);
+		return userDao.update(user);
 	}
 
 }

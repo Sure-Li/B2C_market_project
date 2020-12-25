@@ -41,6 +41,7 @@ public class UserController {
 	@PostMapping("user/doRegister")
 	public String doRegister(User user) {
 		System.out.println("userget"+user);
+		user.setUserType(UserUtil.USER_TYPE_BUYER);
 		userService.doRegister(user);
 		return ConfigUtil.FUNCTION_SUCCESS;
 	}

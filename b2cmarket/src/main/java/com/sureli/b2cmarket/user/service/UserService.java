@@ -57,4 +57,13 @@ public interface UserService {
 	 */ 
 	List<User> findUserBySearch(User searchUser);
 
+	/** 
+	 * @Title: delete 
+	 * @Description:(删除用户账号)
+	 * @param rowId
+	 * @return  
+	 */ 
+	Integer delete(Long rowId);
+
+
 }
