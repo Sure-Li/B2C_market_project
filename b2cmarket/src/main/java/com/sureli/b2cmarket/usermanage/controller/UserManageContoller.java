@@ -58,4 +58,21 @@ public class UserManageContoller {
 		System.out.println("@PathVariable Long rowId" +rowId);
 		return userService.delete(rowId);
 	}
+	
+	@GetMapping("/edit/{rowId}")
+	public ModelAndView goUserEdit(@PathVariable Long rowId, ModelAndView modelAndView) {
+		System.out.println(rowId);
+		User user = userService.findOne(rowId);
+		System.out.println(user);
+		modelAndView.addObject("user", user);
+		modelAndView.setViewName("admin/user/user_edit");
+		return modelAndView;
+	}
+	@ResponseBody
+	@PostMapping("/doedit")
+	public Integer doUserEdit(User user) {
+		int result = userService.update(user);
+		return result;	
+	}
 }
+	

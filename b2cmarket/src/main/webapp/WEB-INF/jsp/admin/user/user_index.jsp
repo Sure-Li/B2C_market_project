@@ -9,8 +9,8 @@
 </select>
 <select name="userType">
 <option value="">用户类型</option>
-<option value="0">买家</option>
 <option value="1">卖家</option>
+<option value="0">买家</option>
 </select>
 <input name="userName"  placeholder="用户名称">
 <input name="userCode" placeholder="用户账号">

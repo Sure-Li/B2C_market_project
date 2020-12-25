@@ -73,7 +73,7 @@ $(document).ready(function(){
 					console.log(data);
 					if(data){
 						layer.close(editIndex);
-						$('#loginUserName').text(data);
+						/*$('#loginUserName').text(data);*/
 						initUserData();
 					}
 				}
@@ -120,7 +120,7 @@ $(document).ready(function(){
 						method:'get',
 						success:function(data){
 							if(data==1){
-								location.href="index";
+								location.href="admin";
 							}
 						}
 					});

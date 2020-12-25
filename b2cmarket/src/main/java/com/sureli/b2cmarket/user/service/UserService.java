@@ -65,5 +65,21 @@ public interface UserService {
 	 */ 
 	Integer delete(Long rowId);
 
+	/** 
+	 * @Title: findOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */ 
+	User findOne(Long rowId);
+
+	/** 
+	 * @Title: update 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param user
+	 * @return  
+	 */ 
+	int update(User user);
+
 
 }

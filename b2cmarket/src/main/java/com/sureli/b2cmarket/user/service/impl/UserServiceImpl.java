@@ -134,4 +134,33 @@ public class UserServiceImpl implements UserService {
 		return userDao.update(user);
 	}
 
+	/** 
+	 * @Title: findOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */  
+	@Override
+	public User findOne(Long rowId) {
+		return userDao.findOne(rowId);
+	}
+
+	/** 
+	 * @Title: update 
+	 * @Description:(修改用户)
+	 * @param user
+	 * @return  
+	 */  
+	@Override
+	public int update(User user) {
+		User userGet = userDao.findOne(user.getRowId());
+		System.out.println("userGet"+userGet);
+		userGet.setUserName(user.getUserName());
+		userGet.setUserPassword(user.getUserPassword());
+		//Todo 此处还需要将更新人加入  由于还没有登录功能 所以暂时先预留 -------------------------------------------------
+		userGet.setIsLock(user.getIsLock());
+		userGet.setUpdateDate(new Date());
+		return userDao.update(userGet);
+	}
+
 }

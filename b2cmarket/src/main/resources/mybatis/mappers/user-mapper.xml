@@ -47,11 +47,13 @@
 		<if test="userCode!=null and userCode!=''">
 			AND USER_CODE = #{userCode}
 		</if>
+		 <if test="userType!=null">
+			AND user_type = #{userType}
+		</if>
 		<if test="isLock!=null and isLock!=''">
 			AND IS_LOCK = #{isLock}
 		</if>
-		<if test="userType!=null and userType!=''">
-			AND user_type = #{userType}
-		</if>
+
+
 	</select>
 </mapper>

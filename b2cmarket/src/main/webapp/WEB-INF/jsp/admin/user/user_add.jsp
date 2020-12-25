@@ -5,8 +5,8 @@
 <option value="0">买家</option>
 <option value="1">卖家</option>
 </select><br>
-用户名称：<input name="userName"><br>
-登录账号：<input name="userCode"><br>
+用户名称：<input name="userName" value="${user.userName}"><br>
+登录账号：<input name="userCode" value="${user.userCode}"><br>
 登录密码：<input type="password" name="userPassword"><br>
 <input type="hidden" name="userAvatar">
 <input type="file" id="userFile"><br>
