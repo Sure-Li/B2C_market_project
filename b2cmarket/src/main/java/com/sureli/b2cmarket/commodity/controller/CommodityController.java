@@ -31,7 +31,7 @@ public class CommodityController {
 		List<Commodity> commodityList = commodityService.findBySearch(searchCommodity);
 		System.out.println(searchCommodity);
 		System.out.println("commodityList"+commodityList);
-		modelAndView.addObject("orderList", commodityList);
+		modelAndView.addObject("commodityList", commodityList);
 		modelAndView.setViewName("admin/commodity/commodity_list");
 		return modelAndView;
 	}
