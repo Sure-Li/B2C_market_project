@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	var baseUrl = $('#urlHidden').val();
 	//页面加载完成之后直接加载文件的数据
 	initListData();
 	//绑定查询数据
@@ -7,7 +8,7 @@ $(document).ready(function(){
 	});
 	$('#btn-add').off('click').on('click',function(){
 		$.ajax({
-			url:'user/form',
+			url:baseUrl+'/form',
 			success:function(htmlData){
 				layer.open({
                     type:1,
@@ -39,7 +40,7 @@ $(document).ready(function(){
 		$('#btn-add-submit').off('click').on('click',function(){
 			$.ajax({
 				type:'post',
-				url:'user',
+				url:baseUrl,
 				data:$('#form_add').serialize(),
 				success:function(data){
 					console.log(data);
@@ -53,7 +54,7 @@ $(document).ready(function(){
 	}
 	function initListData(){
 		$.ajax({
-			url:'user/list',
+			url:baseUrl+'/list',
 			type:'get',
 			dataType:'html',
 			data:$('#searchForm').serialize(),//将多条件查询表单
@@ -67,7 +68,7 @@ $(document).ready(function(){
 		$('#btn-edit-submit').off('click').on('click',function(){
 			$.ajax({
 				type:'post',
-				url:'user/doedit',
+				url:baseUrl+'doedit',
 				data:$('#form_edit').serialize(),
 				success:function(data){
 					console.log(data);

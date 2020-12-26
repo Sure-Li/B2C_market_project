@@ -1,11 +1,10 @@
 /**
  * @Company:Sure_li  
- * @Title:UserController.java 
+ * @Title:OrderController.java 
  * @Author:lishuo  
- * @Date:2020-12-23 20:42:33     
- */
-package com.sureli.b2cmarket.user.controller;
-
+ * @Date:2020-12-26 8:22:08     
+ */ 
+package com.sureli.b2cmarket.order.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -21,13 +20,13 @@ import com.sureli.b2cmarket.user.pojo.UserUtil;
 import com.sureli.b2cmarket.user.service.UserService;
 import com.sureli.b2cmarket.util.ConfigUtil;
 
-/**
- * @ClassName:UserController
- * @Description:(用户的controller层 用于页面跳转)
+/** 
+ * @ClassName:OrderController 
+ * @Description:(这里用一句话描述这个类的作用)  
  */
 @RestController
-@RequestMapping("user/")
-public class UserController {
+@RequestMapping("order/")
+public class OrderController {
 	@Autowired
 	private UserService userService;
 

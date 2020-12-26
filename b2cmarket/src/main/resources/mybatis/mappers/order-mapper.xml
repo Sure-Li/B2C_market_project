@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sureli.b2cmarket.order.dao.OrderDao">
+	<sql id="baseColum"> `order_code`, `user_id`, `price_sum`, `address_id`,
+		`order_state`, `order_pay_method`, `active_flag`, `create_by`,
+		`create_date`, `update_by`, `update_date`
+	</sql>
+	<sql id="baseSelect">
+		SELECT ROW_ID,
+		<include refid="baseColum"></include>
+		FROM tb_order WHERE active_flag = 1
+	</sql>
+	<insert id="save">
+		INSERT INTO `b2c_market`.`tb_order` (
+		<include refid="baseColum"></include>
+		)
+		VALUES (#{orderCode}, #{userId}, #{priceSum}, #{addressId},
+		#{orderState}, #{orderPayMethod},
+		#{activeFlag},#{createBy},#{createDate}, #{updateBy}, #{updateDate});
+	</insert>
+	<update id="update">
+		UPDATE `b2c_market`.`tb_order` SET `order_code` =
+		#{orderCode} , `user_id` = #{userId} , `price_sum` = #{priceSum} , `address_id` = #{addressId}
+		, `order_state` = #{orderState} , `order_pay_method` = #{orderPayMethod} , `active_flag` = #{activeFlag}
+		, `create_by` = #{createBy}, `create_date` = #{createDate} ,
+		`update_by` = #{updateBy} , `update_date` = #{updateDate} WHERE
+		`row_id` = #{rowId}
+	</update>
+	<select id="findOne" resultType="Order">
+		<include refid="baseSelect"></include>
+		And row_id = #{rowId}
+	</select>
+	<select id="findOrderBySearch" resultType="Order">
+		<include refid="baseSelect"></include>
+		<if test="userName!=null and userName!=''">
+		</if>
+	</select>
+</mapper>

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!-- 多条件查询  -->
 <form id="searchForm">
+<input type="hidden" id="urlHidden" value="user">
 <select name="isLock">
 <option value="">用户状态</option>
 <option value="1">锁定</option>
@@ -29,4 +30,4 @@
 		</tr>
 		<tbody id="tbody_container"></tbody>
 </table>
-<script type="text/javascript" src="js/page/admin/user.js"></script>
+<script type="text/javascript" src="js/page/admin/base.js"></script>

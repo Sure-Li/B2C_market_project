@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @ClassName:AdminController
- * @Description:(这里用一句话描述这个类的作用)
+ * @Description:(后台管理页面跳转各个模块)
  */
 @Controller
 public class AdminController {
@@ -20,6 +20,12 @@ public class AdminController {
 	@RequestMapping("userManage")
 	public ModelAndView goUserManageIndex(ModelAndView modelAndView) {
 		modelAndView.setViewName("admin/user/user_index");
+		return modelAndView;
+	}
+
+	@RequestMapping("orderManage")
+	public ModelAndView goOrderManageIndex(ModelAndView modelAndView) {
+		modelAndView.setViewName("admin/order/order_index");
 		return modelAndView;
 	}
 

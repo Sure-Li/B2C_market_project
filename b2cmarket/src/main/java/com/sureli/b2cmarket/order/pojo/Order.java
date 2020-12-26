@@ -6,6 +6,8 @@
  */
 package com.sureli.b2cmarket.order.pojo;
 
+import org.apache.ibatis.type.Alias;
+
 import com.sureli.b2cmarket.base.pojo.BaseClass;
 
 import lombok.Getter;
@@ -17,6 +19,7 @@ import lombok.Setter;
  */
 @Setter
 @Getter
+@Alias("Order")
 public class Order extends BaseClass {
 
 	private static final long serialVersionUID = 1L;
