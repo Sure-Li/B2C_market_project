@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.sureli.b2cmarket.commodity.dao.CommodityDao">
+	<sql id="baseColum"> `catalogue_id`, `commodity_name`, `commodity_code`,
+		`commodity_photo`, `commodity_price`, `commodity_stock_count`,
+		`commodity_up_down_state`, `commodity_info`, `active_flag`,
+		`create_by`, `create_date`, `update_by`, `update_date`
+	</sql>
+	<sql id="baseSelect">
+		SELECT ROW_ID,
+		<include refid="baseColum"></include>
+		FROM tb_commodity WHERE active_flag = 1
+	</sql>
+	<insert id="save">
+		INSERT INTO `b2c_market`.`tb_commodity` (
+		<include refid="baseColum"></include>
+		)
+		VALUES (#{catalogueId}, #{commodityName}, #{commodityCode},
+		#{commodityPhoto},
+		#{commodityPrice}, #{commoditySotckCount},
+		#{commodityUpDownState},#{commodityInfo},
+		#{activeFlag},#{createBy},#{createDate}, #{updateBy}, #{updateDate});
+	</insert>
+	<update id="update">
+		UPDATE `b2c_market`.`tb_commodity` SET `catalogue_id`
+		= #{catalogueId} , `commodity_name` = #{commdityName} ,
+		`commodity_code` = #{commodityCode} ,
+		`commodity_photo` =
+		#{commondityPhoto} , `commodity_price` = #{commodityPrice} ,
+		`commodity_stock_count` = #{commodityStockCount} ,
+		`commodity_up_down_state` = #{commodityUpDownState} ,
+		`commodity_info`
+		= #{commodityInfo} , `active_flag` = #{activeFlag}
+		, `create_by` =
+		#{createBy}, `create_date` = #{createDate} ,
+		`update_by` = #{updateBy}
+		, `update_date` = #{updateDate} WHERE
+		`row_id` = #{rowId}
+	</update>
+	<select id="findOne" resultType="Order">
+		<include refid="baseSelect"></include>
+		And row_id = #{rowId}
+	</select>
+	<select id="findBySearch" resultType="Order">
+		<include refid="baseSelect"></include>
+		<!-- <if test="orderCode!=null and orderCode!=''">
+			and order_code = #{orderCode}
+		</if>
+		<if test="userId!=null and userId!=''">
+			and user_id = #{userId}
+		</if>
+		<if test="addressId!=null and addressId!=''">
+			and address_id = #{addressId}
+		</if>
+		<if test="orderState!=null and orderState!=''">
+			and order_state = #{orderState}
+		</if>
+		<if test="orderPayMethod!=null and orderPayMethod!=''">
+			and order_pay_method = #{orderPayMethod}
+		</if> -->
+	</select>
+</mapper>

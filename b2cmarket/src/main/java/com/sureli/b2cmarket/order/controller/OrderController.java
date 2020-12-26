@@ -25,16 +25,16 @@ import com.sureli.b2cmarket.order.service.OrderService;
  * @Description:(这里用一句话描述这个类的作用)  
  */
 @RestController
-@RequestMapping("order/")
+@RequestMapping("commodity/")
 public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	@GetMapping("/list")
 	public ModelAndView getUserList(Order searchOrder, ModelAndView modelAndView) {
-		List<Order> orderList = orderService.findBySearch(searchOrder);
+		List<Order> commodityList = orderService.findBySearch(searchOrder);
 		System.out.println(searchOrder);
-		System.out.println(orderList);
-		modelAndView.addObject("orderList", orderList);
+		System.out.println(commodityList);
+		modelAndView.addObject("commodityList", commodityList);
 		modelAndView.setViewName("admin/order/order_list");
 		return modelAndView;
 	}
