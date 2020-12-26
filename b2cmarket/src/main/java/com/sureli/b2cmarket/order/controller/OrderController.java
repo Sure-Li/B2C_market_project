@@ -6,19 +6,19 @@
  */ 
 package com.sureli.b2cmarket.order.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.sureli.b2cmarket.user.pojo.User;
-import com.sureli.b2cmarket.user.pojo.UserUtil;
-import com.sureli.b2cmarket.user.service.UserService;
-import com.sureli.b2cmarket.util.ConfigUtil;
+import com.sureli.b2cmarket.order.pojo.Order;
+import com.sureli.b2cmarket.order.service.OrderService;
 
 /** 
  * @ClassName:OrderController 
@@ -28,54 +28,47 @@ import com.sureli.b2cmarket.util.ConfigUtil;
 @RequestMapping("order/")
 public class OrderController {
 	@Autowired
-	private UserService userService;
-
-	/**
-	 * 
-	 * @Title: doRegister
-	 * @Description:(执行注册功能的方法)
-	 * @param user
-	 * @param request
-	 * @param response
-	 * @return
-	 */
-	@PostMapping("doRegister")
-	public String doRegister(User user) {
-		System.out.println("userget"+user);
-		user.setUserType(UserUtil.USER_TYPE_BUYER);
-		userService.doRegister(user);
-		return ConfigUtil.FUNCTION_SUCCESS;
+	private OrderService orderService;
+	@GetMapping("/list")
+	public ModelAndView getUserList(Order searchOrder, ModelAndView modelAndView) {
+		List<Order> orderList = orderService.findBySearch(searchOrder);
+		System.out.println(searchOrder);
+		System.out.println(orderList);
+		modelAndView.addObject("orderList", orderList);
+		modelAndView.setViewName("admin/order/order_list");
+		return modelAndView;
 	}
-
-	/**
-	 * 
-	 * @Title: doLogin
-	 * @Description:(执行登录功能的方法)
-	 * @param userCode
-	 * @param UserPassword
-	 * @return
-	 */
-
-	@GetMapping("doLogin")
-	public String doLogin(String userCode, String userPassword, HttpServletRequest request) {
-		String result = "";
-		User userGet = userService.findUserByCodeAndPassword(userCode, userPassword);
-		HttpSession session = null;
-		if (userGet != null && userGet.getIsLock() != UserUtil.USER_IS_LOCK_YES) {
-			session = request.getSession();
-			session.setAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME, userGet);
-			result = ConfigUtil.FUNCTION_SUCCESS;
-		}else {
-			result = ConfigUtil.FUNCTION_FAIL;
-		}
-		return result;
+//	@GetMapping("/form")
+//	public ModelAndView goAddForm(ModelAndView modelAndView) {
+//		modelAndView.setViewName("admin/user/user_add");
+//		return modelAndView;
+//	}
+//	@PostMapping
+//	public Integer doAddUser(User user, HttpSession session) {
+//		String createBy = ServletUtil.getUserCodeBySession(session);
+//		user.setCreateBy(createBy);
+//		return userService.doRegister(user);
+//	}
+//	
+	@ResponseBody
+	@GetMapping("/delete/{rowId}")
+	public Integer doDelete(@PathVariable Long rowId) {
+		System.out.println("@PathVariable Long rowId" +rowId);
+		return orderService.delete(rowId);
 	}
-
-	@GetMapping("exit")
-	public String doExit(HttpServletRequest request) {
-		HttpSession session = null;
-		session = request.getSession();
-		session.setAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME, new User());
-		return "success";
+	@GetMapping("/edit/{rowId}")
+	public ModelAndView goUserEdit(@PathVariable Long rowId, ModelAndView modelAndView) {
+		System.out.println(rowId);
+		Order order = orderService.findOne(rowId);
+		System.out.println(order);
+		modelAndView.addObject("order", order);
+		modelAndView.setViewName("admin/order/order_edit");
+		return modelAndView;
 	}
+//	@ResponseBody
+//	@PostMapping("/doedit")
+//	public Integer doUserEdit(User user) {
+//		int result = userService.update(user);
+//		return result;	
+//	}
 }

@@ -21,7 +21,7 @@
 		<option value="4">信用卡</option>
 	</select> <input name="orderCode" placeholder="订单编号"> <input name="userId" placeholder="用户id"> <input name="addressId" placeholder="地址id"> <input type="button" value="查询" id="btn_search"> <input type="reset">
 </form>
-<a href="javaScript:;" style="float: right;" id="btn-add">新增</a>
+<!-- <a href="javaScript:;" style="float: right;" id="btn-add">新增</a> -->
 <table>
 	<tr>
 		

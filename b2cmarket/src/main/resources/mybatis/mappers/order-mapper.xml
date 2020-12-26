@@ -22,8 +22,10 @@
 	</insert>
 	<update id="update">
 		UPDATE `b2c_market`.`tb_order` SET `order_code` =
-		#{orderCode} , `user_id` = #{userId} , `price_sum` = #{priceSum} , `address_id` = #{addressId}
-		, `order_state` = #{orderState} , `order_pay_method` = #{orderPayMethod} , `active_flag` = #{activeFlag}
+		#{orderCode} , `user_id` = #{userId} , `price_sum` = #{priceSum} ,
+		`address_id` = #{addressId}
+		, `order_state` = #{orderState} ,
+		`order_pay_method` = #{orderPayMethod} , `active_flag` = #{activeFlag}
 		, `create_by` = #{createBy}, `create_date` = #{createDate} ,
 		`update_by` = #{updateBy} , `update_date` = #{updateDate} WHERE
 		`row_id` = #{rowId}
@@ -32,9 +34,22 @@
 		<include refid="baseSelect"></include>
 		And row_id = #{rowId}
 	</select>
-	<select id="findOrderBySearch" resultType="Order">
+	<select id="findBySearch" resultType="Order">
 		<include refid="baseSelect"></include>
-		<if test="userName!=null and userName!=''">
+		<if test="orderCode!=null and orderCode!=''">
+			and order_code = #{orderCode}
+		</if>
+		<if test="userId!=null and userId!=''">
+			and user_id = #{userId}
+		</if>
+		<if test="addressId!=null and addressId!=''">
+			and address_id = #{addressId}
+		</if>
+		<if test="orderState!=null and orderState!=''">
+			and order_state = #{orderState}
+		</if>
+		<if test="orderPayMethod!=null and orderPayMethod!=''">
+			and order_pay_method = #{orderPayMethod}
 		</if>
 	</select>
 </mapper>
