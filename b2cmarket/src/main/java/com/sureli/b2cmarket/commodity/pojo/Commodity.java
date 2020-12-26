@@ -6,12 +6,15 @@
  */
 package com.sureli.b2cmarket.commodity.pojo;
 
+import org.apache.ibatis.type.Alias;
+
 import com.sureli.b2cmarket.base.pojo.BaseClass;
 
 /**
  * @ClassName:Commodity
  * @Description:(商品类)
  */
+@Alias("Commodity")
 public class Commodity extends BaseClass {
 
 	private static final long serialVersionUID = 1L;

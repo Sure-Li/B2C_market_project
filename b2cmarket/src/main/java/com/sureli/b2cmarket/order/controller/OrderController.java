@@ -12,6 +12,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,16 +26,16 @@ import com.sureli.b2cmarket.order.service.OrderService;
  * @Description:(这里用一句话描述这个类的作用)  
  */
 @RestController
-@RequestMapping("commodity/")
+@RequestMapping("order/")
 public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	@GetMapping("/list")
 	public ModelAndView getUserList(Order searchOrder, ModelAndView modelAndView) {
-		List<Order> commodityList = orderService.findBySearch(searchOrder);
+		List<Order> orderList = orderService.findBySearch(searchOrder);
 		System.out.println(searchOrder);
-		System.out.println(commodityList);
-		modelAndView.addObject("commodityList", commodityList);
+		System.out.println(orderList);
+		modelAndView.addObject("orderList", orderList);
 		modelAndView.setViewName("admin/order/order_list");
 		return modelAndView;
 	}
@@ -65,10 +66,10 @@ public class OrderController {
 		modelAndView.setViewName("admin/order/order_edit");
 		return modelAndView;
 	}
-//	@ResponseBody
-//	@PostMapping("/doedit")
-//	public Integer doUserEdit(User user) {
-//		int result = userService.update(user);
-//		return result;	
-//	}
+	@ResponseBody
+	@PostMapping("/doedit")
+	public Integer doUserEdit(Order order) {
+		int result = orderService.update(order);
+		return result;	
+	}
 }

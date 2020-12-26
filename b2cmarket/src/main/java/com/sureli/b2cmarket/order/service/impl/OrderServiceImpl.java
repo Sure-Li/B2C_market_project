@@ -6,6 +6,7 @@
  */ 
 package com.sureli.b2cmarket.order.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.sureli.b2cmarket.order.dao.OrderDao;
 import com.sureli.b2cmarket.order.pojo.Order;
 import com.sureli.b2cmarket.order.service.OrderService;
+import com.sureli.b2cmarket.user.pojo.User;
 import com.sureli.b2cmarket.util.ConfigUtil;
 
 /** 
@@ -55,6 +57,23 @@ public class OrderServiceImpl implements OrderService {
 		Order order = orderDao.findOne(rowId);
 		order.setActiveFlag(ConfigUtil.ACTIVE_FLAG_NO);
 		return orderDao.update(order);
+	}
+	/** 
+	 * @Title: update 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param order
+	 * @return  
+	 */  
+	@Override
+	public int update(Order order) {
+		Order orderGet = orderDao.findOne(order.getRowId());
+		System.out.println("userGet"+orderGet);
+		orderGet.setOrderState(order.getOrderState());
+		orderGet.setOrderPayMethod(order.getOrderPayMethod());
+		//Todo 此处还需要将更新人加入  由于还没有登录功能 所以暂时先预留 -------------------------------------------------
+		orderGet.setAddressId(order.getAddressId());
+		orderGet.setUpdateDate(new Date());
+		return orderDao.update(orderGet);
 	}
 
 	

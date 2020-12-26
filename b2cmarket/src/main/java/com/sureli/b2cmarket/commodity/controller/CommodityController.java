@@ -11,18 +11,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sureli.b2cmarket.commodity.pojo.Commodity;
 import com.sureli.b2cmarket.commodity.service.CommodityService;
-import com.sureli.b2cmarket.order.pojo.Order;
-import com.sureli.b2cmarket.order.service.OrderService;
 
 /** 
  * @ClassName:CommodityController 
  * @Description:(这里用一句话描述这个类的作用)  
  */
 @Controller
+@RequestMapping("commodity")
 public class CommodityController {
 	@Autowired
 	private CommodityService commodityService;
@@ -30,9 +30,9 @@ public class CommodityController {
 	public ModelAndView getUserList(Commodity searchCommodity, ModelAndView modelAndView) {
 		List<Commodity> commodityList = commodityService.findBySearch(searchCommodity);
 		System.out.println(searchCommodity);
-		System.out.println(commodityList);
+		System.out.println("commodityList"+commodityList);
 		modelAndView.addObject("orderList", commodityList);
-		modelAndView.setViewName("admin/order/order_list");
+		modelAndView.setViewName("admin/commodity/commodity_list");
 		return modelAndView;
 	}
 //	@GetMapping("/form")

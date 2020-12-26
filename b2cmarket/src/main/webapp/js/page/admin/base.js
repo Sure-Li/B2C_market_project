@@ -68,7 +68,7 @@ $(document).ready(function(){
 		$('#btn-edit-submit').off('click').on('click',function(){
 			$.ajax({
 				type:'post',
-				url:baseUrl+'doedit',
+				url:baseUrl+'/doedit',
 				data:$('#form_edit').serialize(),
 				success:function(data){
 					console.log(data);
@@ -121,7 +121,8 @@ $(document).ready(function(){
 						method:'get',
 						success:function(data){
 							if(data==1){
-								location.href="admin";
+								/*location.href="admin";*/
+								initListData();
 							}
 						}
 					});

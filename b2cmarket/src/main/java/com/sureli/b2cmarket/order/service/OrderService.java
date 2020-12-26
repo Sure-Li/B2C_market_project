@@ -41,4 +41,12 @@ public interface OrderService {
 	 */ 
 	Integer delete(Long rowId);
 
+	/** 
+	 * @Title: update 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param order
+	 * @return  
+	 */ 
+	int update(Order order);
+
 }

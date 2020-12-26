@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<c:if test="${!empty commodityList}">
+	<c:forEach items="${commodityList}" var="user">
+		<c:if test="${user.activeFlag==1}">
+			<tr>
+				<td>${user.userType==0?"买家":"卖家"}</td>
+				<td>${user.userName}</td>
+				<td>${user.userCode}</td>
+				<td>${user.lastLoginIp}&nbsp;<fmt:formatDate value="${user.lastLoginDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+				<td>${user.isLock==1?"锁定":"正常"}</td>
+				<td>
+				<a href="user/edit/${user.rowId}" id="btn-edit">修改</a>
+				<a href="user/delete/${user.rowId}" id="btn-delete">删除</a></td>
+			</tr>
+		</c:if>
+	</c:forEach>
+</c:if>
+<c:if test="${empty commodityList}">
+<h1 style="color: red;">暂无数据</h1>
+</c:if>

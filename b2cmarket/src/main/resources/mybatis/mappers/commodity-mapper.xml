@@ -40,11 +40,11 @@
 		, `update_date` = #{updateDate} WHERE
 		`row_id` = #{rowId}
 	</update>
-	<select id="findOne" resultType="Order">
+	<select id="findOne" resultType="Commodity">
 		<include refid="baseSelect"></include>
 		And row_id = #{rowId}
 	</select>
-	<select id="findBySearch" resultType="Order">
+	<select id="findBySearch" resultType="Commodity">
 		<include refid="baseSelect"></include>
 		<!-- <if test="orderCode!=null and orderCode!=''">
 			and order_code = #{orderCode}
