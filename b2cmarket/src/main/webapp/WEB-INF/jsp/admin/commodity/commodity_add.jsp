@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <form  id="${commodity.rowId==null?'form_add':'form_edit'}" action="" method="get">
 <!-- 隐藏域 用于存放rowid 通过rowid的有无来判断是新增还是修改 -->
-<input type="hidden" value="${commodity.rowId}">
+<input type="hidden" name="rowId" value="${commodity.rowId}">
 目录ID：<select name="catalogueId">
 <option>需要自动生成</option>
 <option value="0">电脑</option>

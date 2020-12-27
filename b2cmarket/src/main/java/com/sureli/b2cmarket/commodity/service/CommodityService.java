@@ -40,4 +40,20 @@ public interface CommodityService {
 	 */ 
 	Commodity findOne(Long rowId);
 
+	/** 
+	 * @Title: update 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param commodity
+	 * @return  
+	 */ 
+	Integer update(Commodity commodity);
+
+	/** 
+	 * @Title: delete 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */ 
+	Integer delete(Long rowId);
+
 }

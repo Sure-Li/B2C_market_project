@@ -53,13 +53,13 @@ public class CommodityController {
 		commodity.setCreateBy(createBy);
 		return commodityService.doRegister(commodity);
 	}
-//	
-//	@ResponseBody
-//	@GetMapping("/delete/{rowId}")
-//	public Integer doDelete(@PathVariable Long rowId) {
-//		System.out.println("@PathVariable Long rowId" +rowId);
-//		return orderService.delete(rowId);
-//	}
+	
+	@ResponseBody
+	@GetMapping("/delete/{rowId}")
+	public Integer doDelete(@PathVariable Long rowId) {
+		System.out.println("@PathVariable Long rowId" +rowId);
+		return commodityService.delete(rowId);
+	}
 	@GetMapping("/edit/{rowId}")
 	public ModelAndView goUserEdit(@PathVariable Long rowId, ModelAndView modelAndView) {
 		System.out.println(rowId);
@@ -69,10 +69,11 @@ public class CommodityController {
 		modelAndView.setViewName("admin/commodity/commodity_add");
 		return modelAndView;
 	}
-//	@ResponseBody
-//	@PostMapping("/doedit")
-//	public Integer doUserEdit(User user) {
-//		int result = userService.update(user);
-//		return result;	
-//	}
+	@ResponseBody
+	@PostMapping("/doedit")
+	public Integer doUserEdit(Commodity commodity) {
+		System.out.println("commodity"+commodity);
+		int result = commodityService.update(commodity);
+		return result;	
+	}
 }

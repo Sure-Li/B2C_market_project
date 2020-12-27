@@ -26,10 +26,10 @@
 	</insert>
 	<update id="update">
 		UPDATE `b2c_market`.`tb_commodity` SET `catalogue_id`
-		= #{catalogueId} , `commodity_name` = #{commdityName} ,
+		= #{catalogueId} , `commodity_name` = #{commodityName} ,
 		`commodity_code` = #{commodityCode} ,
 		`commodity_photo` =
-		#{commondityPhoto} , `commodity_price` = #{commodityPrice} ,
+		#{commodityPhoto} , `commodity_price` = #{commodityPrice} ,
 		`commodity_stock_count` = #{commodityStockCount} ,
 		`commodity_up_down_state` = #{commodityUpDownState} ,
 		`commodity_info`
@@ -46,20 +46,23 @@
 	</select>
 	<select id="findBySearch" resultType="Commodity">
 		<include refid="baseSelect"></include>
-		<!-- <if test="orderCode!=null and orderCode!=''">
-			and order_code = #{orderCode}
+		 <if test="commodityUpDownState!=null">
+			and commodity_up_down_state = #{commodityUpDownState}
 		</if>
-		<if test="userId!=null and userId!=''">
-			and user_id = #{userId}
+		<if test="catalogueId!=null and catalogueId!=''">
+			and catalogue_id = #{catalogueId}
 		</if>
-		<if test="addressId!=null and addressId!=''">
-			and address_id = #{addressId}
+		<if test="commodityCode!=null and commodityCode!=''">
+			and commodity_code = #{commodityCode}
 		</if>
-		<if test="orderState!=null and orderState!=''">
-			and order_state = #{orderState}
+		<if test="commodityName!=null and commodityName!=''">
+			and commodity_name = #{commodityName}
 		</if>
-		<if test="orderPayMethod!=null and orderPayMethod!=''">
-			and order_pay_method = #{orderPayMethod}
-		</if> -->
+		<if test="commodityPrice!=null and commodityPrice!=''">
+			and commodity_price = #{commodityPrice}
+		</if> 
+		<if test="commodityStockCount!=null and commodityStockCount!=''">
+			and commodity_stock_count = #{commodityStockCount}
+		</if>
 	</select>
 </mapper>

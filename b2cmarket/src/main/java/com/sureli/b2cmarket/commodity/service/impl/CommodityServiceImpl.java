@@ -3,7 +3,7 @@
  * @Title:CommodityServiceImpl.java 
  * @Author:lishuo  
  * @Date:2020-12-26 11:36:50     
- */ 
+ */
 package com.sureli.b2cmarket.commodity.service.impl;
 
 import java.util.Date;
@@ -18,30 +18,32 @@ import com.sureli.b2cmarket.commodity.service.CommodityService;
 import com.sureli.b2cmarket.user.pojo.UserUtil;
 import com.sureli.b2cmarket.util.ConfigUtil;
 
-/** 
- * @ClassName:CommodityServiceImpl 
- * @Description:(商品服务层的实现类)  
+/**
+ * @ClassName:CommodityServiceImpl
+ * @Description:(商品服务层的实现类)
  */
 @Service
 public class CommodityServiceImpl implements CommodityService {
 	@Autowired
 	private CommodityDao commodityDao;
-	/** 
-	 * @Title: findBySearch 
+
+	/**
+	 * @Title: findBySearch
 	 * @Description:(这里用一句话描述这个方法的作用)
 	 * @param searchCommodity
-	 * @return  
-	 */  
+	 * @return
+	 */
 	@Override
 	public List<Commodity> findBySearch(Commodity searchCommodity) {
 		return commodityDao.findBySearch(searchCommodity);
 	}
-	/** 
-	 * @Title: doRegister 
+
+	/**
+	 * @Title: doRegister
 	 * @Description:(这里用一句话描述这个方法的作用)
 	 * @param commodity
-	 * @return  
-	 */  
+	 * @return
+	 */
 	@Override
 	public Integer doRegister(Commodity commodity) {
 		commodity.setCommodityUpDownState(1);
@@ -49,15 +51,50 @@ public class CommodityServiceImpl implements CommodityService {
 		commodity.setCreateDate(new Date());
 		return commodityDao.save(commodity);
 	}
+
+	/**
+	 * @Title: findOne
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return
+	 */
+	@Override
+	public Commodity findOne(Long rowId) {
+		return commodityDao.findOne(rowId);
+	}
+
+	/**
+	 * @Title: update
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param commodity
+	 * @return
+	 */
+	@Override
+	public Integer update(Commodity commodity) {
+		Commodity commodityGet = commodityDao.findOne(commodity.getRowId());
+		commodityGet.setUpdateBy("li");// 预留修改以及
+		commodityGet.setCatalogueId(commodity.getCatalogueId());
+		commodityGet.setCommodityName(commodity.getCommodityName());
+		commodityGet.setCommodityCode(commodity.getCommodityCode());
+		commodityGet.setCommodityPrice(commodity.getCommodityPrice());
+		commodityGet.setCommodityStockCount(commodity.getCommodityStockCount());
+		commodityGet.setCommodityUpDownState(commodity.getCommodityUpDownState());
+		commodityGet.setCommodityInfo(commodity.getCommodityInfo());
+		commodityGet.setUpdateDate(new Date());
+		return commodityDao.update(commodityGet);
+	}
+
 	/** 
-	 * @Title: findOne 
+	 * @Title: delete 
 	 * @Description:(这里用一句话描述这个方法的作用)
 	 * @param rowId
 	 * @return  
 	 */  
 	@Override
-	public Commodity findOne(Long rowId) {
-		return commodityDao.findOne(rowId);
+	public Integer delete(Long rowId) {
+		Commodity commodityGet = commodityDao.findOne(rowId);
+		commodityGet.setActiveFlag(ConfigUtil.ACTIVE_FLAG_NO);
+		return commodityDao.update(commodityGet);
 	}
 
 }
