@@ -6,8 +6,10 @@
  */
 package com.sureli.b2cmarket.market.controller;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -156,7 +158,7 @@ public class MarketController {
 			modelAndView.setViewName("admin/index");// 登录状态页面
 			System.out.println("modelAndView.setViewName(\"index\");// 登录状态页面");
 		}
-		modelAndView.setViewName("admin/index");// 登录状态页面
+//		modelAndView.setViewName("admin/index");// 登录状态页面
 		return modelAndView;
 	}
 
@@ -176,5 +178,20 @@ public class MarketController {
 	public Integer doLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
 			HttpServletResponse response) {
 		return userService.doLogin(userCode, userPassword, isRemenber, request, response);
+	}
+	@ResponseBody 
+	@RequestMapping("/admindologinout")
+	public Integer doLoginOut(@CookieValue(name = ConfigUtil.COOKIE_NAME, required = false) String cookieValue,
+			HttpSession session, HttpServletResponse response) {
+		System.out.println("cookieValue" + cookieValue);
+		session.setAttribute(ConfigUtil.LOGINOUT_ISREMENBER, cookieValue != null ? 1 : 0);
+		session.removeAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME);
+
+		// 退出自动登录
+		Cookie cookie = new Cookie(ConfigUtil.COOKIE_NAME,null);
+		cookie.setMaxAge(0);
+		cookie.setPath("/");
+		response.addCookie(cookie);
+		return 1;
 	}
 }

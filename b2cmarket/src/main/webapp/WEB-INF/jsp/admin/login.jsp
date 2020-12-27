@@ -17,16 +17,16 @@
 		<input type="reset">
 	</form>
 </body>
-<script type="text/javascript" src="assert\js\jQuery\jquery-3.4.1.js"></script>
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#btn_login').off('click').on('click',function(){
 		$.ajax({
-			url:'dologin',
+			url:'admindologin',
 			data:$('#form_login').serialize(),
 			success:function(data){
 				if(data==1){
-					location.href="index";
+					location.href="admin";
 				}else if(data==3){
 					$('#login_info').text("账户被锁定，请联系管理员");
 				}else if(data==2){

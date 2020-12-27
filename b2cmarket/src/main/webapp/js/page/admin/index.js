@@ -36,10 +36,10 @@ $(document).ready(function() {
                 closeBtn:2},
                 function(index){
 					$.ajax({
-						url:'dologinout',
+						url:'admindologinout',
 						success:function(data){
 							if(data==1){
-								location.href="index";
+								location.href="admin";
 							}
 						}
 					});
