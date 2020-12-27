@@ -34,5 +34,10 @@ public class AdminController {
 		modelAndView.setViewName("admin/commodity/commodity_index");
 		return modelAndView;
 	}
+	@RequestMapping("catalogueManage")
+	public ModelAndView goCatalogueManageIndex(ModelAndView modelAndView) {
+		modelAndView.setViewName("admin/catalogue/catalogue_index");
+		return modelAndView;
+	}
 
 }

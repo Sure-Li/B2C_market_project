@@ -76,7 +76,6 @@ $(document).ready(function(){
 					console.log(data);
 					if(data){
 						layer.close(editIndex);
-						/*$('#loginUserName').text(data);*/
 						initListData();
 					}
 				}
