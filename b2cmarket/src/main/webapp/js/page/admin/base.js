@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	var addIndex = null;
 	var baseUrl = $('#urlHidden').val();
 	//页面加载完成之后直接加载文件的数据
 	initListData();
@@ -10,7 +11,7 @@ $(document).ready(function(){
 		$.ajax({
 			url:baseUrl+'/form',
 			success:function(htmlData){
-				layer.open({
+			addIndex = layer.open({
                     type:1,
                     title:"用户新增",
                     area:['500px','500px'],
@@ -44,8 +45,9 @@ $(document).ready(function(){
 				data:$('#form_add').serialize(),
 				success:function(data){
 					console.log(data);
-					if(date){
-						layer.close(index);
+					if(data){
+						layer.close(addIndex);
+						initListData();
 					}
 				}
 			})

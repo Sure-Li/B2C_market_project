@@ -20,7 +20,7 @@
 		)
 		VALUES (#{catalogueId}, #{commodityName}, #{commodityCode},
 		#{commodityPhoto},
-		#{commodityPrice}, #{commoditySotckCount},
+		#{commodityPrice}, #{commodityStockCount},
 		#{commodityUpDownState},#{commodityInfo},
 		#{activeFlag},#{createBy},#{createDate}, #{updateBy}, #{updateDate});
 	</insert>

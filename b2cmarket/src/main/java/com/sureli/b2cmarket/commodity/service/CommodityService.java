@@ -24,4 +24,20 @@ public interface CommodityService {
 	 */ 
 	List<Commodity> findBySearch(Commodity searchCommodity);
 
+	/** 
+	 * @Title: doRegister 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param commodity
+	 * @return  
+	 */ 
+	Integer doRegister(Commodity commodity);
+
+	/** 
+	 * @Title: findOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */ 
+	Commodity findOne(Long rowId);
+
 }
