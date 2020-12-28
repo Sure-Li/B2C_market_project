@@ -16,7 +16,7 @@ $(document).ready(function() {
 				});
 			},
 			success: function(data) {
-				console.log(data);
+				/*console.log(data);*/
 				$('#maindiv').html(data);
 			},
 			complete: function() {/*请求完成之后*/

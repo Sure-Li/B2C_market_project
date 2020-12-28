@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="js/layer/theme/default/layer.css">
 <link rel="stylesheet" href="css/page/index.css">
 <link rel="stylesheet" href="js/uploadfile/uploadifive.css">
+<link rel="stylesheet" href="js/jquery-treetable/css/jquery.treetable.css">
+<link rel="stylesheet" href="js/jquery-treetable/css/jquery.treetable.theme.default.css">
 </head>
 <body>
 	<div class="contaner">
@@ -32,4 +34,5 @@
 <script type="text/javascript" src="js/page/app-ajax.js"></script>
 <script type="text/javascript" src="js/uploadfile/jquery.uploadifive.js"></script>
 <script type="text/javascript" src="js/page/admin/index.js"></script>
+<script type="text/javascript" src="js/jquery-treetable/jquery.treetable.js"></script>
 </html>

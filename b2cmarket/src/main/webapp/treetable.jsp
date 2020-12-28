@@ -11,9 +11,9 @@
 <body>
 	<table id="example-basic-static">
 		<tbody>
-			<tr data-tt-id="0">
+			<!-- <tr data-tt-id="0">
 				<td>app</td>
-			</tr>
+			</tr> -->
 			<tr data-tt-id="1" data-tt-parent-id="0">
 				<td>controllers</td>
 			</tr>
