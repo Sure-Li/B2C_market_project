@@ -17,23 +17,26 @@ $(document).ready(function(){
                     area:['500px','500px'],
                     content:htmlData,
 					success:function(layero,index){
-						bindFileUpload();
 						bindSubmit();
+						bindFileUpload();
 					}
                 }); 
 			}
 		});
 	});
 	function bindFileUpload(){
+		var uploadFilePurpose = $('#uploadFilePurpose').val();
+		console.log(uploadFilePurpose);
 		//绑定异步上传文件 在外面直接绑定无法绑定
 		$('#uploadFile').uploadifive({
 	        'auto': true,
-			'buttonText':'用户头像',
-	        'fileObjName'     : 'userFile', 
-	        'uploadScript'     : 'user/upload',//上传的url
+			'buttonText':'商品图片',
+			'formData':{'filePurpose':2},
+	        'fileObjName'     : 'multipartFile', 
+	        'uploadScript'     : 'upload',//上传的url
 	        'onUploadComplete' : function(file, data) {//上传成功后的回调
 	        	console.log(data);
-	        	$('#avatar').val(data);
+	        	$('#commodityPhoto').val(data);
 	        	}
 	    });
 	}

@@ -81,6 +81,7 @@ public class CommodityServiceImpl implements CommodityService {
 		commodityGet.setCommodityUpDownState(commodity.getCommodityUpDownState());
 		commodityGet.setCommodityInfo(commodity.getCommodityInfo());
 		commodityGet.setUpdateDate(new Date());
+		commodityGet.setCommodityPhoto(commodity.getCommodityPhoto());
 		return commodityDao.update(commodityGet);
 	}
 

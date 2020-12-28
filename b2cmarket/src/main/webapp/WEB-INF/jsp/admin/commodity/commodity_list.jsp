@@ -9,7 +9,7 @@
 				<td>${commodity.catalogueId}</td>
 				<td>${commodity.commodityName}</td>
 				<td>${commodity.commodityCode}</td>
-				<td>${commodity.commodityPhoto}</td>
+				<td><img alt="" src="${commodity.commodityPhoto}" style="width: 30px;height: 30px"> </td>
 				<td>${commodity.commodityPrice}</td>
 				<td>${commodity.commodityStockCount}</td>
 				<td>${commodity.commodityUpDownState==0?"下架":"上架"}</td>

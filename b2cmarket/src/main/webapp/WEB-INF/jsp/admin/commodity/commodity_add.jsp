@@ -18,7 +18,7 @@
 <option value="0" ${commodity.commodityUpDownState==0?"selected":"" }>下架</option>
 </select><br>
 商品简介：<input type="text" name="commodityInfo" value="${commodity.commodityInfo}"><br>
-<input type="hidden" name="commodityPhoto" value="${commodity.commodityPhoto}">
+<input type="hidden" name="commodityPhoto" id="commodityPhoto" value="${commodity.commodityPhoto}">
 <input type="button" id="${commodity.rowId==null?'btn-add-submit':'btn-edit-submit'}" value="提交">
 <input type="reset">
 </form>
