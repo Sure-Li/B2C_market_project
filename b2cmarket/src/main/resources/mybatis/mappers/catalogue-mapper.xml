@@ -44,6 +44,6 @@
 		<if test="commodityCount!=null and commodityCount!=''">
 			and commodity_count = #{commodityCount}
 		</if>
-		order by parent_id
+		<!-- order by parent_id -->
 	</select>
 </mapper>

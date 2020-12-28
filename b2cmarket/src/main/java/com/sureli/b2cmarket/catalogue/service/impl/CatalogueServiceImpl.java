@@ -6,7 +6,9 @@
  */
 package com.sureli.b2cmarket.catalogue.service.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +17,6 @@ import org.springframework.stereotype.Service;
 import com.sureli.b2cmarket.catalogue.dao.CatalogueDao;
 import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
 import com.sureli.b2cmarket.catalogue.service.CatalogueService;
-import com.sureli.b2cmarket.user.pojo.User;
-import com.sureli.b2cmarket.user.pojo.UserUtil;
 import com.sureli.b2cmarket.util.ConfigUtil;
 
 /**
@@ -36,7 +36,19 @@ public class CatalogueServiceImpl implements CatalogueService {
 	 */
 	@Override
 	public List<Catalogue> findBySearch(Catalogue searchCatalogue) {
-		return catalogueDao.findBySearch(searchCatalogue);
+		List<Catalogue> getList = catalogueDao.findBySearch(searchCatalogue);
+		System.out.println(getList);
+		return sort(-1L, getList, new ArrayList<Catalogue>());
+	}
+
+	public List<Catalogue> sort(Long parentId, List<Catalogue> itemCatsBeforeList, List<Catalogue> itemCatsAfterList) {
+		for (Catalogue entity : itemCatsBeforeList) {
+			if (Long.parseLong(entity.getParentId()) == parentId) {
+				itemCatsAfterList.add(entity);
+				sort(entity.getRowId(), itemCatsBeforeList, itemCatsAfterList);
+			}
+		}
+		return itemCatsAfterList;
 	}
 
 	/**

@@ -6,6 +6,7 @@
 		<tr>
 			<th>父标签ID</th>
 			<th>目录名称</th>
+			<th>目录ID</th>
 			<th>商品数量</th>
 			<th>操作</th>
 		</tr>
@@ -15,6 +16,7 @@
 				<tr data-tt-id="${catalogue.rowId}" data-tt-parent-id="${catalogue.parentId}">
 					<td>${catalogue.parentId}</td>
 					<td>${catalogue.catalogueName}</td>
+					<td>${catalogue.rowId}</td>
 					<td>${catalogue.commodityCount}</td>
 					<td><a href="catalogue/edit/${catalogue.rowId}" id="btn-edit">修改</a> <a href="catalogue/delete/${catalogue.rowId}" id="btn-delete">删除</a></td>
 				</tr>
