@@ -7,7 +7,17 @@ $(document).ready(function() {
 		} else {
 			console.log("2222")
 		}
-	}
+	};
+	/*initCatalogue();
+	function initCatalogue(){
+		$.ajax({
+			url:'index',
+			type:'get',
+			success:function(date){
+				
+			}
+		});
+	};*/
 	$('#showLoginUlId').off('click', '#userLoginStateExitId').on('click', '#userLoginStateExitId', function() {
 		console.log("('click','userLoginStateExitId')");
 		$.ajax({

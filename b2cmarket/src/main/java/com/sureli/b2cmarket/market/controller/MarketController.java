@@ -6,6 +6,8 @@
  */
 package com.sureli.b2cmarket.market.controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
+import com.sureli.b2cmarket.commodity.pojo.Commodity;
+import com.sureli.b2cmarket.market.service.MarketService;
 import com.sureli.b2cmarket.user.service.UserService;
 import com.sureli.b2cmarket.util.ConfigUtil;
 
@@ -29,7 +34,8 @@ import com.sureli.b2cmarket.util.ConfigUtil;
 public class MarketController {
 	@Autowired
 	private UserService userService;
-
+	@Autowired
+	private MarketService marketService;
 	/**
 	 * 
 	 * @Title: goIndex
@@ -37,8 +43,12 @@ public class MarketController {
 	 * @param modelAndView
 	 * @return
 	 */
+//	@ResponseBody
 	@RequestMapping({ "/", "index" })
 	public ModelAndView goIndex(ModelAndView modelAndView) {
+		List<Catalogue> getList = marketService.getCatalogueList();
+		System.out.println("getList     "+getList);
+		modelAndView.addObject("catalogueList", getList);
 		modelAndView.setViewName("market/index");
 		return modelAndView;
 	}
@@ -91,6 +101,9 @@ public class MarketController {
 	 */
 	@RequestMapping("category")
 	public ModelAndView goCategory(ModelAndView modelAndView) {
+		List<Commodity> getList =  marketService.getCommodityList();
+		System.out.println("getlist     "+getList);
+		modelAndView.addObject("commodityList", getList);
 		modelAndView.setViewName("market/category");
 		return modelAndView;
 	}

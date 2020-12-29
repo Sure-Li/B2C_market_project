@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- Header Container  -->
 <header id="header" class=" typeheader-1">
 
@@ -227,16 +228,28 @@
 
 									<div class="navbar-header">
 										<button type="button" id="show-verticalmenu" data-toggle="collapse" class="navbar-toggle">
-											<i class="fa fa-bars"></i> <span> All Categories </span>
+											<i class="fa fa-bars"></i> <span> All Categories</span>
 										</button>
 									</div>
 									<div class="vertical-wrapper">
 										<span id="remove-verticalmenu" class="fa fa-times"></span>
 										<div class="megamenu-pattern">
 											<div class="container-mega">
-												<ul class="megamenu">
+											<ul class="megamenu">
+												<c:if test="${!empty catalogueList}">
+													<c:forEach items="${catalogueList}" var="catalogue">
+														<li class="item-vertical" style="display: true;">
+															<p class="close-menu"></p> <a href="#" class="clearfix"> <img src="image/catalog/menu/icons/ico6.png" alt="icon"> <span>${catalogue.catalogueName }</span>
+														</a>
+														</li>
+														
+													</c:forEach>
+													<!-- <li class="loadmore"><i class="fa fa-plus-square-o"></i> <span class="more-view">More Categories</span></li> -->
+												</c:if>
+											</ul>
+												<!-- <ul class="megamenu">
 													<li class="item-vertical  with-sub-menu hover">
-														<p class="close-menu"></p> <a href="#" class="clearfix"> <img src="image/catalog/menu/icons/ico10.png" alt="icon"> <span>Gifts & Toys</span> <b class="fa-angle-right"></b>
+														<p class="close-menu"></p> <a href="#" class="clearfix"> <img src="image/catalog/menu/icons/ico10.png" alt="icon"> <span>test</span> <b class="fa-angle-right"></b>
 													</a>
 														<div class="sub-menu" data-subwidth="60">
 															<div class="content">
@@ -484,9 +497,9 @@
 													</a>
 													</li>
 
-													<li class="loadmore"><i class="fa fa-plus-square-o"></i> <span class="more-view">More Categories</span></li>
+													<li class="loadmore"><i class="fa fa-plus-square-o"></i> <span class="more-view">More Categories</span></li> -->
 
-												</ul>
+												<!-- </ul> -->
 											</div>
 										</div>
 									</div>

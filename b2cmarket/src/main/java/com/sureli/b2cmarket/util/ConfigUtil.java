@@ -1,5 +1,9 @@
 package com.sureli.b2cmarket.util;
 
+import java.util.List;
+
+import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
+
 /**
  * @Company:度半 
  * @Title:ConfigUtil.java 
@@ -24,4 +28,15 @@ public class ConfigUtil {
 
 	public static final String FUNCTION_SUCCESS = "success";
 	public static final String FUNCTION_FAIL = "fail";
+	
+	//排序方法
+	public static List<Catalogue> sort(Long parentId, List<Catalogue> itemCatsBeforeList, List<Catalogue> itemCatsAfterList) {
+		for (Catalogue entity : itemCatsBeforeList) {
+			if (Long.parseLong(entity.getParentId()) == parentId) {
+				itemCatsAfterList.add(entity);
+				sort(entity.getRowId(), itemCatsBeforeList, itemCatsAfterList);
+			}
+		}
+		return itemCatsAfterList;
+	}
 }

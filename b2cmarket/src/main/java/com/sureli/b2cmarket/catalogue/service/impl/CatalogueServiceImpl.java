@@ -38,18 +38,10 @@ public class CatalogueServiceImpl implements CatalogueService {
 	public List<Catalogue> findBySearch(Catalogue searchCatalogue) {
 		List<Catalogue> getList = catalogueDao.findBySearch(searchCatalogue);
 		System.out.println(getList);
-		return sort(-1L, getList, new ArrayList<Catalogue>());
+		return ConfigUtil.sort(-1L, getList, new ArrayList<Catalogue>());
 	}
 
-	public List<Catalogue> sort(Long parentId, List<Catalogue> itemCatsBeforeList, List<Catalogue> itemCatsAfterList) {
-		for (Catalogue entity : itemCatsBeforeList) {
-			if (Long.parseLong(entity.getParentId()) == parentId) {
-				itemCatsAfterList.add(entity);
-				sort(entity.getRowId(), itemCatsBeforeList, itemCatsAfterList);
-			}
-		}
-		return itemCatsAfterList;
-	}
+	
 
 	/**
 	 * @Title: update
