@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -60,7 +61,8 @@ public class MarketController {
 	 * @param modelAndView
 	 * @return
 	 */
-	@RequestMapping("login")
+	@ResponseBody
+	@GetMapping("login")
 	public ModelAndView goLogin(ModelAndView modelAndView) {
 		modelAndView.setViewName("market/login");
 		return modelAndView;
@@ -73,7 +75,8 @@ public class MarketController {
 	 * @param modelAndView
 	 * @return
 	 */
-	@RequestMapping("register")
+	@ResponseBody
+	@GetMapping("register")
 	public ModelAndView goRegister(ModelAndView modelAndView) {
 		modelAndView.setViewName("market/register");
 		return modelAndView;
@@ -99,7 +102,8 @@ public class MarketController {
 	 * @param modelAndView
 	 * @return
 	 */
-	@RequestMapping("category")
+	@ResponseBody
+	@GetMapping("category")
 	public ModelAndView goCategory(ModelAndView modelAndView) {
 		List<Commodity> getList =  marketService.getCommodityList();
 		System.out.println("getlist     "+getList);

@@ -65,7 +65,7 @@ body {
 
 
 		<!-- Main Container  -->
-		<div class="main-container container">
+		<div class="main-container container" id="marketMainContainerId">
 			<div id="content">
 				<div class="content-top-w">
 
@@ -2899,6 +2899,10 @@ body {
 	<script type="text/javascript" src="js/themejs/so_megamenu.js"></script>
 	<script type="text/javascript" src="js/themejs/addtocart.js"></script>
 
+<!-- self files
+============================================ -->
+
+	<script type="text/javascript" src="js/page/market.js"></script>
 
 
 

@@ -216,7 +216,7 @@
 									<div id="menuHeading">
 										<div class="megamenuToogle-wrapper">
 											<div class="megamenuToogle-pattern">
-												<div class="container">
+												<div class="container" id="HeaderAllCatalogueId">
 													<div>
 														<span></span> <span></span> <span></span>
 													</div>
@@ -538,7 +538,7 @@
 																		<a href="#" class="title-submenu">Listing pages</a>
 																		<div>
 																			<ul class="row-list">
-																				<li><a href="category">Category Page 1 </a></li>
+																				<li><a href="category" id="headerCatagoryId">Category Page 1 </a></li>
 																				<li><a href="category-v2.html">Category Page 2</a></li>
 																				<li><a href="category-v3.html">Category Page 3</a></li>
 																			</ul>
@@ -740,7 +740,7 @@
 					<div class="signin-w hidden-md hidden-sm hidden-xs">
 						<input type="hidden" value="${sessionScope.loginUser.userName}" id="userLoginName">
 						<ul class="signin-link blank" id="showLoginUlId">
-							<li class="log login"><i class="fa fa-lock"></i> <a class="link-lg" href="login">Login </a> or <a href="register">Register</a></li>
+							<li class="log login"><i class="fa fa-lock"></i> <a class="link-lg" href="login" id="headerLoginId">Login </a> or <a href="register" id="headerRegisterId">Register</a></li>
 						</ul>
 					</div>
 				</div>

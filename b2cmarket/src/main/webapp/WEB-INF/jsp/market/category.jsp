@@ -63,7 +63,7 @@ body {
 	<div id="wrapper" class="wrapper-fluid banners-effect-5">
 
 
-		<%@include file="header.jsp"%>
+		<%-- <%@include file="header.jsp"%> --%>
 
 		<!-- Main Container  -->
 		<div class="main-container container">
@@ -429,7 +429,7 @@ body {
 			<!-- //Main Container -->
 
 
-			<%@include file="footer.jsp"%>
+			<%-- <%@include file="footer.jsp"%> --%>
 
 		</div>
 
