@@ -56,4 +56,12 @@ public interface CatalogueService {
 	 */ 
 	Integer delete(Long rowId);
 
+	/** 
+	 * @Title: findAllByParentId 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param l
+	 * @return  
+	 */ 
+	List<Catalogue> findAllByParentId(long l);
+
 }

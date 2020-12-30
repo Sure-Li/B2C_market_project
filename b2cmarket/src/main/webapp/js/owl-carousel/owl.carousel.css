@@ -88,7 +88,7 @@
 }
 
 .owl2-carousel .owl2-controls .owl2-nav .owl2-prev,
-.owl2-carousel .owl2-controls .owl2-nav .owl2-next,
+.owl2-carousel .owl2-controls .owl2-nav .owl2-next, 
 .owl2-carousel .owl2-controls .owl2-dot {
     cursor: pointer;
     cursor: hand;

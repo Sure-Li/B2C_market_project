@@ -41,8 +41,6 @@ public class CatalogueServiceImpl implements CatalogueService {
 		return ConfigUtil.sort(-1L, getList, new ArrayList<Catalogue>());
 	}
 
-	
-
 	/**
 	 * @Title: update
 	 * @Description:(这里用一句话描述这个方法的作用)
@@ -96,6 +94,24 @@ public class CatalogueServiceImpl implements CatalogueService {
 		System.out.println("catalogueGet" + catalogueGet);
 		catalogueGet.setActiveFlag(ConfigUtil.ACTIVE_FLAG_NO);
 		return catalogueDao.update(catalogueGet);
+	}
+
+	/**
+	 * @Title: findAllByParentId
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param l
+	 * @return
+	 */
+	@Override
+	public List<Catalogue> findAllByParentId(long l) {
+		List<Catalogue> getList = findBySearch(new Catalogue());
+		List<Catalogue> result = new ArrayList<Catalogue>();
+		for (Catalogue catalogue : getList) {
+			if (Long.parseLong(catalogue.getParentId())==l) {
+				result.add(catalogue);
+			}
+		}
+		return result;
 	}
 
 }

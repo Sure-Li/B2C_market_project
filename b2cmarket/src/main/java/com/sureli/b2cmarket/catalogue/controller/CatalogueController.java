@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
 import com.sureli.b2cmarket.catalogue.service.CatalogueService;
+import com.sureli.b2cmarket.commodity.pojo.Commodity;
 import com.sureli.b2cmarket.util.ServletUtil;
 
 /** 
@@ -43,9 +44,24 @@ public class CatalogueController {
 		modelAndView.setViewName("admin/catalogue/catalogue_list");
 		return modelAndView;
 	}
+	@ResponseBody
 	@GetMapping("/form")
 	public ModelAndView goAddForm(ModelAndView modelAndView) {
 		modelAndView.setViewName("admin/catalogue/catalogue_add");
+		List<Catalogue> getList =  catalogueService.findAllByParentId(-1L);
+		System.out.println(getList);
+		modelAndView.addObject("getListByParent",getList);
+		return modelAndView;
+	}
+	
+	@ResponseBody
+	@GetMapping("/makeChild/{rowId}")
+	public ModelAndView goAddChild(@PathVariable long rowId,ModelAndView modelAndView) {
+		modelAndView.setViewName("admin/catalogue/catalogue_child");
+		List<Catalogue> getList =  catalogueService.findAllByParentId(rowId);
+		System.out.println(getList);
+		modelAndView.addObject("childSelectId","childSelectId");
+		modelAndView.addObject("getListByParent",getList);
 		return modelAndView;
 	}
 	@ResponseBody

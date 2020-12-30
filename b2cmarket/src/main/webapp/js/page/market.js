@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('#headerRegisterId').off('click').on('click',function(){
+	$(document).off('click','#headerRegisterId,#loginContinueId').on('click','#headerRegisterId,#loginContinueId',function(){
 		console.log('headerRegisterId');
 		$.ajax({
 			url:'register',
@@ -53,6 +53,7 @@ $(document).ready(function() {
 		});
 		return false;
 	});
+	$('#megamenuId').attr("style","display:none");
 	$('#HeaderAllCatalogueId,#megamenuId').off('mouseout').on('mouseout',function(){
 		$('#megamenuId').attr("style","display:none");
 	});

@@ -526,7 +526,7 @@
 									<div class="megamenu-pattern">
 										<div class="container-mega">
 											<ul class="megamenu" data-transition="slide" data-animationtime="250">
-												<li class="home hover"><a href="index">Home</a></li>
+												<li ><a href="index">Home</a></li>
 												<li class="with-sub-menu hover">
 													<p class="close-menu"></p> <a href="#" class="clearfix"> <strong>Features</strong> <img class="label-hot" src="image/catalog/menu/new-icon.png" alt="icon items"> <b class="caret"></b>
 												</a>

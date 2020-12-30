@@ -46,4 +46,45 @@ $(document).ready(function() {
                     layer.close(index);
                 }); 
 	});
+	$(document).off('change','#chooseParentId').on('change','#chooseParentId',function(){
+		var rowId = $(this).val();
+		$('#catalogueParentId').val(rowId);
+		console.log(rowId);
+		$.ajax({
+			url:'catalogue/makeChild/'+rowId,
+			method:'get',
+			success:function(data){
+					if(data){
+						$('.childContainer').html(data);
+					}
+				}
+		})
+	});
+	$(document).off('change','#childSelectId').on('change','#childSelectId',function(){
+		var rowId = $(this).val();
+		var childContainer = '#childContainer'+rowId;
+		console.log(childContainer);
+		console.log(rowId);
+		$('#catalogueParentId').val(rowId);
+		$.ajax({
+			url:'catalogue/makeChild/'+rowId,
+			method:'get',
+			success:function(data){
+				console.log($('.childContainerTest').size());
+				console.log('data'+!data.match(".*已经是最底部目录.*"));
+					if(!data.match(".*已经是最底部目录.*")){
+						console.log('tset----------'+$('span:last-child'));
+						$('.childContainerTest').html(data);
+					}else{
+						$('#childContainerInfoId').text('已经是最底部目录');
+					}
+				}
+		})
+	});
+	
+	$(document).off('click','#catalogueAddResetId').on('click','#catalogueAddResetId',function(){
+		console.log("ysysysysy");
+		$('.childContainer').html("");
+		/*return false;*/
+	});
 });

@@ -515,7 +515,7 @@ $(document).ready(function() {
 		
 		galleryActiveClass: "active"
 	});
-	$('.large-image').magnificPopup({
+	/*$('.large-image').magnificPopup({
 		items: [
 			{src: 'image/catalog/demo/product/fashion/1.jpg' },
 			{src: 'image/catalog/demo/product/fashion/2.jpg' },
@@ -534,7 +534,7 @@ $(document).ready(function() {
 				magnificPopup.goTo(activeIndex);
 			}
 		}
-	});
+	});*/
 	$("#thumb-slider .owl2-item").each(function() {
 		$(this).find("[data-index='0']").addClass('active');
 	});
