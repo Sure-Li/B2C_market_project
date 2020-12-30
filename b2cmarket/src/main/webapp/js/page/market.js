@@ -38,10 +38,25 @@ $(document).ready(function() {
 		});
 		return false;
 	});
-	$('#HeaderAllCatalogueId').off('mouseout').on('mouseout',function(){
-		$('.item-vertical').attr("style","display:none");
+	
+	$(document).off('click','#goProductId').on('click','#goProductId',function(){
+		console.log('goProductId'+href);
+		var href=$(this).attr('href');
+		$.ajax({
+			url:href,
+			type:'get',
+			success:function(data){
+				if(data){
+					$('#marketMainContainerId').html(data);
+				}
+			}
+		});
+		return false;
 	});
-	$('#HeaderAllCatalogueId').off('mouseover').on('mouseover',function(){
-		$('.item-vertical').attr("style","display:true");
+	$('#HeaderAllCatalogueId,#megamenuId').off('mouseout').on('mouseout',function(){
+		$('#megamenuId').attr("style","display:none");
+	});
+	$('#HeaderAllCatalogueId,#megamenuId').off('mouseover').on('mouseover',function(){
+		$('#megamenuId').attr("style","display:true");
 	});
 });	

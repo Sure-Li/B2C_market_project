@@ -37,4 +37,12 @@ public interface MarketService {
 	 */ 
 	List<Commodity> getCommodityList();
 
+	/** 
+	 * @Title: findOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */ 
+	Commodity findOne(Long rowId);
+
 }

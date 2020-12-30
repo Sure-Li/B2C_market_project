@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -97,7 +98,7 @@ public class MarketController {
 
 	/**
 	 * 
-	 * @Title: goCategory
+	 * @Title: category
 	 * @Description:(跳转商品目录页面)
 	 * @param modelAndView
 	 * @return
@@ -127,13 +128,17 @@ public class MarketController {
 
 	/**
 	 * 
-	 * @Title: goCheckout
+	 * @Title: product 
 	 * @Description:(跳转商品详情页面)
 	 * @param modelAndView
 	 * @return
 	 */
-	@RequestMapping("product")
-	public ModelAndView goProduct(ModelAndView modelAndView) {
+	@ResponseBody
+	@GetMapping("product/{rowId}")
+	public ModelAndView goProduct(@PathVariable Long rowId,ModelAndView modelAndView) {
+		Commodity commodity =  marketService.findOne(rowId);
+		modelAndView.addObject("commodity", commodity);
+		System.out.println("commodity"+commodity);
 		modelAndView.setViewName("market/product");
 		return modelAndView;
 	}

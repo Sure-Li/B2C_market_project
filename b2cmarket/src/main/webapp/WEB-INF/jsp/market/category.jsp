@@ -342,7 +342,7 @@ body {
 												<div class="left-block left-b">
 
 													<div class="product-image-container second_img">
-														<a href="product" target="_self" title="Lastrami bacon"> <img src="${commodity.commodityPhoto}" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e10.jpg" class="img-2 img-responsive" alt="image2">
+														<a href="product/${commodity.rowId}" id="goProductId" target="_self" title="Lastrami bacon"> <img src="${commodity.commodityPhoto}" class="img-1 img-responsive" alt="image1"> <img src="image/catalog/demo/product/270/e10.jpg" class="img-2 img-responsive" alt="image2">
 														</a>
 													</div>
 													<!--quickview-->
@@ -374,7 +374,7 @@ body {
 															<span class="rating-num">( 2 )</span>
 														</div>
 														<h4>
-															<a href="product" title="${commodity.commodityName}" target="_self">${commodity.commodityName}</a>
+															<a href="product/${commodity.rowId}"  id="goProductId" title="${commodity.commodityName}" target="_self">${commodity.commodityName}</a>
 														</h4>
 
 													</div>

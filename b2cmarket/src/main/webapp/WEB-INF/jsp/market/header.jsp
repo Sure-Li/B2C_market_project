@@ -235,7 +235,7 @@
 										<span id="remove-verticalmenu" class="fa fa-times"></span>
 										<div class="megamenu-pattern">
 											<div class="container-mega">
-											<ul class="megamenu">
+											<ul class="megamenu" id="megamenuId">
 												<c:if test="${!empty catalogueList}">
 													<c:forEach items="${catalogueList}" var="catalogue">
 														<li class="item-vertical" style="display: true;">
@@ -551,7 +551,7 @@
 																		<a href="#" class="title-submenu">Product pages</a>
 																		<div>
 																			<ul class="row-list">
-																				<li><a href="product">Product page 1</a></li>
+																				<li><a href="product" id="goProductId">Product page 1</a></li>
 																				<li><a href="product-v2.html">Product page 2</a></li>
 																				<!-- <li><a href="product-v3.html">Image size - small</a></li> -->
 																			</ul>

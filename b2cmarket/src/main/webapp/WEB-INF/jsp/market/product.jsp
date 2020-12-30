@@ -1,67 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <!-- Basic page needs
-    ============================================ -->
-    <title>SuperMarket - Multipurpose Responsive HTML5 Template</title>
-    <meta charset="utf-8">
-    <meta name="keywords" content="html5 template, best html5 template, best html template, html5 basic template, multipurpose html5 template, multipurpose html template, creative html templates, creative html5 templates" />
-    <meta name="description" content="SuperMarket is a powerful Multi-purpose HTML5 Template with clean and user friendly design. It is definite a great starter for any eCommerce web project." />
-    <meta name="author" content="Magentech">
-    <meta name="robots" content="index, follow" />
-   
-    <!-- Mobile specific metas
-    ============================================ -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- Favicon
-    ============================================ -->
-    <link rel="shortcut icon" type="image/png" href="ico/favicon-16x16.png"/>
-  
-   
-    <!-- Libs CSS
-    ============================================ -->
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="js/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link href="css/themecss/lib.css" rel="stylesheet">
-    <link href="js/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-    <link href="js/minicolors/miniColors.css" rel="stylesheet">
-    
-    <!-- Theme CSS
-    ============================================ -->
-    <link href="css/themecss/so_searchpro.css" rel="stylesheet">
-    <link href="css/themecss/so_megamenu.css" rel="stylesheet">
-    <link href="css/themecss/so-categories.css" rel="stylesheet">
-    <link href="css/themecss/so-listing-tabs.css" rel="stylesheet">
-    <link href="css/themecss/so-category-slider.css" rel="stylesheet">
-    <link href="css/themecss/so-newletter-popup.css" rel="stylesheet">
-
-    <link href="css/footer/footer1.css" rel="stylesheet">
-    <link href="css/header/header1.css" rel="stylesheet">
-    <link id="color_scheme" href="css/theme.css" rel="stylesheet"> 
-    <link href="css/responsive.css" rel="stylesheet">
-
-     <!-- Google web fonts
-    ============================================ -->
-    <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>     
-    <style type="text/css">
-         body{font-family:'Poppins', sans-serif;}
-    </style>
-
-</head>
-
-<body class="res layout-subpage layout-1 banners-effect-5">
 
     <div id="wrapper" class="wrapper-fluid">
-    
-    <%@include file="header.jsp" %>
-
 	<!-- Main Container  -->
 	<div class="main-container container">
 		<ul class="breadcrumb">
@@ -75,66 +16,6 @@
 	
 			<!--Left Part Start -->
 			<aside class="col-sm-4 col-md-3 content-aside" id="column-left">
-				<div class="module category-style">
-                	<h3 class="modtitle">Categories</h3>
-                	<div class="modcontent">
-                		<div class="box-category">
-                			<ul id="cat_accordion" class="list-group">
-                				<li class="hadchild"><a href="category.html" class="cutom-parent">Smartphone & Tablets</a>   <span class="button-view  fa fa-plus-square-o"></span>
-                					<ul style="display: block;">
-                						<li><a href="category.html">Men's Watches</a></li>
-                						<li><a href="category.html">Women's Watches</a></li>
-                						<li><a href="category.html">Kids' Watches</a></li>
-                						<li><a href="category.html">Accessories</a></li>
-                					</ul>
-                				</li>
-                				<li class="hadchild"><a class="cutom-parent" href="category.html">Electronics</a>   <span class="button-view  fa fa-plus-square-o"></span>
-                					<ul style="display: none;">
-                						<li><a href="category.html">Cycling</a></li>
-                						<li><a href="category.html">Running</a></li>
-                						<li><a href="category.html">Swimming</a></li>
-                						<li><a href="category.html">Football</a></li>
-                						<li><a href="category.html">Golf</a></li>
-                						<li><a href="category.html">Windsurfing</a></li>
-                					</ul>
-                				</li>
-                				<li class="hadchild"><a href="category.html" class="cutom-parent">Shoes</a>   <span class="button-view  fa fa-plus-square-o"></span>
-                					<ul style="display: none;">
-                						<li><a href="category.html">Sub Categories</a></li>
-                						<li><a href="category.html">Sub Categories</a></li>
-                						<li><a href="category.html">Sub Categories</a></li>
-                						<li><a href="category.html">Sub Categories</a></li>
-                						<li><a href="category.html">Sub Categories</a></li>
-                					</ul>
-                				</li>
-                				<li class="hadchild"><a href="category.html" class="cutom-parent">Watches</a>  <span class="button-view  fa fa-plus-square-o"></span>
-                					<ul style="display: none;">
-                						<li><a href="category.html">Men's Watches</a></li>
-                						<li><a href="category.html">Women's Watches</a></li>
-                						<li><a href="category.html">Kids' Watches</a></li>
-                						<li><a href="category.html">Accessories</a></li>
-                					</ul>
-                				</li>
-                				<li class="hadchild"><a href="category.html" class="cutom-parent">Jewellery</a>    <span class="button-view  fa fa-plus-square-o"></span>
-                					<ul style="display: none;">
-                						<li><a href="category.html">Sub Categories</a></li>
-                						<li><a href="category.html">Sub Categories</a></li>
-                						<li><a href="category.html">Sub Categories</a></li>
-                						<li><a href="category.html">Sub Categories</a></li>
-                						<li><a href="category.html">Sub Categories</a></li>
-                					</ul>
-                				</li>
-                				<li class=""><a href="category.html" class="cutom-parent">Health &amp; Beauty</a>  <span class="dcjq-icon"></span></li>
-                				<li class=""><a href="category.html" class="cutom-parent">Kids &amp; Babies</a>    <span class="dcjq-icon"></span></li>
-                				<li class=""><a href="category.html" class="cutom-parent">Sports</a>  <span class="dcjq-icon"></span></li>
-                				<li class=""><a href="category.html" class="cutom-parent">Home &amp; Garden</a><span class="dcjq-icon"></span></li>
-                				<li class=""><a href="category.html" class="cutom-parent">Wines &amp; Spirits</a>  <span class="dcjq-icon"></span></li>
-                			</ul>
-                		</div>
-                		
-                		
-                	</div>
-                </div>
             	<div class="module product-simple">
                     <h3 class="modtitle">
                         <span>Latest products</span>
@@ -314,13 +195,13 @@
 				
 						<div class="content-product-left class-honizol col-md-5 col-sm-12 col-xs-12">
 							<div class="large-image  ">
-								<img itemprop="image" class="product-image-zoom" src="image/catalog/demo/product/fashion/1.jpg"  title="Chicken swinesha" alt="Chicken swinesha">
+								<img itemprop="image" class="product-image-zoom" src="${commodity.commodityPhoto}"  title="Chicken swinesha" alt="Chicken swinesha">
 							</div>
 							<a class="thumb-video pull-left" href="https://www.youtube.com/watch?v=HhabgvIIXik"><i class="fa fa-youtube-play"></i></a>
 							
 							<div id="thumb-slider" class="yt-content-slider full_slider owl-drag" data-rtl="yes" data-autoplay="no" data-autoheight="no" data-delay="4" data-speed="0.6" data-margin="10" data-items_column00="4" data-items_column0="4" data-items_column1="3" data-items_column2="4"  data-items_column3="1" data-items_column4="1" data-arrows="yes" data-pagination="no" data-lazyload="yes" data-loop="no" data-hoverpause="yes">
-								<a data-index="0" class="img thumbnail " data-image="image/catalog/demo/product/fashion/1.jpg" title="Chicken swinesha">
-									<img src="image/catalog/demo/product/fashion/1.jpg" title="Chicken swinesha" alt="Chicken swinesha">
+								<a data-index="0" class="img thumbnail " data-image="${commodity.commodityPhoto}" title="Chicken swinesha">
+									<img src="${commodity.commodityPhoto}" title="Chicken swinesha" alt="Chicken swinesha">
 								</a>
 								<a data-index="1" class="img thumbnail " data-image="image/catalog/demo/product/fashion/2.jpg" title="Chicken swinesha">
 									<img src="image/catalog/demo/product/fashion/2.jpg" title="Chicken swinesha" alt="Chicken swinesha">
@@ -340,7 +221,7 @@
 
 						<div class="content-product-right col-md-7 col-sm-12 col-xs-12">
 							<div class="title-product">
-								<h1>Chicken swinesha</h1>
+								<h1>${commodity.commodityName}</h1>
 							</div>
 							<!-- Review ---->
 							<div class="box-review form-group">
@@ -639,7 +520,7 @@
                                     <div class="left-block left-b">
                                         
                                         <div class="product-image-container second_img">
-                                            <a href="product.html" target="_self" title="Lastrami bacon">
+                                            <a href="product.html" id="goProductId" target="_self" title="Lastrami bacon">
                                                 <img src="image/catalog/demo/product/270/e1.jpg" class="img-1 img-responsive" alt="image1">
                                                 <img src="image/catalog/demo/product/270/e10.jpg" class="img-2 img-responsive" alt="image2">
                                             </a>
@@ -673,7 +554,7 @@
                                                 </div>
                                                 <span class="rating-num">( 2 )</span>
                                             </div>
-                                            <h4><a href="product.html" title="Pastrami bacon" target="_self">Lastrami bacon</a></h4>
+                                            <h4><a href="product.html" id="goProductId" title="Pastrami bacon" target="_self">Lastrami bacon</a></h4>
                                             
                                         </div>
                                         <p class="price">
@@ -965,9 +846,6 @@
 	</div>
 	<!-- //Main Container -->
 	
-
-	<%@include file="footer.jsp" %>
-	
 <!-- Include Libs & Plugins
 	============================================ -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -993,6 +871,4 @@
 	<script type="text/javascript" src="js/themejs/application.js"></script>
 <!-- 		 -->
 	
-</body>
-</html>
     
