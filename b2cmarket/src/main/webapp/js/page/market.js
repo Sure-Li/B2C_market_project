@@ -60,4 +60,5 @@ $(document).ready(function() {
 	$('#HeaderAllCatalogueId,#megamenuId').off('mouseover').on('mouseover',function(){
 		$('#megamenuId').attr("style","display:true");
 	});
+	
 });	

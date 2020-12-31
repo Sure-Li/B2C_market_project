@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.sureli.b2cmarket.area.dao.AreaDao">
+	<sql id="baseColum"> `area_code`, `area_name`, `parent_code`, `area_runk`,
+		`has_child`, `active_flag`, `create_by`, `create_date`, `update_by`,
+		`update_date`
+	</sql>
+	<sql id="baseSelect">
+		SELECT ROW_ID,
+		<include refid="baseColum"></include>
+		FROM tb_cd_area WHERE active_flag = 1
+	</sql>
+	<select id="findByParentCode" resultType="Area">
+		<include refid="baseSelect"></include>
+		And parent_code = #{parentCode}
+	</select>
+</mapper>

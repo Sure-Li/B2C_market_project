@@ -73,8 +73,11 @@ $(document).ready(function() {
 				console.log($('.childContainerTest').size());
 				console.log('data'+!data.match(".*已经是最底部目录.*"));
 					if(!data.match(".*已经是最底部目录.*")){
-						console.log('tset----------'+$('span:last-child'));
-						$('.childContainerTest').html(data);
+						/*console.log('tset----------'+$(this).next('span'));*/
+						/*$(this).next('span[class=childContainerTest]').html(data);*/
+						
+						console.log($(this).find('.class=childContainerTest'));
+						$('span[class=childContainerTest]:last').html(data);
 					}else{
 						$('#childContainerInfoId').text('已经是最底部目录');
 					}

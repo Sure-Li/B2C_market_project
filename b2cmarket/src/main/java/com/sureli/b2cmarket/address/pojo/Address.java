@@ -6,12 +6,15 @@
  */
 package com.sureli.b2cmarket.address.pojo;
 
+import org.apache.ibatis.type.Alias;
+
 import com.sureli.b2cmarket.base.pojo.BaseClass;
 
 /**
  * @ClassName:Adress
  * @Description:(这里用一句话描述这个类的作用)
  */
+@Alias("Address")
 public class Address extends BaseClass {
 
 	private static final long serialVersionUID = 1L;

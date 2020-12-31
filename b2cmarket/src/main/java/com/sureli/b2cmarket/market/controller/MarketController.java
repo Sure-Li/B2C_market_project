@@ -22,6 +22,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sureli.b2cmarket.address.pojo.Address;
+import com.sureli.b2cmarket.address.service.AddressService;
+import com.sureli.b2cmarket.area.pojo.Area;
+import com.sureli.b2cmarket.area.service.AreaService;
 import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
 import com.sureli.b2cmarket.commodity.pojo.Commodity;
 import com.sureli.b2cmarket.market.service.MarketService;
@@ -38,6 +42,8 @@ public class MarketController {
 	private UserService userService;
 	@Autowired
 	private MarketService marketService;
+	@Autowired
+	private AreaService areaService;
 	/**
 	 * 
 	 * @Title: goIndex
@@ -79,10 +85,31 @@ public class MarketController {
 	@ResponseBody
 	@GetMapping("register")
 	public ModelAndView goRegister(ModelAndView modelAndView) {
+		List<Area> provinceList = areaService.findByParentCode(-1L);
+//		System.out.println(provinceList);
+		modelAndView.addObject("provinceList", provinceList);
 		modelAndView.setViewName("market/register");
 		return modelAndView;
 	}
-
+	
+	@ResponseBody
+	@GetMapping("register/makeCity/{rowId}")
+	public ModelAndView goRegisterCity(@PathVariable long rowId,ModelAndView modelAndView) {
+		List<Area> cityList = areaService.findByParentCode(rowId);
+		modelAndView.addObject("cityList", cityList);
+		System.out.println(cityList);
+		modelAndView.setViewName("admin/area/area_city");
+		return modelAndView;
+	}
+	@ResponseBody
+	@GetMapping("register/makeRegin/{rowId}")
+	public ModelAndView goRegisterRegin(@PathVariable long rowId,ModelAndView modelAndView) {
+		List<Area> reginList = areaService.findByParentCode(rowId);
+		modelAndView.addObject("reginList", reginList);
+		System.out.println(reginList);
+		modelAndView.setViewName("admin/area/area_regin");
+		return modelAndView;
+	}
 	/**
 	 * 
 	 * @Title: goCart
