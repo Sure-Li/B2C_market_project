@@ -22,6 +22,7 @@
 					<div class="col-sm-6">
 						<fieldset id="personal-details">
 							<legend>Personal Details</legend>
+							<input type="hidden" id="rowIdForInitFunction" value="${userMyCount.rowId}">
 							<div class="form-group required">
 								<label for="input-firstname" class="control-label">User Type</label> <br>${userMyCount.userType==0?"买家":"卖家"}
 							</div>
@@ -47,7 +48,7 @@
 					<div class="col-sm-6">
 						<fieldset id="personal-details">
 							<legend>
-								Address Manage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javaScript:;" id="addAddressId">Add Address</a>
+								Address Manage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="address/goAddAddress/${userMyCount.rowId}" id="addAddressId">Add Address</a>
 							</legend>
 							<c:if test="${!empty addressMycountList}">
 								<c:forEach items="${addressMycountList}" var="address">
@@ -55,8 +56,8 @@
 										<div class="form-group required">
 										收货电话：${address.addressPhone}
 											详细地址：${address.addressDetail}
-											<a href="user/edit/${address.rowId}" id="btn-edit">修改</a> <a href="user/delete/${address.rowId}" id="btn-delete">删除</a>
-											${address.addressIsDefault==1?"<font style='color: red;'>默认地址<font/>":""}
+											<a href="address/edit/${address.rowId}" id="btn-edit">修改</a> <a href="address/delete/${address.rowId}" id="btn-delete">删除</a>
+											${address.addressIsDefault==1?"<span style='color: red;'>默认地址<span/>":""}
 										</div>
 											
 									</c:if>
@@ -70,11 +71,6 @@
 					</div>
 				</div>
 
-				<!-- <div class="buttons clearfix">
-					<div class="pull-right">
-						<input type="submit" class="btn btn-md btn-primary" value="Save Changes">
-					</div>
-				</div> -->
 			</form>
 		</div>
 		<!--Middle Part End-->
@@ -103,3 +99,152 @@
 	</div>
 </div>
 <!-- //Main Container -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		var add_index = null;
+		$('#addAddressId').off('click').on('click',function(){
+			var href= $(this).attr('href');
+			console.log(href);
+			$.ajax({
+				url:href,
+				type:'get',
+				success:function(htmlData){
+					add_index = layer.open({
+		                type:1,
+		                title:"用户地址新增",
+		                area:['600px','550px'],
+		                content:htmlData,
+						success:function(layero,index){
+							 bindSubmit();	
+						}
+		            }); 
+				}
+			});
+			return false;
+		});
+		function bindSubmit(){
+			$('#btn-add-submit').off('click').on('click',function(){
+				 $.ajax({
+					type:'post',
+					url:'address',
+					data:$('#form_add').serialize(),
+					success:function(data){
+						console.log(data);
+						if(data){
+							layer.close(add_index);
+							initListData();
+						}
+					}
+				});
+				return false;
+			});
+			
+		}
+		$(document).off('change','#input-addressProviceCode').on('change','#input-addressProviceCode', function() {
+			var rowId = $(this).val();
+			$.ajax({
+				url:'register/makeCity/'+rowId,
+				method:'get',
+				success:function(data){
+						if(data){
+							$('#input-addressCityCode').html(data);
+							$('#input-addressReginCode').html('<option value="">--- Please Select ---</option>');
+						}else{
+							$('#input-addressCityCode').html('<option>---已经是最底部---<option/>');
+						}
+					}
+			})
+		});
+		$(document).off('change','#input-addressCityCode').on('change','#input-addressCityCode', function() {
+			var rowId = $(this).val();
+			$.ajax({
+				url:'register/makeRegin/'+rowId,
+				method:'get',
+				success:function(data){
+						if(data){
+							$('#input-addressReginCode').html(data);
+						}else{
+							$('#input-addressReginCode').html('<option>---已经是最底部---<option/>');
+						}
+					}
+			})
+		});
+		$(document).off('click','#btn-delete').on('click','#btn-delete',function(){
+			console.log("btn-delete");
+			var href = $(this).attr('href');
+			console.log(href);
+			layer.alert('',{
+	                icon:2,
+	                area:['200px','200px'],
+	                title:'地址删除',
+	                content:'您确定要删除吗？',
+	                closeBtn:1},
+	                function(index){
+						$.ajax({
+							url:href,
+							method:'get',
+							success:function(data){
+								if(data==1){
+									initListData();
+								}
+							}
+						});
+	                    layer.close(index);
+	                }); 
+			return false;
+		});
+		function initListData(){
+			$.ajax({
+				url:'myAccount',
+				type:'get',
+				data:{rowId:$('#rowIdForInitFunction').val()},
+				success:function(data){
+					if(data){
+						$('#marketMainContainerId').html(data);
+					}
+				}
+			});
+		}
+		/* edit */
+		var editIndex = null;
+		function bindEditSubmit(){
+			$('#btn-edit-submit').off('click').on('click',function(){
+				$.ajax({
+					type:'get',
+					url:'address/doedit',
+					data:$('#form_edit').serialize(),
+					success:function(data){
+						console.log(data);
+						if(data){
+							layer.close(editIndex);
+							initListData();
+						}
+					}
+				});
+				return false;
+			});
+		}
+		$(document).off('click','#btn-edit').on('click','#btn-edit',function(){
+			console.log("btn-edit");
+			var href = $(this).attr('href');
+			console.log(href);
+			$.ajax({
+				url:href,
+				type:'GET',
+				success:function(result){
+				editIndex=layer.open({
+	                    type:1,
+	                    title:"用户修改",
+	                    area:['600px','550px'],
+	                    content:result,
+						success:function(data){
+							console.log("bindEditSubmit();");
+							bindEditSubmit();
+						}
+	                }); 
+				}
+			});
+			return false;
+		});
+	});
+</script>

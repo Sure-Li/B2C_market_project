@@ -24,4 +24,36 @@ public interface AddressService {
 	 */ 
 	List<Address> findByUserId(Long rowId);
 
+	/** 
+	 * @Title: save 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param address
+	 * @return  
+	 */ 
+	Integer save(Address address);
+
+	/** 
+	 * @Title: delete 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */ 
+	Integer delete(Long rowId);
+
+	/** 
+	 * @Title: findOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */ 
+	Address findOne(Long rowId);
+
+	/** 
+	 * @Title: doEdit 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param address
+	 * @return  
+	 */ 
+	Integer doEdit(Address address);
+
 }
