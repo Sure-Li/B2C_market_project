@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <form class="form-horizontal account-register clearfix" id="form_edit">
+	<input type="hidden" name="rowId" value="${getAddress.rowId}">
 	<input type="hidden" name="userId" value="${getAddress.userId}">
 	<input type="hidden"  value="${getAddress.addressProvinceCode}" id="form_edit_province_id">
 	<input type="hidden"  value="${getAddress.addressCityCode}" id="form_edit_city_id">

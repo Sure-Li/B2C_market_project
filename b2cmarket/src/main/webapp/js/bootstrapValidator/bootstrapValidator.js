@@ -44,9 +44,13 @@ if (typeof jQuery === 'undefined') {
             while (div.innerHTML = '<!--[if gt IE '+(++v)+']><br><![endif]-->', a[0]) {}
             return v > 4 ? v : !v;
         }());
-
-        var el = document.createElement('div');
-        this._changeEvent = (ieVersion === 9 || !('oninput' in el)) ? 'keyup' : 'input';
+		
+		//开始修改表单验证为脱离光标
+        //var el = document.createElement('div');
+        //this._changeEvent = (ieVersion === 9 || !('oninput' in el)) ? 'keyup' : 'input';
+		//开始修改表单验证为脱离光标
+		var el = document.createElement('div');
+        this._changeEvent = (ieVersion === 9 || !('onblur' in el)) ? 'keyup' : 'blur';
 
         // The flag to indicate that the form is ready to submit when a remote/callback validator returns
         this._submitIfValid = null;

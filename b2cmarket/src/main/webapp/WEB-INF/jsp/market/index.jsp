@@ -30,6 +30,8 @@
 <link href="js/jquery-ui/jquery-ui.min.css" rel="stylesheet">
 <link href="js/minicolors/miniColors.css" rel="stylesheet">
 
+
+
 <!-- Theme CSS
     ============================================ -->
 <link href="css/themecss/so_searchpro.css" rel="stylesheet">
@@ -38,6 +40,10 @@
 <link href="css/themecss/so-listing-tabs.css" rel="stylesheet">
 <link href="css/themecss/so-category-slider.css" rel="stylesheet">
 <link href="css/themecss/so-newletter-popup.css" rel="stylesheet">
+
+<!-- Self CSS
+    ============================================ -->
+<link href="css/bootstrapValidator/bootstrapValidator.css" rel="stylesheet">
 
 <link href="css/footer/footer1.css" rel="stylesheet">
 <link href="css/header/header1.css" rel="stylesheet">
@@ -2904,6 +2910,9 @@ body {
 ============================================ -->
 
 	<script type="text/javascript" src="js/page/market.js"></script>
+	<script type="text/javascript" src="js/bootstrapValidator/bootstrapValidator.js"></script>
+	
+	
 	
 	
 

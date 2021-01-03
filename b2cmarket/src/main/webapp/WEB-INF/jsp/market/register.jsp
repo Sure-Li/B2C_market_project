@@ -160,5 +160,60 @@
 					}
 			})
 		});
+		$('#userRegisterForm').bootstrapValidator({
+			message: 'This value is not valid',
+	            feedbackIcons: {
+	                valid: 'glyphicon glyphicon-ok',
+	                invalid: 'glyphicon glyphicon-remove',
+	                validating: 'glyphicon glyphicon-refresh'
+	            },
+	            fields: {
+	                userCode: {
+	                    message: '用户名验证失败',
+	                    validators: {
+	                        notEmpty: {
+	                            message: '用户名不能为空'
+	                        },
+	                        stringLength: {
+	                            min: 1,
+	                            max: 18,
+	                            message: '用户名长度必须在1到18位之间'
+	                        },
+	                        regexp: {
+	                            regexp: /^[a-zA-Z0-9_]+$/,
+	                            message: '用户名只能包含大写、小写、数字和下划线'
+	                        }
+	                    }
+	                },
+	                userPhone: {
+	                    message: '用户手机号验证失败',
+	                    validators: {
+	                        notEmpty: {
+	                            message: '用户手机号不能为空'
+	                        },
+	                        stringLength: {
+	                            min: 1,
+	                            max: 11,
+	                            message: '用户手机号长度必须在1到11位之间'
+	                        }
+	                        /* ,
+	                        regexp: {
+	                            regexp: '0?(13|14|15|18)[0-9]{9}',
+	                            message: '手机格式匹配不正确'
+	                        } */
+	                    }
+	                },
+	                userPassword: {
+	                    validators: {
+	                        notEmpty: {
+	                            message: '密码不能为空'
+	                        },
+	                    }
+	                }
+	            },
+	            submitHandler: function (validator, form, submitButton) {
+	                alert("submit");
+	            }
+		});
 	});
 </script>
