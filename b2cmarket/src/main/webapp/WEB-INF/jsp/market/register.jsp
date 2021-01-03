@@ -86,7 +86,7 @@
 				<div class="form-group required">
 					<label class="col-sm-2 control-label" for="input-postcode">Post Code</label>
 					<div class="col-sm-10">
-						<input type="text" name="postcode" value="" placeholder="Post Code" id="input-postcode" class="form-control">
+						<input type="text" name="addressPostCode" value="" placeholder="Post Code" id="input-postcode" class="form-control">
 					</div>
 				</div>
 				<div class="form-group required">
@@ -128,6 +128,7 @@
 		</form>
 	</div>
 </div>
+<script type="text/javascript" src="js/page/user/user-register.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#input-addressProviceCode').off('change').on('change', function() {

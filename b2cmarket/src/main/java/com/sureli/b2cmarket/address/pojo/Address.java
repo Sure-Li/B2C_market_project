@@ -27,7 +27,7 @@ public class Address extends BaseClass {
 	// 区编码
 	private String addressReginCode;
 	// 详细地址
-	private String addressDetail;
+	private String addressDatail;
 	// 邮编
 	private String addressPostCode;
 	// 收件人电话
@@ -68,11 +68,11 @@ public class Address extends BaseClass {
 	}
 
 	public String getAddressDetail() {
-		return addressDetail;
+		return addressDatail;
 	}
 
 	public void setAddressDetail(String addressDetail) {
-		this.addressDetail = addressDetail;
+		this.addressDatail = addressDetail;
 	}
 
 	public String getAddressPostCode() {
@@ -104,13 +104,13 @@ public class Address extends BaseClass {
 	}
 
 	public Address(String userId, String addressProvinceCode, String addressCityCode, String addressReginCode,
-			String addressDetail, String addressPostCode, String addressPhone, String addressIsDefault) {
+			String addressDatail, String addressPostCode, String addressPhone, String addressIsDefault) {
 		super();
 		this.userId = userId;
 		this.addressProvinceCode = addressProvinceCode;
 		this.addressCityCode = addressCityCode;
 		this.addressReginCode = addressReginCode;
-		this.addressDetail = addressDetail;
+		this.addressDatail = addressDatail;
 		this.addressPostCode = addressPostCode;
 		this.addressPhone = addressPhone;
 		this.addressIsDefault = addressIsDefault;
@@ -124,7 +124,7 @@ public class Address extends BaseClass {
 	@Override
 	public String toString() {
 		return "Address [userId=" + userId + ", addressProvinceCode=" + addressProvinceCode + ", addressCityCode="
-				+ addressCityCode + ", addressReginCode=" + addressReginCode + ", addressDetail=" + addressDetail
+				+ addressCityCode + ", addressReginCode=" + addressReginCode + ", addressDatail=" + addressDatail
 				+ ", addressPostCode=" + addressPostCode + ", addressPhone=" + addressPhone + ", addressIsDefault="
 				+ addressIsDefault + ", rowId=" + rowId + ", activeFlag=" + activeFlag + ", createBy=" + createBy
 				+ ", createDate=" + createDate + ", updateBy=" + updateBy + ", updateDate=" + updateDate + "]";

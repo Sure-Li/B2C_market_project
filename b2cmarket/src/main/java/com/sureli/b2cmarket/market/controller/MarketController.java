@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -29,6 +30,7 @@ import com.sureli.b2cmarket.area.service.AreaService;
 import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
 import com.sureli.b2cmarket.commodity.pojo.Commodity;
 import com.sureli.b2cmarket.market.service.MarketService;
+import com.sureli.b2cmarket.user.pojo.User;
 import com.sureli.b2cmarket.user.service.UserService;
 import com.sureli.b2cmarket.util.ConfigUtil;
 
@@ -44,6 +46,9 @@ public class MarketController {
 	private MarketService marketService;
 	@Autowired
 	private AreaService areaService;
+	@Autowired
+	private AddressService addressService;
+
 	/**
 	 * 
 	 * @Title: goIndex
@@ -55,7 +60,7 @@ public class MarketController {
 	@RequestMapping({ "/", "index" })
 	public ModelAndView goIndex(ModelAndView modelAndView) {
 		List<Catalogue> getList = marketService.getCatalogueList();
-		System.out.println("getList     "+getList);
+		System.out.println("getList     " + getList);
 		modelAndView.addObject("catalogueList", getList);
 		modelAndView.setViewName("market/index");
 		return modelAndView;
@@ -77,6 +82,27 @@ public class MarketController {
 
 	/**
 	 * 
+	 * @Title: goMyAccount
+	 * @Description:(跳转登录页面)
+	 * @param modelAndView
+	 * @return
+	 */
+	@ResponseBody
+	@GetMapping("myAccount")
+	public ModelAndView goMyAccount(ModelAndView modelAndView, Long rowId) {
+		System.out.println(rowId);
+		User userMyCount = userService.findOne(rowId);
+		List<Address> addressMycountList = addressService.findByUserId(rowId);
+		System.out.println("addressMycountList" + addressMycountList);
+		System.out.println("userMyCount" + userMyCount);
+		modelAndView.addObject("addressMycountList", addressMycountList);
+		modelAndView.addObject("userMyCount", userMyCount);
+		modelAndView.setViewName("market/myAccount");
+		return modelAndView;
+	}
+
+	/**
+	 * 
 	 * @Title: goRegister
 	 * @Description:(跳转注册页面)
 	 * @param modelAndView
@@ -91,25 +117,27 @@ public class MarketController {
 		modelAndView.setViewName("market/register");
 		return modelAndView;
 	}
-	
+
 	@ResponseBody
 	@GetMapping("register/makeCity/{rowId}")
-	public ModelAndView goRegisterCity(@PathVariable long rowId,ModelAndView modelAndView) {
+	public ModelAndView goRegisterCity(@PathVariable long rowId, ModelAndView modelAndView) {
 		List<Area> cityList = areaService.findByParentCode(rowId);
 		modelAndView.addObject("cityList", cityList);
 		System.out.println(cityList);
 		modelAndView.setViewName("admin/area/area_city");
 		return modelAndView;
 	}
+
 	@ResponseBody
 	@GetMapping("register/makeRegin/{rowId}")
-	public ModelAndView goRegisterRegin(@PathVariable long rowId,ModelAndView modelAndView) {
+	public ModelAndView goRegisterRegin(@PathVariable long rowId, ModelAndView modelAndView) {
 		List<Area> reginList = areaService.findByParentCode(rowId);
 		modelAndView.addObject("reginList", reginList);
 		System.out.println(reginList);
 		modelAndView.setViewName("admin/area/area_regin");
 		return modelAndView;
 	}
+
 	/**
 	 * 
 	 * @Title: goCart
@@ -133,8 +161,8 @@ public class MarketController {
 	@ResponseBody
 	@GetMapping("category")
 	public ModelAndView goCategory(ModelAndView modelAndView) {
-		List<Commodity> getList =  marketService.getCommodityList();
-		System.out.println("getlist     "+getList);
+		List<Commodity> getList = marketService.getCommodityList();
+		System.out.println("getlist     " + getList);
 		modelAndView.addObject("commodityList", getList);
 		modelAndView.setViewName("market/category");
 		return modelAndView;
@@ -155,17 +183,17 @@ public class MarketController {
 
 	/**
 	 * 
-	 * @Title: product 
+	 * @Title: product
 	 * @Description:(跳转商品详情页面)
 	 * @param modelAndView
 	 * @return
 	 */
 	@ResponseBody
 	@GetMapping("product/{rowId}")
-	public ModelAndView goProduct(@PathVariable Long rowId,ModelAndView modelAndView) {
-		Commodity commodity =  marketService.findOne(rowId);
+	public ModelAndView goProduct(@PathVariable Long rowId, ModelAndView modelAndView) {
+		Commodity commodity = marketService.findOne(rowId);
 		modelAndView.addObject("commodity", commodity);
-		System.out.println("commodity"+commodity);
+		System.out.println("commodity" + commodity);
 		modelAndView.setViewName("market/product");
 		return modelAndView;
 	}
@@ -228,7 +256,8 @@ public class MarketController {
 			HttpServletResponse response) {
 		return userService.doLogin(userCode, userPassword, isRemenber, request, response);
 	}
-	@ResponseBody 
+
+	@ResponseBody
 	@RequestMapping("/admindologinout")
 	public Integer doLoginOut(@CookieValue(name = ConfigUtil.COOKIE_NAME, required = false) String cookieValue,
 			HttpSession session, HttpServletResponse response) {
@@ -237,7 +266,7 @@ public class MarketController {
 		session.removeAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME);
 
 		// 退出自动登录
-		Cookie cookie = new Cookie(ConfigUtil.COOKIE_NAME,null);
+		Cookie cookie = new Cookie(ConfigUtil.COOKIE_NAME, null);
 		cookie.setMaxAge(0);
 		cookie.setPath("/");
 		response.addCookie(cookie);

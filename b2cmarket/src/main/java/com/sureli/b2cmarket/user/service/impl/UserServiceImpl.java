@@ -17,6 +17,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sureli.b2cmarket.address.dao.AddressDao;
+import com.sureli.b2cmarket.address.pojo.Address;
 import com.sureli.b2cmarket.user.dao.UserDao;
 import com.sureli.b2cmarket.user.pojo.User;
 import com.sureli.b2cmarket.user.pojo.UserUtil;
@@ -31,6 +33,8 @@ import com.sureli.b2cmarket.util.ConfigUtil;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
+	@Autowired
+	private AddressDao addressDao;
 
 	/**
 	 * @Title: doLogin
@@ -45,6 +49,29 @@ public class UserServiceImpl implements UserService {
 		user.setCreateBy("Sure_li");
 		user.setCreateDate(new Date());
 		return userDao.save(user);
+	}
+
+	/**
+	 * @Title: doRegister
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param user
+	 * @param address
+	 * @return
+	 */
+	@Override
+	public Integer doRegister(User user, Address address) {
+		user.setIsLock(UserUtil.USER_IS_LOCK_NO);
+		user.setActiveFlag(ConfigUtil.ACTIVE_FLAG_YES);
+		user.setCreateBy("Sure_li");
+		user.setCreateDate(new Date());
+		userDao.save(user);
+		User getUser = userDao.findUserByCodeAndPassword(user.getUserCode(), user.getUserPassword());
+		address.setUserId(getUser.getRowId().toString());
+		address.setActiveFlag(ConfigUtil.ACTIVE_FLAG_YES);
+		address.setCreateBy("li");
+		address.setCreateDate(new Date());
+		addressDao.save(address);
+		return 1;
 	}
 
 	/**
@@ -134,30 +161,31 @@ public class UserServiceImpl implements UserService {
 		return userDao.update(user);
 	}
 
-	/** 
-	 * @Title: findOne 
+	/**
+	 * @Title: findOne
 	 * @Description:(这里用一句话描述这个方法的作用)
 	 * @param rowId
-	 * @return  
-	 */  
+	 * @return
+	 */
 	@Override
 	public User findOne(Long rowId) {
 		return userDao.findOne(rowId);
 	}
 
-	/** 
-	 * @Title: update 
+	/**
+	 * @Title: update
 	 * @Description:(修改用户)
 	 * @param user
-	 * @return  
-	 */  
+	 * @return
+	 */
 	@Override
 	public int update(User user) {
 		User userGet = userDao.findOne(user.getRowId());
-		System.out.println("userGet"+userGet);
+		System.out.println("userGet" + userGet);
 		userGet.setUserName(user.getUserName());
 		userGet.setUserPassword(user.getUserPassword());
-		//Todo 此处还需要将更新人加入  由于还没有登录功能 所以暂时先预留 -------------------------------------------------
+		// Todo 此处还需要将更新人加入 由于还没有登录功能 所以暂时先预留
+		// -------------------------------------------------
 		userGet.setIsLock(user.getIsLock());
 		userGet.setUpdateDate(new Date());
 		return userDao.update(userGet);

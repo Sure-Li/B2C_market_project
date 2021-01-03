@@ -14,8 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.sureli.b2cmarket.address.pojo.Address;
 import com.sureli.b2cmarket.user.pojo.User;
 import com.sureli.b2cmarket.user.pojo.UserUtil;
 import com.sureli.b2cmarket.user.service.UserService;
@@ -40,12 +43,15 @@ public class UserController {
 	 * @param response
 	 * @return
 	 */
+	@ResponseBody
 	@PostMapping("doRegister")
-	public String doRegister(User user) {
-		System.out.println("userget"+user);
+	public ModelAndView doRegister(User user,Address address,ModelAndView modelAndView) {
+		System.out.println("userget:"+user);
+		System.out.println("address:"+address);
 		user.setUserType(UserUtil.USER_TYPE_BUYER);
-		userService.doRegister(user);
-		return ConfigUtil.FUNCTION_SUCCESS;
+		userService.doRegister(user,address);
+		modelAndView.setViewName("market/login");
+		return modelAndView;
 	}
 
 	/**

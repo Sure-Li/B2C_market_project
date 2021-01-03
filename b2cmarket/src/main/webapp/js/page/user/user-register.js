@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	console.log("tes1t");
 	console.log($("#userRegisterForm")[0]);
-	
+
 	$('#userRegisterSubmitId').off('click').on('click', function() {
 		$.ajax({
 			url: "user/doRegister",
@@ -9,10 +9,8 @@ $(document).ready(function() {
 			data: $("#userRegisterForm").serialize(),
 			success: function(data) {
 				console.log(data);
-				if(data=='success'){
-					location.href="login";
-				}else{
-					
+				if (data) {
+					$('#marketMainContainerId').html(data);
 				}
 			}
 		});

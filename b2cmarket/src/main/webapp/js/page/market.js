@@ -25,6 +25,21 @@ $(document).ready(function() {
 		});
 		return false;
 	});
+	$('#userLoginStateNameId').off('click').on('click',function(){
+		console.log('userLoginStateNameId');
+		console.log($('#userLoginRowId').val());
+		$.ajax({
+			url:'myAccount',
+			type:'get',
+			data:{rowId:$('#userLoginRowId').val()},
+			success:function(data){
+				if(data){
+					$('#marketMainContainerId').html(data);
+				}
+			}
+		});
+		return false;
+	});
 	$('#headerCatagoryId').off('click').on('click',function(){
 		console.log('headerCatagoryId');
 		$.ajax({
@@ -60,5 +75,6 @@ $(document).ready(function() {
 	$('#HeaderAllCatalogueId,#megamenuId').off('mouseover').on('mouseover',function(){
 		$('#megamenuId').attr("style","display:true");
 	});
+	
 	
 });	

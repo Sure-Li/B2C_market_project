@@ -11,6 +11,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sureli.b2cmarket.address.pojo.Address;
 import com.sureli.b2cmarket.user.pojo.User;
 
 /**
@@ -26,6 +27,13 @@ public interface UserService {
 	 * @return
 	 */
 	Integer doRegister(User user);
+	/**
+	 * @Title: doRegister
+	 * @Description:(用于创建用户的方法)
+	 * @param user
+	 * @return
+	 */
+	Integer doRegister(User user,Address address);
 
 	/**
 	 * @Title: findUserByCodeAndPassword
@@ -80,6 +88,13 @@ public interface UserService {
 	 * @return  
 	 */ 
 	int update(User user);
+	/** 
+	 * @Title: doRegister 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param user
+	 * @param address  
+	 */ 
+	
 
 
 }

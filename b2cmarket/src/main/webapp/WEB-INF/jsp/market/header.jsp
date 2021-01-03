@@ -739,6 +739,7 @@
 					</div>
 					<div class="signin-w hidden-md hidden-sm hidden-xs">
 						<input type="hidden" value="${sessionScope.loginUser.userName}" id="userLoginName">
+						<input type="hidden" value="${sessionScope.loginUser.rowId}" id="userLoginRowId">
 						<ul class="signin-link blank" id="showLoginUlId">
 							<li class="log login"><i class="fa fa-lock"></i> <a class="link-lg" href="login" id="headerLoginId">Login </a> or <a href="register" id="headerRegisterId">Register</a></li>
 						</ul>
