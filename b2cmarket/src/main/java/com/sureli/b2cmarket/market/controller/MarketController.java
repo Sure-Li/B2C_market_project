@@ -6,7 +6,9 @@
  */
 package com.sureli.b2cmarket.market.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -27,8 +29,11 @@ import com.sureli.b2cmarket.address.pojo.Address;
 import com.sureli.b2cmarket.address.service.AddressService;
 import com.sureli.b2cmarket.area.pojo.Area;
 import com.sureli.b2cmarket.area.service.AreaService;
+import com.sureli.b2cmarket.cart.pojo.Cart;
+import com.sureli.b2cmarket.cart.service.CartService;
 import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
 import com.sureli.b2cmarket.commodity.pojo.Commodity;
+import com.sureli.b2cmarket.commodity.service.CommodityService;
 import com.sureli.b2cmarket.market.service.MarketService;
 import com.sureli.b2cmarket.user.pojo.User;
 import com.sureli.b2cmarket.user.service.UserService;
@@ -48,7 +53,11 @@ public class MarketController {
 	private AreaService areaService;
 	@Autowired
 	private AddressService addressService;
-
+	@Autowired
+	private CartService cartService;
+	@Autowired
+	private CommodityService commodityService;
+	
 	/**
 	 * 
 	 * @Title: goIndex
@@ -147,6 +156,14 @@ public class MarketController {
 	 */
 	@RequestMapping("cart")
 	public ModelAndView goCart(ModelAndView modelAndView) {
+		List<Cart> cartList =  cartService.finAll();
+		Map<String, Commodity> cartCommodityMap = new HashMap<String, Commodity>();
+		for (Cart cart : cartList) {
+			String key = cart.getCommodityCount().toString();
+			Commodity getCommodity = commodityService.findOne(Long.parseLong(cart.getCommodityId()));
+			cartCommodityMap.put(key, getCommodity);
+		}
+		modelAndView.addObject("cartCommodityMap", cartCommodityMap);
 		modelAndView.setViewName("market/cart");
 		return modelAndView;
 	}

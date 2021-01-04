@@ -172,7 +172,7 @@
 	                    message: '用户名验证失败',
 	                    validators: {
 	                        notEmpty: {
-	                            message: '用户名不能为空'
+	                            message: '用户账号不能为空'
 	                        },
 	                        stringLength: {
 	                            min: 1,
@@ -207,6 +207,34 @@
 	                    validators: {
 	                        notEmpty: {
 	                            message: '密码不能为空'
+	                        },
+	                    }
+	                },
+	                userName: {
+	                    validators: {
+	                        notEmpty: {
+	                            message: '用户名称不能为空'
+	                        },
+	                    }
+	                },
+	                addressDetail: {
+	                    validators: {
+	                        notEmpty: {
+	                            message: '详细地址不能为空'
+	                        },
+	                    }
+	                },
+	                addressPostCode: {
+	                    validators: {
+	                        notEmpty: {
+	                            message: '邮编不能为空'
+	                        },
+	                    }
+	                },
+	                addressPhone: {
+	                    validators: {
+	                        notEmpty: {
+	                            message: '收货人手机号不能为空'
 	                        },
 	                    }
 	                }

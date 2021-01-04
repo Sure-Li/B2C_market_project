@@ -67,7 +67,7 @@ body {
 	<div id="wrapper" class="wrapper-fluid banners-effect-3">
 
 
-		<%@include file="header.jsp" %>
+		<%@include file="header.jsp"%>
 
 
 		<!-- Main Container  -->
@@ -76,7 +76,13 @@ body {
 				<div class="content-top-w">
 
 					<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 main-left">
-						<div class="module col1 hidden-sm hidden-xs"></div>
+						<div class="module col1 hidden-sm hidden-xs">
+							<div class="banners banners5">
+								<div class="banner">
+									<a href="#"><img src="image/catalog/banners/banner2.jpg" alt="image" style="height: 300px; width: 230px;"></a>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 main-right">
 						<div class="slider-container row">
@@ -2867,7 +2873,7 @@ body {
 
 
 
-		<%@ include file="footer.jsp" %>
+		<%@ include file="footer.jsp"%>
 
 	</div>
 
@@ -2906,15 +2912,15 @@ body {
 	<script type="text/javascript" src="js/themejs/addtocart.js"></script>
 	<script type="text/javascript" src="js/layer/layer.js"></script>
 
-<!-- self files
+	<!-- self files
 ============================================ -->
 
 	<script type="text/javascript" src="js/page/market.js"></script>
 	<script type="text/javascript" src="js/bootstrapValidator/bootstrapValidator.js"></script>
-	
-	
-	
-	
+
+
+
+
 
 
 

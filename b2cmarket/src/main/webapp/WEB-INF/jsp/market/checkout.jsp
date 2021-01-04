@@ -1,68 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <!-- Basic page needs
-    ============================================ -->
-    <title>SuperMarket - Multipurpose Responsive HTML5 Template</title>
-    <meta charset="utf-8">
-    <meta name="keywords" content="html5 template, best html5 template, best html template, html5 basic template, multipurpose html5 template, multipurpose html template, creative html templates, creative html5 templates" />
-    <meta name="description" content="SuperMarket is a powerful Multi-purpose HTML5 Template with clean and user friendly design. It is definite a great starter for any eCommerce web project." />
-    <meta name="author" content="Magentech">
-    <meta name="robots" content="index, follow" />
-   
-    <!-- Mobile specific metas
-    ============================================ -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- Favicon
-    ============================================ -->
-    <link rel="shortcut icon" type="image/png" href="ico/favicon-16x16.png"/>
-  
-   
-    <!-- Libs CSS
-    ============================================ -->
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="js/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link href="css/themecss/lib.css" rel="stylesheet">
-    <link href="js/jquery-ui/jquery-ui.min.css" rel="stylesheet">
-    <link href="js/minicolors/miniColors.css" rel="stylesheet">
-    
-    <!-- Theme CSS
-    ============================================ -->
-    <link href="css/themecss/so_searchpro.css" rel="stylesheet">
-    <link href="css/themecss/so_megamenu.css" rel="stylesheet">
-    <link href="css/themecss/so-categories.css" rel="stylesheet">
-    <link href="css/themecss/so-listing-tabs.css" rel="stylesheet">
-    <link href="css/themecss/so-category-slider.css" rel="stylesheet">
-    <link href="css/themecss/so-newletter-popup.css" rel="stylesheet">
-
-    <link href="css/footer/footer1.css" rel="stylesheet">
-    <link href="css/header/header1.css" rel="stylesheet">
-    <link id="color_scheme" href="css/theme.css" rel="stylesheet"> 
-    <link href="css/responsive.css" rel="stylesheet">
-
-     <!-- Google web fonts
-    ============================================ -->
-    <link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>     
-    <style type="text/css">
-         body{font-family:'Poppins', sans-serif;}
-    </style>
-
-</head>
-
-<body class="res layout-1">
-
-    
-    <div id="wrapper" class="wrapper-fluid banners-effect-5">
-    
-
-    <%@include file="header.jsp" %>
-    
 	<!-- Main Container  -->
 	<div class="main-container container">
 		<ul class="breadcrumb">
@@ -77,57 +14,6 @@
 			  <h2 class="title">Checkout</h2>
 			  <div class="so-onepagecheckout row">
 				<div class="col-left col-sm-3">
-				  <div class="panel panel-default">
-					<div class="panel-heading">
-					  <h4 class="panel-title"><i class="fa fa-sign-in"></i> Create an Account or Login</h4>
-					</div>
-					  <div class="panel-body">
-							<div class="radio">
-							  <label>
-								<input type="radio" value="register" name="account">
-								Register Account</label>
-							</div>
-							<div class="radio">
-							  <label>
-								<input type="radio" checked="checked" value="guest" name="account">
-								Guest Checkout</label>
-							</div>
-							<div class="radio">
-							  <label>
-								<input type="radio" value="returning" name="account">
-								Returning Customer</label>
-							</div>
-					  </div>
-				  </div>
-				  <div class="panel panel-default">
-					<div class="panel-heading">
-					  <h4 class="panel-title"><i class="fa fa-user"></i> Your Personal Details</h4>
-					</div>
-					  <div class="panel-body">
-							<fieldset id="account">
-							  <div class="form-group required">
-								<label for="input-payment-firstname" class="control-label">First Name</label>
-								<input type="text" class="form-control" id="input-payment-firstname" placeholder="First Name" value="" name="firstname">
-							  </div>
-							  <div class="form-group required">
-								<label for="input-payment-lastname" class="control-label">Last Name</label>
-								<input type="text" class="form-control" id="input-payment-lastname" placeholder="Last Name" value="" name="lastname">
-							  </div>
-							  <div class="form-group required">
-								<label for="input-payment-email" class="control-label">E-Mail</label>
-								<input type="text" class="form-control" id="input-payment-email" placeholder="E-Mail" value="" name="email">
-							  </div>
-							  <div class="form-group required">
-								<label for="input-payment-telephone" class="control-label">Telephone</label>
-								<input type="text" class="form-control" id="input-payment-telephone" placeholder="Telephone" value="" name="telephone">
-							  </div>
-							  <div class="form-group">
-								<label for="input-payment-fax" class="control-label">Fax</label>
-								<input type="text" class="form-control" id="input-payment-fax" placeholder="Fax" value="" name="fax">
-							  </div>
-							</fieldset>
-						  </div>
-				  </div>
 				  <div class="panel panel-default">
 					<div class="panel-heading">
 					  <h4 class="panel-title"><i class="fa fa-book"></i> Your Address</h4>
@@ -252,33 +138,6 @@
 							
 						</div>
 					
-					
-					
-					<div class="col-sm-12">
-					  <div class="panel panel-default">
-						<div class="panel-heading">
-						  <h4 class="panel-title"><i class="fa fa-ticket"></i> Do you Have a Coupon or Voucher?</h4>
-						</div>
-						  <div class="panel-body row">
-							<div class="col-sm-6 ">
-							<div class="input-group">
-							  <input type="text" class="form-control" id="input-coupon" placeholder="Enter your coupon here" value="" name="coupon">
-							  <span class="input-group-btn">
-							  <input type="button" class="btn btn-primary" data-loading-text="Loading..." id="button-coupon" value="Apply Coupon">
-							  </span></div>
-							</div>
-							
-							<div class="col-sm-6">
-							<div class="input-group">
-							  <input type="text" class="form-control" id="input-voucher" placeholder="Enter your gift voucher code here" value="" name="voucher">
-							  <span class="input-group-btn">
-							  <input type="submit" class="btn btn-primary" data-loading-text="Loading..." id="button-voucher" value="Apply Voucher">
-							  </span> </div>
-							</div>
-						  </div>
-					  </div>
-					</div>
-					
 					<div class="col-sm-12">
 					  <div class="panel panel-default">
 						<div class="panel-heading">
@@ -365,36 +224,3 @@
 		</div>
 	</div>
 	<!-- //Main Container -->
-	
-	<%@include file="footer.jsp" %>
-
-    </div>
-	
-	
-
-<!-- Include Libs & Plugins
-	============================================ -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/owl-carousel/owl.carousel.js"></script>
-<script type="text/javascript" src="js/slick-slider/slick.js"></script>
-	<script type="text/javascript" src="js/themejs/libs.js"></script>
-	<script type="text/javascript" src="js/unveil/jquery.unveil.js"></script>
-	<script type="text/javascript" src="js/countdown/jquery.countdown.min.js"></script>
-	<script type="text/javascript" src="js/dcjqaccordion/jquery.dcjqaccordion.2.8.min.js"></script>
-	<script type="text/javascript" src="js/datetimepicker/moment.js"></script>
-	<script type="text/javascript" src="js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
-	
-	
-	<!-- Theme files
-	============================================ -->
-	
-	
-	<script type="text/javascript" src="js/themejs/so_megamenu.js"></script>
-	<script type="text/javascript" src="js/themejs/addtocart.js"></script>
-	<script type="text/javascript" src="js/themejs/application.js"></script>
-		
-</body>
-</html>

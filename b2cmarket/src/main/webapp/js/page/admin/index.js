@@ -75,8 +75,7 @@ $(document).ready(function() {
 					if(!data.match(".*已经是最底部目录.*")){
 						/*console.log('tset----------'+$(this).next('span'));*/
 						/*$(this).next('span[class=childContainerTest]').html(data);*/
-						
-						console.log($(this).find('.class=childContainerTest'));
+						/*console.log($(this).find('.class=childContainerTest'));*/
 						$('span[class=childContainerTest]:last').html(data);
 					}else{
 						$('#childContainerInfoId').text('已经是最底部目录');

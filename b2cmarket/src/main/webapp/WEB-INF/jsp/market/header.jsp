@@ -177,7 +177,7 @@
 											</tbody>
 										</table>
 										<p class="text-right">
-											<a class="btn view-cart" href="cart"><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href="checkout"><i class="fa fa-share"></i>Checkout</a>
+											<a class="btn view-cart" href="cart" id="btn-view-cart-id"><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp; <a class="btn btn-mega checkout-cart" href="checkout" id="btn-checkout-id"><i class="fa fa-share"></i>Checkout</a>
 										</p>
 									</div>
 								</li>

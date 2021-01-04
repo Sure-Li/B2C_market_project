@@ -21,15 +21,43 @@ $(document).ready(function() {
 	$('#showLoginUlId').off('click', '#userLoginStateExitId').on('click', '#userLoginStateExitId', function() {
 		console.log("('click','userLoginStateExitId')");
 		$.ajax({
-			url:'user/exit',
-			type:'get',
-			success:function(date){
-				if(date){
-					location.href='index';
+			url: 'user/exit',
+			type: 'get',
+			success: function(date) {
+				if (date) {
+					location.href = 'index';
 				}
 			}
 		});
 	});
+	$('#btn-view-cart-id').off('click').on('click', function() {
+		var href = $(this).attr('href');
+		console.log(href);
+		$.ajax({
+			url:href,
+			type:'get',
+			success:function(data){
+				if(data){
+					$('#marketMainContainerId').html(data);
+				}
+			}
+		});
+		return false;
+	});
 	
-	
+	$('#btn-checkout-id').off('click').on('click', function() {
+		var href = $(this).attr('href');
+		console.log(href);
+		$.ajax({
+			url:href,
+			type:'get',
+			success:function(data){
+				if(data){
+					$('#marketMainContainerId').html(data);
+				}
+			}
+		});
+		return false;
+	});
+
 });	

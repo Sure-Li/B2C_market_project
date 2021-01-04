@@ -6,12 +6,15 @@
  */
 package com.sureli.b2cmarket.cart.pojo;
 
+import org.apache.ibatis.type.Alias;
+
 import com.sureli.b2cmarket.base.pojo.BaseClass;
 
 /**
  * @ClassName:Cart
  * @Description:(这里用一句话描述这个类的作用)
  */
+@Alias("Cart")
 public class Cart extends BaseClass {
 
 	private static final long serialVersionUID = 1L;
