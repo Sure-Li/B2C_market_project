@@ -10,7 +10,7 @@
 	<div class="row">
 		<!--Middle Part Start-->
 		<div id="content" class="col-sm-12">
-			<h2 class="title">Shopping Cart${cartCommodityMap}</h2>
+			<h2 class="title">Shopping Cart</h2>
 			<div class="table-responsive form-group">
 				<table class="table table-bordered">
 					<thead>
@@ -32,16 +32,16 @@
 									<td class="text-left"><a href="product">${cartCommodity.value.commodityName}</a><br /></td>
 									<td class="text-left">${cartCommodity.value.commodityInfo}</td>
 									<td class="text-left" width="200px"><div class="input-group btn-block quantity">
-											<input type="text" name="quantity" value="${cartCommodity.key}" size="1" class="form-control" data-href="cart/edit/${cartCommodity.value.rowId}/${userId}/${cartCommodity.value.commodityPrice}" id="input-commodityCount-id" />
+											<input type="text" name="quantity" value="${cartCommodity.key.commodityCount}" size="1" class="form-control" data-href="cart/edit/${cartCommodity.value.rowId}/${userId}/${cartCommodity.value.commodityPrice}" id="input-commodityCount-id" />
 											 <span class="input-group-btn">
-												<button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" id="btn-submit-delete-id">
+												<button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" data-href="cart/delete/${cartCommodity.value.rowId}/${userId}/${cartCommodity.value.commodityPrice}" id="btn-submit-delete-id">
 													<i class="fa fa-times-circle"></i>
 												</button>
 												
 											</span>
 										</div></td>
 									<td class="text-right">$ ${cartCommodity.value.commodityPrice}</td>
-									<td class="text-right">$ ${cartCommodity.value.commodityPrice*cartCommodity.key}</td>
+									<td class="text-right">$ ${cartCommodity.value.commodityPrice*cartCommodity.key.commodityCount}</td>
 								</tr>
 							</c:forEach>
 							<br>
@@ -61,7 +61,7 @@
 				<div class="col-sm-4 col-sm-offset-8">
 					<table class="table table-bordered">
 						<tbody>
-							<tr>
+						<!-- 	<tr>
 								<td class="text-right"><strong>Sub-Total:</strong></td>
 								<td class="text-right">$168.71</td>
 							</tr>
@@ -76,10 +76,10 @@
 							<tr>
 								<td class="text-right"><strong>VAT (20%):</strong></td>
 								<td class="text-right">$34.68</td>
-							</tr>
+							</tr> -->
 							<tr>
 								<td class="text-right"><strong>Total:</strong></td>
-								<td class="text-right">$213.70</td>
+								<td class="text-right">$ ${cartPriceSum}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -104,6 +104,7 @@
 $().ready(function(){
 	$(document).off('blur','#input-commodityCount-id').on('blur','#input-commodityCount-id',function(){
 		var href = $(this).attr('data-href');
+		console.log(href);
 		var commodityeCount = $(this).val();
 		console.log(commodityeCount);
 		$.ajax({
@@ -129,5 +130,23 @@ $().ready(function(){
 			}
 		});
 	}
+	$(document).off('blur','#btn-submit-delete-id').on('blur','#btn-submit-delete-id',function(){
+		var href = $(this).attr('data-href');
+		console.log(href);
+		var commodityeCount = $(this).val();
+		console.log(commodityeCount);
+		$.ajax({
+			url:href,
+			type:'post',
+			data:{commodityeCount:commodityeCount},
+			success:function(result){
+				if(result){
+					initData();
+				}
+			}
+		})
+		return false;
+	});	
+	
 });
 </script>

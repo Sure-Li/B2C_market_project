@@ -16,6 +16,7 @@ import com.sureli.b2cmarket.cart.dao.CartDao;
 import com.sureli.b2cmarket.cart.pojo.Cart;
 import com.sureli.b2cmarket.cart.service.CartService;
 import com.sureli.b2cmarket.user.pojo.User;
+import com.sureli.b2cmarket.util.ConfigUtil;
 
 /** 
  * @ClassName:CartServiceImpl 
@@ -32,8 +33,8 @@ public class CartServiceImpl implements CartService {
 	 * @return  
 	 */  
 	@Override
-	public List<Cart> finAll() {
-		return cartDao.findAll();
+	public List<Cart> finAll(String userId) {
+		return cartDao.findAll(userId);
 	}
 	/** 
 	 * @Title: save 
@@ -57,6 +58,44 @@ public class CartServiceImpl implements CartService {
 		Cart cartGet = cartDao.findByUserIdAndCommodityId(cart.getUserId(),cart.getCommodityId());
 		cartGet.setCommodityCount(cart.getCommodityCount());
 		cartGet.setCommodityPriceSum(cart.getCommodityPriceSum());
+		cartGet.setUpdateBy(user.getUserName());
+		cartGet.setUpdateDate(new Date());
+		return cartDao.update(cartGet);
+	}
+	/** 
+	 * @Title: delete 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param cart
+	 * @param userBySession
+	 * @return  
+	 */  
+	@Override
+	public Integer delete(Cart cart, User user) {
+		Cart cartGet = cartDao.findByUserIdAndCommodityId(cart.getUserId(),cart.getCommodityId());
+		cartGet.setActiveFlag(ConfigUtil.ACTIVE_FLAG_NO);
+		cartGet.setUpdateBy(user.getUserName());
+		cartGet.setUpdateDate(new Date());
+		return cartDao.update(cartGet);
+	}
+	/** 
+	 * @Title: findByUserIdAndCommodityIdfindByUserIdAndCommodityId 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param userCode
+	 * @param rowId
+	 * @return  
+	 */  
+	@Override
+	public Cart findByUserIdAndCommodityIdfindByUserIdAndCommodityId(String userCode, Long rowId) {
+		return cartDao.findByUserIdAndCommodityId(userCode,rowId.toString());
+	}
+	/** 
+	 * @Title: updateCartAddOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param cartGet
+	 * @return  
+	 */  
+	@Override
+	public Integer updateCartAddOne(Cart cartGet,User user) {
 		cartGet.setUpdateBy(user.getUserName());
 		cartGet.setUpdateDate(new Date());
 		return cartDao.update(cartGet);

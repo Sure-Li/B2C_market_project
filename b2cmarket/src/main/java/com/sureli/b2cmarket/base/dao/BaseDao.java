@@ -51,9 +51,10 @@ public interface BaseDao<T> {
 
 	/**
 	 * 
+	 * @param userId 
 	 * @Title: findAll
 	 * @Description:(返回表中所有有效的实例)
 	 * @return 返回一个list集合
 	 */
-	List<T> findAll();
+	List<T> findAll(String userId);
 }

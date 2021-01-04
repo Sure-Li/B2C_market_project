@@ -157,15 +157,17 @@ public class MarketController {
 	 */
 	@RequestMapping("cart")
 	public ModelAndView goCart(ModelAndView modelAndView,HttpSession session) {
-		List<Cart> cartList =  cartService.finAll();
-		Map<String, Commodity> cartCommodityMap = new HashMap<String, Commodity>();
+		List<Cart> cartList =  cartService.finAll(ServletUtil.getUserCodeBySession(session));
+		Map<Cart, Commodity> cartCommodityMap = new HashMap<Cart, Commodity>();
+		double cartPriceSum = 0;
 		for (Cart cart : cartList) {
-			String key = cart.getCommodityCount().toString();
 			Commodity getCommodity = commodityService.findOne(Long.parseLong(cart.getCommodityId()));
-			cartCommodityMap.put(key, getCommodity);
+			cartCommodityMap.put(cart, getCommodity);
+			cartPriceSum+=cart.getCommodityPriceSum();
 		}
 		modelAndView.addObject("userId", ServletUtil.getUserCodeBySession(session));
 		modelAndView.addObject("cartCommodityMap", cartCommodityMap);
+		modelAndView.addObject("cartPriceSum", cartPriceSum);
 		modelAndView.setViewName("market/cart");
 		return modelAndView;
 	}

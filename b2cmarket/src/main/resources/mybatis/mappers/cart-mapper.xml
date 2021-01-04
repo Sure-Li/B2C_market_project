@@ -39,6 +39,7 @@
 	</select>
 	<select id="findAll" resultType="Cart">
 		<include refid="baseSelect"></include>
+		and `user_id` = #{userId}
 	</select>
 	<select id="findByUserIdAndCommodityId" resultType="Cart">
 		<include refid="baseSelect"></include>

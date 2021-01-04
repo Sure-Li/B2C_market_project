@@ -22,7 +22,7 @@ public interface CartService {
 	 * @Description:(这里用一句话描述这个方法的作用)
 	 * @return  
 	 */ 
-	List<Cart> finAll();
+	List<Cart> finAll(String userId);
 
 	/** 
 	 * @Title: save 
@@ -40,5 +40,32 @@ public interface CartService {
 	 * @return  
 	 */ 
 	Integer update(Cart cart, User user);
+
+	/** 
+	 * @Title: delete 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param cart
+	 * @param userBySession
+	 * @return  
+	 */ 
+	Integer delete(Cart cart, User userBySession);
+
+	/** 
+	 * @Title: findByUserIdAndCommodityIdfindByUserIdAndCommodityId 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param userCode
+	 * @param rowId
+	 * @return  
+	 */ 
+	Cart findByUserIdAndCommodityIdfindByUserIdAndCommodityId(String userCode, Long rowId);
+
+	/** 
+	 * @Title: updateCartAddOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param cartGet
+	 * @param user 
+	 * @return  
+	 */ 
+	Integer updateCartAddOne(Cart cartGet, User user);
 
 }
