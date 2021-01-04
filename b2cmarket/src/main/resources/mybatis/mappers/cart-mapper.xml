@@ -22,7 +22,7 @@
 		#{updateBy}, #{updateDate});
 	</insert>
 	<update id="update">
-		PDATE `b2c_market`.`tb_cart` SET `user_id` = #{userId} ,
+		UPDATE `b2c_market`.`tb_cart` SET `user_id` = #{userId} ,
 		`commodity_id` = #{commodityId} , `commodity_count` = #{commodityCount} , `commodity_price_sum`
 		= #{commodityPriceSum} , `active_flag` = #{activeFlag} , `create_by` = #{createBy} ,
 		`create_date` = #{createDate} , `update_by` = #{updateBy} ,
@@ -40,4 +40,10 @@
 	<select id="findAll" resultType="Cart">
 		<include refid="baseSelect"></include>
 	</select>
+	<select id="findByUserIdAndCommodityId" resultType="Cart">
+		<include refid="baseSelect"></include>
+		and `user_id` = #{userId} and
+		`commodity_id` = #{commodityId} 
+	</select>
+	
 </mapper>

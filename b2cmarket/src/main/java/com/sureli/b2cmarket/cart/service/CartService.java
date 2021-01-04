@@ -9,6 +9,7 @@ package com.sureli.b2cmarket.cart.service;
 import java.util.List;
 
 import com.sureli.b2cmarket.cart.pojo.Cart;
+import com.sureli.b2cmarket.user.pojo.User;
 
 /** 
  * @ClassName:CartService 
@@ -30,5 +31,14 @@ public interface CartService {
 	 * @return  
 	 */ 
 	Integer save(Cart cart);
+
+	/** 
+	 * @Title: update 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param cart
+	 * @param user 
+	 * @return  
+	 */ 
+	Integer update(Cart cart, User user);
 
 }

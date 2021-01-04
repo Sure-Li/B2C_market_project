@@ -11,6 +11,7 @@ import java.util.Date;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,4 +46,15 @@ public class CartController {
 		System.out.println(cart);
 		return cartService.save(cart);
 	}
+//	cart/edit/${cartCommodity.value.rowId}/${userId}
+	@PostMapping("/edit/{rowId}/{userId}/{commodityPrice}")
+	public Integer update(@PathVariable String rowId,@PathVariable String userId,@PathVariable Double commodityPrice,Integer commodityeCount,HttpSession session) {
+		System.out.println("@PathVariable Long rowId"+rowId);
+		System.out.println("@PathVariable String userId"+userId);
+		System.out.println("Integer commodityeCount"+commodityeCount);
+		
+		Cart cart= new Cart(userId, rowId, commodityeCount, commodityPrice*commodityeCount);
+		return cartService.update(cart,ServletUtil.getUserBySession(session));
+	}
+	
 }

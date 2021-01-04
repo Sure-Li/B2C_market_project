@@ -32,13 +32,12 @@
 									<td class="text-left"><a href="product">${cartCommodity.value.commodityName}</a><br /></td>
 									<td class="text-left">${cartCommodity.value.commodityInfo}</td>
 									<td class="text-left" width="200px"><div class="input-group btn-block quantity">
-											<input type="text" name="quantity" value="${cartCommodity.key}" size="1" class="form-control" /> <span class="input-group-btn">
-												<button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary">
-													<i class="fa fa-clone"></i>
-												</button>
-												<button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" onClick="">
+											<input type="text" name="quantity" value="${cartCommodity.key}" size="1" class="form-control" data-href="cart/edit/${cartCommodity.value.rowId}/${userId}/${cartCommodity.value.commodityPrice}" id="input-commodityCount-id" />
+											 <span class="input-group-btn">
+												<button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" id="btn-submit-delete-id">
 													<i class="fa fa-times-circle"></i>
 												</button>
+												
 											</span>
 										</div></td>
 									<td class="text-right">$ ${cartCommodity.value.commodityPrice}</td>
@@ -101,3 +100,34 @@
 	</div>
 </div>
 <!-- //Main Container -->
+<script type="text/javascript">
+$().ready(function(){
+	$(document).off('blur','#input-commodityCount-id').on('blur','#input-commodityCount-id',function(){
+		var href = $(this).attr('data-href');
+		var commodityeCount = $(this).val();
+		console.log(commodityeCount);
+		$.ajax({
+			url:href,
+			type:'post',
+			data:{commodityeCount:commodityeCount},
+			success:function(result){
+				if(result){
+					initData();
+				}
+			}
+		})
+		return false;
+	});	
+	function initData(){
+		$.ajax({
+			url:'cart',
+			type:'get',
+			success:function(data){
+				if(data){
+					$('#marketMainContainerId').html(data);
+				}
+			}
+		});
+	}
+});
+</script>

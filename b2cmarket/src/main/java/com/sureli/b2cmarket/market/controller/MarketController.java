@@ -38,6 +38,7 @@ import com.sureli.b2cmarket.market.service.MarketService;
 import com.sureli.b2cmarket.user.pojo.User;
 import com.sureli.b2cmarket.user.service.UserService;
 import com.sureli.b2cmarket.util.ConfigUtil;
+import com.sureli.b2cmarket.util.ServletUtil;
 
 /**
  * @ClassName:MarketController
@@ -155,7 +156,7 @@ public class MarketController {
 	 * @return
 	 */
 	@RequestMapping("cart")
-	public ModelAndView goCart(ModelAndView modelAndView) {
+	public ModelAndView goCart(ModelAndView modelAndView,HttpSession session) {
 		List<Cart> cartList =  cartService.finAll();
 		Map<String, Commodity> cartCommodityMap = new HashMap<String, Commodity>();
 		for (Cart cart : cartList) {
@@ -163,6 +164,7 @@ public class MarketController {
 			Commodity getCommodity = commodityService.findOne(Long.parseLong(cart.getCommodityId()));
 			cartCommodityMap.put(key, getCommodity);
 		}
+		modelAndView.addObject("userId", ServletUtil.getUserCodeBySession(session));
 		modelAndView.addObject("cartCommodityMap", cartCommodityMap);
 		modelAndView.setViewName("market/cart");
 		return modelAndView;
