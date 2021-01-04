@@ -23,4 +23,12 @@ public interface CartService {
 	 */ 
 	List<Cart> finAll();
 
+	/** 
+	 * @Title: save 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param cart
+	 * @return  
+	 */ 
+	Integer save(Cart cart);
+
 }

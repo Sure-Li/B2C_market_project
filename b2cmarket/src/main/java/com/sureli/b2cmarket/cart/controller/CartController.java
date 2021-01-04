@@ -6,13 +6,43 @@
  */ 
 package com.sureli.b2cmarket.cart.controller;
 
-import org.springframework.stereotype.Controller;
+import java.util.Date;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sureli.b2cmarket.cart.pojo.Cart;
+import com.sureli.b2cmarket.cart.service.CartService;
+import com.sureli.b2cmarket.commodity.pojo.Commodity;
+import com.sureli.b2cmarket.commodity.service.CommodityService;
+import com.sureli.b2cmarket.util.ConfigUtil;
+import com.sureli.b2cmarket.util.ServletUtil;
 
 /** 
  * @ClassName:CartController 
  * @Description:(这里用一句话描述这个类的作用)  
  */
-@Controller
+@RestController
+@RequestMapping("/cart")
 public class CartController {
+	@Autowired
+	private CartService cartService;
+	@Autowired
+	private CommodityService commodityService;
 
+	@PostMapping("/add")
+	public Integer goAddCart(Long rowId,HttpSession session) {
+		System.out.println(rowId);
+		Commodity commodityGet = commodityService.findOne(rowId);
+		Cart cart = new Cart(ServletUtil.getUserCodeBySession(session), rowId.toString(), 1, commodityGet.getCommodityPrice());
+		cart.setActiveFlag(ConfigUtil.ACTIVE_FLAG_YES);
+		cart.setCreateBy(ServletUtil.getUserBySession(session).getUserName());
+		cart.setCreateDate(new Date());
+		System.out.println(cart);
+		return cartService.save(cart);
+	}
 }

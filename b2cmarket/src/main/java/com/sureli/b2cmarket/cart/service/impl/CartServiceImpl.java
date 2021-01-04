@@ -33,5 +33,15 @@ public class CartServiceImpl implements CartService {
 	public List<Cart> finAll() {
 		return cartDao.findAll();
 	}
+	/** 
+	 * @Title: save 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param cart
+	 * @return  
+	 */  
+	@Override
+	public Integer save(Cart cart) {
+		return cartDao.save(cart);
+	}
 
 }
