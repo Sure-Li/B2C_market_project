@@ -531,70 +531,8 @@
 										<div class="container-mega">
 											<ul class="megamenu" data-transition="slide" data-animationtime="250">
 												<li><a href="index">Home</a></li>
-												<li class="with-sub-menu hover">
-													<p class="close-menu"></p> <a href="#" class="clearfix"> <strong>Features</strong> <img class="label-hot" src="image/catalog/menu/new-icon.png" alt="icon items"> <b class="caret"></b>
-												</a>
-													<div class="sub-menu" style="width: 100%; right: auto;">
-														<div class="content">
-															<div class="row">
-																<div class="col-md-3">
-																	<div class="column">
-																		<a href="#" class="title-submenu">Listing pages</a>
-																		<div>
-																			<ul class="row-list">
-																				<li><a href="category" id="headerCatagoryId">Category Page 1 </a></li>
-																				<li><a href="category-v2.html">Category Page 2</a></li>
-																				<li><a href="category-v3.html">Category Page 3</a></li>
-																			</ul>
-
-																		</div>
-																	</div>
-																</div>
-																<div class="col-md-3">
-																	<div class="column">
-																		<a href="#" class="title-submenu">Product pages</a>
-																		<div>
-																			<ul class="row-list">
-																				<li><a href="product" id="goProductId">Product page 1</a></li>
-																				<li><a href="product-v2.html">Product page 2</a></li>
-																				<!-- <li><a href="product-v3.html">Image size - small</a></li> -->
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-md-3">
-																	<div class="column">
-																		<a href="#" class="title-submenu">Shopping pages</a>
-																		<div>
-																			<ul class="row-list">
-																				<li><a href="cart">Shopping Cart Page</a></li>
-																				<li><a href="checkout">Checkout Page</a></li>
-																				<li><a href="compare.html">Compare Page</a></li>
-																				<li><a href="wishlist">Wishlist Page</a></li>
-
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-md-3">
-																	<div class="column">
-																		<a href="#" class="title-submenu">My Account pages</a>
-																		<div>
-																			<ul class="row-list">
-																				<li><a href="login">Login Page</a></li>
-																				<li><a href="register">Register Page</a></li>
-																				<li><a href="my-account.html">My Account</a></li>
-																				<li><a href="order-history.html">Order History</a></li>
-																				<li><a href="order-information.html">Order Information</a></li>
-																				<li><a href="return.html">Product Returns</a></li>
-																				<li><a href="gift-voucher.html">Gift Voucher</a></li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
+												<li >
+													<a href="category" id="headerCatagoryId" class="clearfix"> <strong>category</strong> <img class="label-hot" src="image/catalog/menu/new-icon.png" alt="icon items"></a>
 												</li>
 												<li class="with-sub-menu hover">
 													<p class="close-menu"></p> <a href="#" class="clearfix"> <strong>Pages</strong> <b class="caret"></b>
