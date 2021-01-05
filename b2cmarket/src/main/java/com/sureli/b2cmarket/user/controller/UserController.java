@@ -111,7 +111,7 @@ public class UserController {
 		Map<Cart, Commodity> cartCommodityMap = new HashMap<Cart, Commodity>();
 		double cartPriceSum = 0;
 		// 已经登录
-		if (userGet.getUserCode() != null && userGet.getIsLock() != UserUtil.USER_IS_LOCK_YES) {
+		if (userGet != null && userGet.getIsLock() != UserUtil.USER_IS_LOCK_YES) {
 			List<Cart> cartList = cartService.finAll(userGet.getUserCode());
 			for (Cart cart : cartList) {
 				Commodity getCommodity = commodityService.findOne(Long.parseLong(cart.getCommodityId()));
@@ -134,7 +134,7 @@ public class UserController {
 	public String doExit(HttpServletRequest request) {
 		HttpSession session = null;
 		session = request.getSession();
-		session.setAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME, new User());
+		session.setAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME,null);
 		return "success";
 	}
 }
