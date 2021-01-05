@@ -130,7 +130,7 @@ $().ready(function(){
 			}
 		});
 	}
-	$(document).off('blur','#btn-submit-delete-id').on('blur','#btn-submit-delete-id',function(){
+	$(document).off('click','#btn-submit-delete-id').on('click','#btn-submit-delete-id',function(){
 		var href = $(this).attr('data-href');
 		console.log(href);
 		var commodityeCount = $(this).val();

@@ -22,7 +22,9 @@ public class ConfigUtil {
 	public static final String COOKIE_NAME = "sureli.b2cmarket.cookie";
 	public static final String COOKIE_VALUE_SPLIT = "~##~";
 	public static final String LOGINOUT_ISREMENBER = "isRemenber";
-
+	public static final String SESSION_USER_CART_MAP = "userCartMap";
+	public static final String SESSION_USER_CART_PRICE_SUM = "userCartPriceSum";
+	
 	public static final int ACTIVE_FLAG_YES = 1;
 	public static final int ACTIVE_FLAG_NO = 0;
 

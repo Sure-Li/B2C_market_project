@@ -118,39 +118,55 @@
 
 							<a data-loading-text="Loading... " class="btn-group top_cart dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 								<div class="shopcart">
-									<span class="icon-c"> <i class="fa fa-shopping-bag"></i>
+									<span class="icon-c" id="span-cart-incon-id"> <i class="fa fa-shopping-bag"></i>
 									</span>
 									<div class="shopcart-inner">
 										<p class="text-shopping-cart">My cart</p>
 
-										<span class="total-shopping-cart cart-total-full"> <span class="items_cart">02</span><span class="items_cart2"> item(s)</span><span class="items_carts">( $162.00 )</span>
+										<!-- <span class="total-shopping-cart cart-total-full"> <span class="items_cart">02</span><span class="items_cart2"> item(s)</span><span class="items_carts">( $162.00 )</span> -->
 										</span>
 									</div>
 								</div>
 							</a>
 
-							<ul class="dropdown-menu pull-right shoppingcart-box" role="menu">
+							<ul class="dropdown-menu pull-right shoppingcart-box" role="menu" id="tbody-cart-show-id">
 								<li>
 									<table class="table table-striped">
 										<tbody>
-											<tr>
-												<td class="text-center" style="width: 70px"><a href="product"> <img src="image/catalog/demo/product/80/1.jpg" style="width: 70px" alt="Yutculpa ullamcon" title="Yutculpa ullamco" class="preview">
-												</a></td>
-												<td class="text-left"><a class="cart_product_name" href="product">Yutculpa ullamco</a></td>
-												<td class="text-center">x1</td>
-												<td class="text-center">$80.00</td>
-												<td class="text-right"><a href="product" class="fa fa-edit"></a></td>
-												<td class="text-right"><a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a></td>
-											</tr>
-											<tr>
-												<td class="text-center" style="width: 70px"><a href="product"> <img src="image/catalog/demo/product/80/2.jpg" style="width: 70px" alt="Xancetta bresao" title="Xancetta bresao" class="preview">
-												</a></td>
-												<td class="text-left"><a class="cart_product_name" href="product">Xancetta bresao</a></td>
-												<td class="text-center">x1</td>
-												<td class="text-center">$60.00</td>
-												<td class="text-right"><a href="product" class="fa fa-edit"></a></td>
-												<td class="text-right"><a onclick="cart.remove('1');" class="fa fa-times fa-delete"></a></td>
-											</tr>
+											<c:if test="${!empty sessionScope.userCartMap}">
+												<c:forEach items="${sessionScope.userCartMap}" var="cartCommodity">
+													<%-- key=${cartCommodity.key},value=${cartCommodity.value} --%>
+													<%-- <tr>
+														<td class="text-center"><a href="product"><img width="70px" src="${cartCommodity.value.commodityPhoto}" alt="Aspire Ultrabook Laptop" title="Aspire Ultrabook Laptop" class="img-thumbnail" /></a></td>
+														<td class="text-left"><a href="product">${cartCommodity.value.commodityName}</a><br /></td>
+														<td class="text-left">${cartCommodity.value.commodityInfo}</td>
+														<td class="text-left" width="200px"><div class="input-group btn-block quantity">
+																<input type="text" name="quantity" value="${cartCommodity.key.commodityCount}" size="1" class="form-control" data-href="cart/edit/${cartCommodity.value.rowId}/${userId}/${cartCommodity.value.commodityPrice}" id="input-commodityCount-id" /> <span class="input-group-btn">
+																	<button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" data-href="cart/delete/${cartCommodity.value.rowId}/${userId}/${cartCommodity.value.commodityPrice}" id="btn-submit-delete-id">
+																		<i class="fa fa-times-circle"></i>
+																	</button>
+
+																</span>
+															</div></td>
+														<td class="text-right">$ ${cartCommodity.value.commodityPrice}</td>
+														<td class="text-right">$ ${cartCommodity.value.commodityPrice*cartCommodity.key.commodityCount}</td>
+													</tr> --%>
+													<tr>
+														<td class="text-center" style="width: 70px"><a href="product"> <img src="${cartCommodity.value.commodityPhoto}" style="width: 70px" alt="Yutculpa ullamcon" title="Yutculpa ullamco" class="preview">
+														</a></td>
+														<td class="text-left"><a class="cart_product_name" href="product">${cartCommodity.value.commodityName}</a></td>
+														<td class="text-center">x ${cartCommodity.key.commodityCount}</td>
+														<td class="text-center">$ ${cartCommodity.value.commodityPrice}</td>
+														<!-- <td class="text-right"><a href="product" class="fa fa-edit"></a></td>
+														<td class="text-right"><a onclick="cart.remove('2');" class="fa fa-times fa-delete"></a></td> -->
+													</tr>
+												</c:forEach>
+												<br>
+											</c:if>
+											<c:if test="${empty sessionScope.userCartMap}">
+												<h1 style="color: red;">暂无数据</h1>
+											</c:if>
+
 										</tbody>
 									</table>
 								</li>
@@ -159,20 +175,8 @@
 										<table class="table table-bordered">
 											<tbody>
 												<tr>
-													<td class="text-left"><strong>Sub-Total</strong></td>
-													<td class="text-right">$140.00</td>
-												</tr>
-												<tr>
-													<td class="text-left"><strong>Eco Tax (-2.00)</strong></td>
-													<td class="text-right">$2.00</td>
-												</tr>
-												<tr>
-													<td class="text-left"><strong>VAT (20%)</strong></td>
-													<td class="text-right">$20.00</td>
-												</tr>
-												<tr>
 													<td class="text-left"><strong>Total</strong></td>
-													<td class="text-right">$162.00</td>
+													<td class="text-right">$ ${sessionScope.userCartPriceSum}</td>
 												</tr>
 											</tbody>
 										</table>
@@ -235,18 +239,18 @@
 										<span id="remove-verticalmenu" class="fa fa-times"></span>
 										<div class="megamenu-pattern">
 											<div class="container-mega">
-											<ul class="megamenu" id="megamenuId">
-												<c:if test="${!empty catalogueList}">
-													<c:forEach items="${catalogueList}" var="catalogue">
-														<li class="item-vertical" style="display: true;">
-															<p class="close-menu"></p> <a href="#" class="clearfix"> <img src="image/catalog/menu/icons/ico6.png" alt="icon"> <span>${catalogue.catalogueName }</span>
-														</a>
-														</li>
-														
-													</c:forEach>
-													<!-- <li class="loadmore"><i class="fa fa-plus-square-o"></i> <span class="more-view">More Categories</span></li> -->
-												</c:if>
-											</ul>
+												<ul class="megamenu" id="megamenuId">
+													<c:if test="${!empty catalogueList}">
+														<c:forEach items="${catalogueList}" var="catalogue">
+															<li class="item-vertical" style="display: true;">
+																<p class="close-menu"></p> <a href="#" class="clearfix"> <img src="image/catalog/menu/icons/ico6.png" alt="icon"> <span>${catalogue.catalogueName }</span>
+															</a>
+															</li>
+
+														</c:forEach>
+														<!-- <li class="loadmore"><i class="fa fa-plus-square-o"></i> <span class="more-view">More Categories</span></li> -->
+													</c:if>
+												</ul>
 												<!-- <ul class="megamenu">
 													<li class="item-vertical  with-sub-menu hover">
 														<p class="close-menu"></p> <a href="#" class="clearfix"> <img src="image/catalog/menu/icons/ico10.png" alt="icon"> <span>test</span> <b class="fa-angle-right"></b>
@@ -526,7 +530,7 @@
 									<div class="megamenu-pattern">
 										<div class="container-mega">
 											<ul class="megamenu" data-transition="slide" data-animationtime="250">
-												<li ><a href="index">Home</a></li>
+												<li><a href="index">Home</a></li>
 												<li class="with-sub-menu hover">
 													<p class="close-menu"></p> <a href="#" class="clearfix"> <strong>Features</strong> <img class="label-hot" src="image/catalog/menu/new-icon.png" alt="icon items"> <b class="caret"></b>
 												</a>
@@ -738,8 +742,7 @@
 						</ul>
 					</div>
 					<div class="signin-w hidden-md hidden-sm hidden-xs">
-						<input type="hidden" value="${sessionScope.loginUser.userName}" id="userLoginName">
-						<input type="hidden" value="${sessionScope.loginUser.rowId}" id="userLoginRowId">
+						<input type="hidden" value="${sessionScope.loginUser.userName}" id="userLoginName"> <input type="hidden" value="${sessionScope.loginUser.rowId}" id="userLoginRowId">
 						<ul class="signin-link blank" id="showLoginUlId">
 							<li class="log login"><i class="fa fa-lock"></i> <a class="link-lg" href="login" id="headerLoginId">Login </a> or <a href="register" id="headerRegisterId">Register</a></li>
 						</ul>
