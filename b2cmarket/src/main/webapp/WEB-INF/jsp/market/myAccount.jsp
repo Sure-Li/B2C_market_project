@@ -54,16 +54,39 @@
 								<c:forEach items="${addressMycountList}" var="address">
 									<c:if test="${address.activeFlag==1}">
 										<div class="form-group required">
-										收货电话：${address.addressPhone}
-											详细地址：${address.addressDetail}
-											<a href="address/edit/${address.rowId}" id="btn-edit">修改</a> <a href="address/delete/${address.rowId}" id="btn-delete">删除</a>
-											${address.addressIsDefault==1?"<span style='color: red;'>默认地址<span/>":""}
+											收货电话：${address.addressPhone} 详细地址：${address.addressDetail} <a href="address/edit/${address.rowId}" id="btn-edit">修改</a> <a href="address/delete/${address.rowId}" id="btn-delete">删除</a> ${address.addressIsDefault==1?"<span style='color: red;'>默认地址<span/>":""}
 										</div>
-											
+
 									</c:if>
 								</c:forEach>
 							</c:if>
 							<c:if test="${empty addressMycountList}">
+								<h1 style="color: red;">暂无数据</h1>
+							</c:if>
+						</fieldset>
+						<br>
+					</div>
+					<div class="col-sm-6">
+						<fieldset id="personal-details">
+							<legend>
+								Order Manage
+							</legend>
+							<c:if test="${!empty orderList}">
+								<c:forEach items="${orderList}" var="order">
+									<c:if test="${order.activeFlag==1}">
+										<tr>
+											<td>${order.orderCode}</td>
+											<td>${order.userId}</td>
+											<td>${order.priceSum}</td>
+											<td>${order.addressId}</td>
+											<td>${order.orderState}</td>
+											<td>${order.orderPayMethod}</td>
+											<td><a href="order/edit/${order.rowId}" id="btn-edit">支付</a> <a href="order/delete/${order.rowId}" id="btn-delete">删除</a></td>
+										</tr>
+									</c:if>
+								</c:forEach>
+							</c:if>
+							<c:if test="${empty orderList}">
 								<h1 style="color: red;">暂无数据</h1>
 							</c:if>
 						</fieldset>
@@ -100,151 +123,199 @@
 </div>
 <!-- //Main Container -->
 <script type="text/javascript">
-	$(document).ready(function() {
-		var add_index = null;
-		$('#addAddressId').off('click').on('click',function(){
-			var href= $(this).attr('href');
-			console.log(href);
-			$.ajax({
-				url:href,
-				type:'get',
-				success:function(htmlData){
-					add_index = layer.open({
-		                type:1,
-		                title:"用户地址新增",
-		                area:['600px','550px'],
-		                content:htmlData,
-						success:function(layero,index){
-							 bindSubmit();	
-						}
-		            }); 
-				}
-			});
-			return false;
-		});
-		function bindSubmit(){
-			$('#btn-add-submit').off('click').on('click',function(){
-				 $.ajax({
-					type:'post',
-					url:'address',
-					data:$('#form_add').serialize(),
-					success:function(data){
-						console.log(data);
-						if(data){
-							layer.close(add_index);
-							initListData();
-						}
-					}
-				});
-				return false;
-			});
-			
-		}
-		$(document).off('change','#input-addressProviceCode').on('change','#input-addressProviceCode', function() {
-			var rowId = $(this).val();
-			$.ajax({
-				url:'register/makeCity/'+rowId,
-				method:'get',
-				success:function(data){
-						if(data){
-							$('#input-addressCityCode').html(data);
-							$('#input-addressReginCode').html('<option value="">--- Please Select ---</option>');
-						}else{
-							$('#input-addressCityCode').html('<option>---已经是最底部---<option/>');
-						}
-					}
-			})
-		});
-		$(document).off('change','#input-addressCityCode').on('change','#input-addressCityCode', function() {
-			var rowId = $(this).val();
-			$.ajax({
-				url:'register/makeRegin/'+rowId,
-				method:'get',
-				success:function(data){
-						if(data){
-							$('#input-addressReginCode').html(data);
-						}else{
-							$('#input-addressReginCode').html('<option>---已经是最底部---<option/>');
-						}
-					}
-			})
-		});
-		$(document).off('click','#btn-delete').on('click','#btn-delete',function(){
-			console.log("btn-delete");
-			var href = $(this).attr('href');
-			console.log(href);
-			layer.alert('',{
-	                icon:2,
-	                area:['200px','200px'],
-	                title:'地址删除',
-	                content:'您确定要删除吗？',
-	                closeBtn:1},
-	                function(index){
-						$.ajax({
-							url:href,
-							method:'get',
-							success:function(data){
-								if(data==1){
-									initListData();
+	$(document)
+			.ready(
+					function() {
+						var add_index = null;
+						$('#addAddressId').off('click').on('click', function() {
+							var href = $(this).attr('href');
+							console.log(href);
+							$.ajax({
+								url : href,
+								type : 'get',
+								success : function(htmlData) {
+									add_index = layer.open({
+										type : 1,
+										title : "用户地址新增",
+										area : [ '600px', '550px' ],
+										content : htmlData,
+										success : function(layero, index) {
+											bindSubmit();
+										}
+									});
 								}
-							}
+							});
+							return false;
 						});
-	                    layer.close(index);
-	                }); 
-			return false;
-		});
-		function initListData(){
-			$.ajax({
-				url:'myAccount',
-				type:'get',
-				data:{rowId:$('#rowIdForInitFunction').val()},
-				success:function(data){
-					if(data){
-						$('#marketMainContainerId').html(data);
-					}
-				}
-			});
-		}
-		/* edit */
-		var editIndex = null;
-		function bindEditSubmit(){
-			$('#btn-edit-submit').off('click').on('click',function(){
-				$.ajax({
-					type:'get',
-					url:'address/doedit',
-					data:$('#form_edit').serialize(),
-					success:function(data){
-						console.log(data);
-						if(data){
-							layer.close(editIndex);
-							initListData();
+						function bindSubmit() {
+							$('#btn-add-submit').off('click').on('click',
+									function() {
+										$.ajax({
+											type : 'post',
+											url : 'address',
+											data : $('#form_add').serialize(),
+											success : function(data) {
+												console.log(data);
+												if (data) {
+													layer.close(add_index);
+													initListData();
+												}
+											}
+										});
+										return false;
+									});
+
 						}
-					}
-				});
-				return false;
-			});
-		}
-		$(document).off('click','#btn-edit').on('click','#btn-edit',function(){
-			console.log("btn-edit");
-			var href = $(this).attr('href');
-			console.log(href);
-			$.ajax({
-				url:href,
-				type:'GET',
-				success:function(result){
-				editIndex=layer.open({
-	                    type:1,
-	                    title:"用户修改",
-	                    area:['600px','550px'],
-	                    content:result,
-						success:function(data){
-							console.log("bindEditSubmit();");
-							bindEditSubmit();
+						$(document)
+								.off('change', '#input-addressProviceCode')
+								.on(
+										'change',
+										'#input-addressProviceCode',
+										function() {
+											var rowId = $(this).val();
+											$
+													.ajax({
+														url : 'register/makeCity/'
+																+ rowId,
+														method : 'get',
+														success : function(data) {
+															if (data) {
+																$(
+																		'#input-addressCityCode')
+																		.html(
+																				data);
+																$(
+																		'#input-addressReginCode')
+																		.html(
+																				'<option value="">--- Please Select ---</option>');
+															} else {
+																$(
+																		'#input-addressCityCode')
+																		.html(
+																				'<option>---已经是最底部---<option/>');
+															}
+														}
+													})
+										});
+						$(document)
+								.off('change', '#input-addressCityCode')
+								.on(
+										'change',
+										'#input-addressCityCode',
+										function() {
+											var rowId = $(this).val();
+											$
+													.ajax({
+														url : 'register/makeRegin/'
+																+ rowId,
+														method : 'get',
+														success : function(data) {
+															if (data) {
+																$(
+																		'#input-addressReginCode')
+																		.html(
+																				data);
+															} else {
+																$(
+																		'#input-addressReginCode')
+																		.html(
+																				'<option>---已经是最底部---<option/>');
+															}
+														}
+													})
+										});
+						$(document).off('click', '#btn-delete').on('click',
+								'#btn-delete', function() {
+									console.log("btn-delete");
+									var href = $(this).attr('href');
+									console.log(href);
+									layer.alert('', {
+										icon : 2,
+										area : [ '200px', '200px' ],
+										title : '地址删除',
+										content : '您确定要删除吗？',
+										closeBtn : 1
+									}, function(index) {
+										$.ajax({
+											url : href,
+											method : 'get',
+											success : function(data) {
+												if (data == 1) {
+													initListData();
+												}
+											}
+										});
+										layer.close(index);
+									});
+									return false;
+								});
+						function initListData() {
+							$.ajax({
+								url : 'myAccount',
+								type : 'get',
+								data : {
+									rowId : $('#rowIdForInitFunction').val()
+								},
+								success : function(data) {
+									if (data) {
+										$('#marketMainContainerId').html(data);
+									}
+								}
+							});
 						}
-	                }); 
-				}
-			});
-			return false;
-		});
-	});
+						/* edit */
+						var editIndex = null;
+						function bindEditSubmit() {
+							$('#btn-edit-submit').off('click').on('click',
+									function() {
+										$.ajax({
+											type : 'get',
+											url : 'address/doedit',
+											data : $('#form_edit').serialize(),
+											success : function(data) {
+												console.log(data);
+												if (data) {
+													layer.close(editIndex);
+													initListData();
+												}
+											}
+										});
+										return false;
+									});
+						}
+						$(document)
+								.off('click', '#btn-edit')
+								.on(
+										'click',
+										'#btn-edit',
+										function() {
+											console.log("btn-edit");
+											var href = $(this).attr('href');
+											console.log(href);
+											$
+													.ajax({
+														url : href,
+														type : 'GET',
+														success : function(
+																result) {
+															editIndex = layer
+																	.open({
+																		type : 1,
+																		title : "用户修改",
+																		area : [
+																				'600px',
+																				'550px' ],
+																		content : result,
+																		success : function(
+																				data) {
+																			console
+																					.log("bindEditSubmit();");
+																			bindEditSubmit();
+																		}
+																	});
+														}
+													});
+											return false;
+										});
+					});
 </script>

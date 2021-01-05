@@ -6,8 +6,11 @@
  */ 
 package com.sureli.b2cmarket.order.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +23,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sureli.b2cmarket.order.pojo.Order;
 import com.sureli.b2cmarket.order.service.OrderService;
+import com.sureli.b2cmarket.util.ConfigUtil;
+import com.sureli.b2cmarket.util.ServletUtil;
 
 /** 
  * @ClassName:OrderController 
@@ -71,5 +76,14 @@ public class OrderController {
 	public Integer doUserEdit(Order order) {
 		int result = orderService.update(order);
 		return result;	
+	}
+	@ResponseBody
+	@PostMapping("/add")
+	public ModelAndView doAdd(double priceSum,Integer addressId,Integer orderPayMethod,ModelAndView modelAndView,HttpSession session){
+		System.out.println("priceSum"+priceSum+"addressId"+addressId+"orderPayMethod"+orderPayMethod);
+		Order order = new Order(new SimpleDateFormat("yyyyMMdd").format(new Date())+ConfigUtil.numHandle(Order.orderCodeCount++), ServletUtil.getUserCodeBySession(session), priceSum, addressId.toString(), 1, orderPayMethod);
+		order.setCreateBy(ServletUtil.getUserBySession(session).getUserName());
+		Integer result = orderService.save(order);
+		return modelAndView;
 	}
 }

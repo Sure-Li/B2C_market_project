@@ -21,7 +21,7 @@
 							</h4>
 						</div>
 						<div class="panel-body">
-							<select class="form-control">
+							<select class="form-control" id="select-order-adress-id">
 								<c:if test="${!empty addressMycountList}">
 									<option value="">--- Please Select ---</option>
 									<c:forEach items="${addressMycountList}" var="address">
@@ -80,19 +80,19 @@
 									<div class="panel-body">
 										<p>Please select the preferred payment method to use on this order.</p>
 										<div class="radio">
-											<label> <input type="radio" checked="checked" value="1" name="orderPayMethod">Cash On Delivery
+											<label> <input type="radio" checked="checked" value="1" name="orderPayMethod" id="orderPayMethodCash">Cash On Delivery
 											</label>
 										</div>
 										<div class="radio">
-											<label> <input type="radio" value="2" name="orderPayMethod">WeChat
+											<label> <input type="radio" value="2" name="orderPayMethod" id="orderPayMethodWeChat">WeChat
 											</label>
 										</div>
 										<div class="radio">
-											<label> <input type="radio" value="3" name="orderPayMethod">AliPay
+											<label> <input type="radio" value="3" name="orderPayMethod" id="orderPayMethodAliPay">AliPay
 											</label>
 										</div>
 										<div class="radio">
-											<label> <input type="radio" value="4" name="orderPayMethod">Credit Card 
+											<label> <input type="radio" value="4" name="orderPayMethod" id="orderPayMethodCreditCard">Credit Card 
 											</label>
 										</div>
 									</div>
@@ -158,7 +158,7 @@
 													<tbody>
 														<tr>
 															<td class="text-right"><strong>Total:</strong></td>
-															<td class="text-right">$ ${cartPriceSum}</td>
+															<td class="text-right">$ <span  id="cartPriceSumId">${cartPriceSum}</span></td>
 														</tr>
 													</tbody>
 												</table>
@@ -185,3 +185,35 @@
 	</div>
 </div>
 <!-- //Main Container -->
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#button-confirm').off('click').on('click',function(){
+		console.log('111');
+		console.log($('#select-order-adress-id').val());
+		console.log($('input:radio[name="orderPayMethod"]:checked').val());
+		console.log($('#cartPriceSumId').html());
+		$.ajax({
+			url:'order/add',
+			type:'post',
+			data:{priceSum:$('#cartPriceSumId').html(),addressId:$('#select-order-adress-id').val(),orderPayMethod:$('input:radio[name="orderPayMethod"]:checked').val()},
+			success:function(data){
+				/* if(data){
+					$('#marketMainContainerId').html(data);
+				} */
+				console.log($('#userLoginRowId').val());
+				$.ajax({
+					url:'myAccount',
+					type:'get',
+					data:{rowId:$('#userLoginRowId').val()},
+					success:function(data){
+						if(data){
+							$('#marketMainContainerId').html(data);
+						}
+					}
+				});
+			}
+		});
+		return false;
+	});
+});
+</script>

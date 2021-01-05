@@ -35,6 +35,8 @@ import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
 import com.sureli.b2cmarket.commodity.pojo.Commodity;
 import com.sureli.b2cmarket.commodity.service.CommodityService;
 import com.sureli.b2cmarket.market.service.MarketService;
+import com.sureli.b2cmarket.order.pojo.Order;
+import com.sureli.b2cmarket.order.service.OrderService;
 import com.sureli.b2cmarket.user.pojo.User;
 import com.sureli.b2cmarket.user.service.UserService;
 import com.sureli.b2cmarket.util.ConfigUtil;
@@ -58,6 +60,8 @@ public class MarketController {
 	private CartService cartService;
 	@Autowired
 	private CommodityService commodityService;
+	@Autowired
+	private OrderService orderService;
 	
 	/**
 	 * 
@@ -99,12 +103,14 @@ public class MarketController {
 	 */
 	@ResponseBody
 	@GetMapping("myAccount")
-	public ModelAndView goMyAccount(ModelAndView modelAndView, Long rowId) {
+	public ModelAndView goMyAccount(ModelAndView modelAndView, Long rowId,HttpSession session) {
 		System.out.println(rowId);
 		User userMyCount = userService.findOne(rowId);
 		List<Address> addressMycountList = addressService.findByUserId(rowId);
-		System.out.println("addressMycountList" + addressMycountList);
-		System.out.println("userMyCount" + userMyCount);
+		Order searchOrder = new Order();
+		searchOrder.setUserId(ServletUtil.getUserCodeBySession(session));
+		List<Order> orderList=orderService.findBySearch(searchOrder);
+		modelAndView.addObject("orderList", orderList);
 		modelAndView.addObject("addressMycountList", addressMycountList);
 		modelAndView.addObject("userMyCount", userMyCount);
 		modelAndView.setViewName("market/myAccount");

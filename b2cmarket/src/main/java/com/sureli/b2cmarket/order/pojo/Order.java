@@ -23,7 +23,7 @@ import lombok.Setter;
 public class Order extends BaseClass {
 
 	private static final long serialVersionUID = 1L;
-	public static int orderCodeCount = 2;
+	public static int orderCodeCount = 1;
 	// 订单编号
 	private String orderCode;
 	// 用户ID

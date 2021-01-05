@@ -49,4 +49,12 @@ public interface OrderService {
 	 */ 
 	int update(Order order);
 
+	/** 
+	 * @Title: save 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param order
+	 * @return  
+	 */ 
+	Integer save(Order order);
+
 }

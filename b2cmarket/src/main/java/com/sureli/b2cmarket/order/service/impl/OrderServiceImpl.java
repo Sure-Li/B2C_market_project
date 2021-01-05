@@ -75,6 +75,18 @@ public class OrderServiceImpl implements OrderService {
 		orderGet.setUpdateDate(new Date());
 		return orderDao.update(orderGet);
 	}
+	/** 
+	 * @Title: save 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param order
+	 * @return  
+	 */  
+	@Override
+	public Integer save(Order order) {
+		order.setActiveFlag(ConfigUtil.ACTIVE_FLAG_YES);
+		order.setCreateDate(new Date());
+		return orderDao.save(order);
+	}
 
 	
 }
