@@ -91,7 +91,7 @@
 					<a href="index" class="btn btn-primary">Continue Shopping</a>
 				</div>
 				<div class="pull-right">
-					<a href="checkout" class="btn btn-primary">Checkout</a>
+					<a href="checkout" class="btn btn-primary" id="btn-checkout-id">Checkout</a>
 				</div>
 			</div>
 		</div>
@@ -147,6 +147,19 @@ $().ready(function(){
 		})
 		return false;
 	});	
-	
+	$(document).off('click','#btn-checkout-id').on('click','#btn-checkout-id', function() {
+		var href = $(this).attr('href');
+		console.log(href);
+		$.ajax({
+			url:href,
+			type:'get',
+			success:function(data){
+				if(data){
+					$('#marketMainContainerId').html(data);
+				}
+			}
+		});
+		return false;
+	});
 });
 </script>

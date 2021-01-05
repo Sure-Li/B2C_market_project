@@ -2,6 +2,7 @@ package com.sureli.b2cmarket.util;
 
 import java.util.List;
 
+
 import com.sureli.b2cmarket.catalogue.pojo.Catalogue;
 
 /**
@@ -40,5 +41,20 @@ public class ConfigUtil {
 			}
 		}
 		return itemCatsAfterList;
+	}
+	public static String numHandle(int num) {
+		String result;
+		if(num<10) {
+			result="0000"+num;
+		}else if(num<100&&10<num) {
+			result="000"+num;
+		}else if(num<1000&&100<num) {
+			result="00"+num;
+		}else if(num<10000&&100<num) {
+			result="0"+num;
+		}else {
+			result=""+num;
+		}
+		return result;
 	}
 }

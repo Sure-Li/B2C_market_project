@@ -197,7 +197,20 @@ public class MarketController {
 	 * @return
 	 */
 	@RequestMapping("checkout")
-	public ModelAndView goCheckout(ModelAndView modelAndView) {
+	public ModelAndView goCheckout(ModelAndView modelAndView,HttpSession session) {
+		List<Cart> cartList =  cartService.finAll(ServletUtil.getUserCodeBySession(session));
+		Map<Cart, Commodity> cartCommodityMap = new HashMap<Cart, Commodity>();
+		double cartPriceSum = 0;
+		for (Cart cart : cartList) {
+			Commodity getCommodity = commodityService.findOne(Long.parseLong(cart.getCommodityId()));
+			cartCommodityMap.put(cart, getCommodity);
+			cartPriceSum+=cart.getCommodityPriceSum();
+		}
+		List<Address> addressMycountList = addressService.findByUserId(ServletUtil.getUserBySession(session).getRowId());
+		modelAndView.addObject("addressMycountList", addressMycountList);
+		modelAndView.addObject("userId", ServletUtil.getUserCodeBySession(session));
+		modelAndView.addObject("cartCommodityMap", cartCommodityMap);
+		modelAndView.addObject("cartPriceSum", cartPriceSum);
 		modelAndView.setViewName("market/checkout");
 		return modelAndView;
 	}
