@@ -6,7 +6,6 @@
  */
 package com.sureli.b2cmarket.user.controller;
 
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,11 +57,11 @@ public class UserController {
 	 */
 	@ResponseBody
 	@PostMapping("doRegister")
-	public ModelAndView doRegister(User user,Address address,ModelAndView modelAndView) {
-		System.out.println("userget:"+user);
-		System.out.println("address:"+address);
+	public ModelAndView doRegister(User user, Address address, ModelAndView modelAndView) {
+		System.out.println("userget:" + user);
+		System.out.println("address:" + address);
 		user.setUserType(UserUtil.USER_TYPE_BUYER);
-		userService.doRegister(user,address);
+		userService.doRegister(user, address);
 		modelAndView.setViewName("market/login");
 		return modelAndView;
 	}
@@ -81,46 +80,53 @@ public class UserController {
 		String result = "";
 		User userGet = userService.findUserByCodeAndPassword(userCode, userPassword);
 		HttpSession session = null;
-		//登录成功
+		// 登录成功
 		if (userGet != null && userGet.getIsLock() != UserUtil.USER_IS_LOCK_YES) {
 			session = request.getSession();
 			session.setAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME, userGet);
-			List<Cart> cartList =  cartService.finAll(userGet.getUserCode());
+			List<Cart> cartList = cartService.finAll(userGet.getUserCode());
 			Map<Cart, Commodity> cartCommodityMap = new HashMap<Cart, Commodity>();
 			double cartPriceSum = 0;
 			for (Cart cart : cartList) {
 				Commodity getCommodity = commodityService.findOne(Long.parseLong(cart.getCommodityId()));
 				cartCommodityMap.put(cart, getCommodity);
-				cartPriceSum+=cart.getCommodityPriceSum();
+				cartPriceSum += cart.getCommodityPriceSum();
 			}
 			session.setAttribute(ConfigUtil.SESSION_USER_CART_MAP, cartCommodityMap);
 			session.setAttribute(ConfigUtil.SESSION_USER_CART_PRICE_SUM, cartPriceSum);
-			
+
 			result = ConfigUtil.FUNCTION_SUCCESS;
-		}else {//登陆失败
+		} else {// 登陆失败
 			result = ConfigUtil.FUNCTION_FAIL;
 		}
 		return result;
 	}
+
 	@ResponseBody
 	@GetMapping("showUserCart")
-	public ModelAndView doShowUserCart(ModelAndView modelAndView,HttpServletRequest request) {
+	public ModelAndView doShowUserCart(ModelAndView modelAndView, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		User userGet = ServletUtil.getUserBySession(session);
-		//已经登录
-		if (userGet != null && userGet.getIsLock() != UserUtil.USER_IS_LOCK_YES) {
-			List<Cart> cartList =  cartService.finAll(userGet.getUserCode());
-			Map<Cart, Commodity> cartCommodityMap = new HashMap<Cart, Commodity>();
-			double cartPriceSum = 0;
+		System.out.println(userGet);
+		Map<Cart, Commodity> cartCommodityMap = new HashMap<Cart, Commodity>();
+		double cartPriceSum = 0;
+		// 已经登录
+		if (userGet.getUserCode() != null && userGet.getIsLock() != UserUtil.USER_IS_LOCK_YES) {
+			List<Cart> cartList = cartService.finAll(userGet.getUserCode());
 			for (Cart cart : cartList) {
 				Commodity getCommodity = commodityService.findOne(Long.parseLong(cart.getCommodityId()));
 				cartCommodityMap.put(cart, getCommodity);
-				cartPriceSum+=cart.getCommodityPriceSum();
+				cartPriceSum += cart.getCommodityPriceSum();
 			}
 			session.setAttribute(ConfigUtil.SESSION_USER_CART_MAP, cartCommodityMap);
 			session.setAttribute(ConfigUtil.SESSION_USER_CART_PRICE_SUM, cartPriceSum);
-			modelAndView.setViewName("market/cart_show");
+
+		} else {
+
 		}
+		session.setAttribute(ConfigUtil.SESSION_USER_CART_MAP, cartCommodityMap);
+		session.setAttribute(ConfigUtil.SESSION_USER_CART_PRICE_SUM, cartPriceSum);
+		modelAndView.setViewName("market/cart_show");
 		return modelAndView;
 	}
 
