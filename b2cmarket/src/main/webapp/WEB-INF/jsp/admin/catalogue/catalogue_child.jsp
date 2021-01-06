@@ -14,7 +14,7 @@
 		</c:forEach>
 	</select>
 	<span class="childContainerTest"></span>
-	<font id="childContainerInfoId"></font>
+	<font id="childContainerInfoId" class="childContainerInfoClass"></font>
 </c:if>
 <c:if test="${empty getListByParent}">
 已经是最底部目录

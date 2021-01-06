@@ -261,7 +261,7 @@ public class MarketController {
 	@RequestMapping("admin")
 	public ModelAndView goAdminIndex(ModelAndView modelAndView, HttpServletRequest request,
 			HttpServletResponse response,
-			@CookieValue(name = ConfigUtil.COOKIE_NAME, required = false) String cookieValue) {
+			@CookieValue(name = ConfigUtil.COOKIE_ADMIN_NAME, required = false) String cookieValue) {
 		System.out.println("cookieValue" + cookieValue);
 //		从浏览器得到cookie 数据 并处理
 		if (cookieValue != null && !"".equals(cookieValue)) {
@@ -269,7 +269,7 @@ public class MarketController {
 //			indexService.autoLogin(cookieValue, request);
 		} else {
 		}
-		if (request.getSession().getAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME) == null) {
+		if (request.getSession().getAttribute(ConfigUtil.SESSION_LOGIN_ADMIN_USER_NAME) == null) {
 			modelAndView.setViewName("admin/login");// 处于非登陆状态
 		} else {
 			modelAndView.setViewName("admin/index");// 登录状态页面
@@ -294,19 +294,19 @@ public class MarketController {
 	@RequestMapping("/admindologin")
 	public Integer doLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
 			HttpServletResponse response) {
-		return userService.doLogin(userCode, userPassword, isRemenber, request, response);
+		return userService.doAdminLogin(userCode, userPassword, isRemenber, request, response);
 	}
 
 	@ResponseBody
 	@RequestMapping("/admindologinout")
-	public Integer doLoginOut(@CookieValue(name = ConfigUtil.COOKIE_NAME, required = false) String cookieValue,
+	public Integer doLoginOut(@CookieValue(name = ConfigUtil.COOKIE_ADMIN_NAME, required = false) String cookieValue,
 			HttpSession session, HttpServletResponse response) {
 		System.out.println("cookieValue" + cookieValue);
 		session.setAttribute(ConfigUtil.LOGINOUT_ISREMENBER, cookieValue != null ? 1 : 0);
-		session.removeAttribute(ConfigUtil.SESSION_LOGIN_USER_NAME);
+		session.removeAttribute(ConfigUtil.SESSION_LOGIN_ADMIN_USER_NAME);
 
 		// 退出自动登录
-		Cookie cookie = new Cookie(ConfigUtil.COOKIE_NAME, null);
+		Cookie cookie = new Cookie(ConfigUtil.COOKIE_ADMIN_NAME, null);
 		cookie.setMaxAge(0);
 		cookie.setPath("/");
 		response.addCookie(cookie);

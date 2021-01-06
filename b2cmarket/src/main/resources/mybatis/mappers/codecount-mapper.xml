@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.sureli.b2cmarket.codecount.dao.CodeCountDao">
+	<sql id="baseColum"> `code_count`, `reset_type`, `active_flag`, `create_by`,
+		`create_date`, `update_by`, `update_date`
+	</sql>
+	<sql id="baseSelect">
+		SELECT ROW_ID,
+		<include refid="baseColum"></include>
+		FROM tb_code_count WHERE active_flag = 1
+	</sql>
+	<insert id="save">
+		insert into `b2c_market`.`tb_code_count`
+		(`code_count`, `reset_type`, `active_flag`, `create_by`,
+		`create_date`, `update_by`, `update_date`) values (#{codeCount},
+		#{resetType},
+		#{activeFlag},#{createBy},#{createDate}, #{updateBy},
+		#{updateDate})
+	</insert>
+	<update id="update">
+		UPDATE `b2c_market`.`tb_code_count` SET `code_count`
+		= #{codeCount} , `reset_type` = #{resetType} , `active_flag` = #{activeFlag} , `create_by` = #{createBy} ,
+		`create_date` = #{createDate} , `update_by` = #{updateBy} ,
+		`update_date` = #{updateDate} WHERE `row_id` = #{rowId};
+	</update>
+	<select id="findOne" resultType="CodeCount">
+		<include refid="baseSelect"></include>
+		And row_id = #{rowId}
+	</select>
+	<select id="findAll" resultType="CodeCount">
+		<include refid="baseSelect"></include>
+	</select>
+</mapper>

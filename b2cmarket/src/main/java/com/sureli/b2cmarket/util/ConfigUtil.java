@@ -20,7 +20,9 @@ public class ConfigUtil {
 	public final static String PATH_BASE = "upfiles/";
 	public final static String PATH_AVATAR = PATH_BASE + "avatar";
 	public static final String SESSION_LOGIN_USER_NAME = "loginUser";
+	public static final String SESSION_LOGIN_ADMIN_USER_NAME = "loginAdminUser";
 	public static final String COOKIE_NAME = "sureli.b2cmarket.cookie";
+	public static final String COOKIE_ADMIN_NAME = "sureli.b2cmarket.admincookie";
 	public static final String COOKIE_VALUE_SPLIT = "~##~";
 	public static final String LOGINOUT_ISREMENBER = "isRemenber";
 	public static final String SESSION_USER_CART_MAP = "userCartMap";

@@ -23,6 +23,10 @@ import lombok.Setter;
 @Setter
 @Getter
 public class CodeCount extends BaseClass {
+	
+	public static final int DAY_AUTO_RESET = 1;
+	public static final int WEEK_AUTO_RESET = 2;
+	public static final int MONTH_AUTO_RESET = 3;
 
 	private static final long serialVersionUID = 1L;
 	private Integer codeCount;

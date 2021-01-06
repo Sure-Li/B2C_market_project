@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sureli.b2cmarket.codecount.pojo.CodeCount;
+import com.sureli.b2cmarket.codecount.service.CodeCountService;
 import com.sureli.b2cmarket.order.pojo.Order;
 import com.sureli.b2cmarket.order.service.OrderService;
 import com.sureli.b2cmarket.util.ConfigUtil;
@@ -35,6 +37,8 @@ import com.sureli.b2cmarket.util.ServletUtil;
 public class OrderController {
 	@Autowired
 	private OrderService orderService;
+	@Autowired
+	private CodeCountService codeCountService;
 	@GetMapping("/list")
 	public ModelAndView getUserList(Order searchOrder, ModelAndView modelAndView) {
 		List<Order> orderList = orderService.findBySearch(searchOrder);
@@ -81,8 +85,10 @@ public class OrderController {
 	@PostMapping("/add")
 	public Integer doAdd(double priceSum,Integer addressId,Integer orderPayMethod,ModelAndView modelAndView,HttpSession session){
 		System.out.println("priceSum"+priceSum+"addressId"+addressId+"orderPayMethod"+orderPayMethod);
-		Order order = new Order(new SimpleDateFormat("yyyyMMdd").format(new Date())+ConfigUtil.numHandle(Order.orderCodeCount), ServletUtil.getUserCodeBySession(session), priceSum, addressId.toString(), 1, orderPayMethod);
-		Order.orderCodeCount++;
+		Order order = new Order(new SimpleDateFormat("yyyyMMdd").format(new Date())+ConfigUtil.numHandle(codeCountService.getCodeCount(1L)), ServletUtil.getUserCodeBySession(session), priceSum, addressId.toString(), 1, orderPayMethod);
+		CodeCount codeCount = new CodeCount();
+		codeCount.setRowId(1L);
+		codeCountService.update(codeCount);
 		order.setCreateBy(ServletUtil.getUserBySession(session).getUserName());
 		return orderService.save(order);
 	}

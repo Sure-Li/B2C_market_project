@@ -6,10 +6,14 @@
  */
 package com.sureli.b2cmarket.task.service.impl;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import com.sureli.b2cmarket.codecount.dao.CodeCountDao;
+import com.sureli.b2cmarket.codecount.pojo.CodeCount;
 import com.sureli.b2cmarket.order.pojo.Order;
 import com.sureli.b2cmarket.task.service.TaskService;
 import com.sureli.b2cmarket.util.ConfigUtil;
@@ -22,6 +26,9 @@ import com.sureli.b2cmarket.util.DateUtil;
 @Service
 @EnableScheduling
 public class TaskServiceImpl implements TaskService {
+	@Autowired
+	private CodeCountDao codeCountDao;
+	
 
 	/**
 	 * @Title: autoJob
@@ -30,7 +37,9 @@ public class TaskServiceImpl implements TaskService {
 	@Override
 	@Scheduled(cron = "0 0 12 * * ?")
 	public void autoJob() {
-		Order.orderCodeCount = 0;
+		CodeCount codeCountget = codeCountDao.findOne(1L);
+		codeCountget.setCodeCount(0);
+		codeCountDao.update(codeCountget);
 		System.out.println("当前时间" + DateUtil.buildLongData() + ConfigUtil.numHandle(Order.orderCodeCount));
 	}
 

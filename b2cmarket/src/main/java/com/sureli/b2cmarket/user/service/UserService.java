@@ -56,6 +56,9 @@ public interface UserService {
 	 */
 	Integer doLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
 			HttpServletResponse response);
+	
+	Integer doAdminLogin(String userCode, String userPassword, String isRemenber, HttpServletRequest request,
+			HttpServletResponse response);
 
 	/** 
 	 * @Title: findUserBySearch 

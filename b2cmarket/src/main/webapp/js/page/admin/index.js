@@ -65,6 +65,8 @@ $(document).ready(function() {
 		var childContainer = '#childContainer'+rowId;
 		console.log(childContainer);
 		console.log(rowId);
+		$(this).next('span').html("");
+		$('.childContainerInfoClass').text('');
 		$('#catalogueParentId').val(rowId);
 		$.ajax({
 			url:'catalogue/makeChild/'+rowId,

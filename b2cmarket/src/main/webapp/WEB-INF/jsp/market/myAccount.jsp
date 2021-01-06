@@ -72,6 +72,10 @@
 								Order Manage
 							</legend>
 							<c:if test="${!empty orderList}">
+							<table style="text-align: center;">
+							<tr>
+							<th>订单编号</th><th>用户账号</th><th>订单总价格</th><th>地址序号</th><th>订单状态</th><th>支付方式</th>
+							</tr>
 								<c:forEach items="${orderList}" var="order">
 									<c:if test="${order.activeFlag==1}">
 										<tr>
@@ -79,13 +83,42 @@
 											<td>${order.userId}</td>
 											<td>${order.priceSum}</td>
 											<td>${order.addressId}</td>
-											<td>${order.orderState}</td>
-											<td>${order.orderPayMethod}</td>
+											<td>
+												<c:if test="${order.orderState==1}">
+													代付款
+											        </c:if>
+												<c:if test="${order.orderState==2}">
+													待发货
+												</c:if>
+												<c:if test="${order.orderState==3}">
+											                        待收货
+												</c:if>
+												<c:if test="${order.orderState==4}">
+													待评价
+												</c:if>
+												<c:if test="${order.orderState==5}">
+													订单完成
+												</c:if>
+											</td>
+											<td>
+												<c:if test="${order.orderPayMethod==1}">
+													到付
+											        </c:if>
+												<c:if test="${order.orderPayMethod==2}">
+													微信 
+												</c:if>
+												<c:if test="${order.orderPayMethod==3}">
+											                        支付宝 
+												</c:if>
+												<c:if test="${order.orderPayMethod==4}">
+													信用卡
+												</c:if>
+											</td>
 											<td><a href="order/pay/${order.rowId}" id="btn-order-pay">支付</a> <a href="order/cancel/${order.rowId}" id="btn-order-cancel">删除</a></td>
 										</tr>
-										<br>
 									</c:if>
 								</c:forEach>
+								</table>
 							</c:if>
 							<c:if test="${empty orderList}">
 								<h1 style="color: red;">暂无数据</h1>
