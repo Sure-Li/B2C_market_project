@@ -96,8 +96,6 @@ public class OrderController {
 	@PostMapping("/cancel/{rowId}")
 	public Integer doCancel(@PathVariable Long rowId){
 		System.out.println(rowId+"cancel");
-		Order orderCancel = orderService.findOne(rowId);
-		orderCancel.setActiveFlag(ConfigUtil.ACTIVE_FLAG_NO);
-		return orderService.update(orderCancel);	
+		return orderService.delete(rowId);	
 	}
 }
