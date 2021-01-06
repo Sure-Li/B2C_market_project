@@ -197,20 +197,19 @@ $(document).ready(function(){
 			type:'post',
 			data:{priceSum:$('#cartPriceSumId').html(),addressId:$('#select-order-adress-id').val(),orderPayMethod:$('input:radio[name="orderPayMethod"]:checked').val()},
 			success:function(data){
-				/* if(data){
-					$('#marketMainContainerId').html(data);
-				} */
-				console.log($('#userLoginRowId').val());
-				$.ajax({
-					url:'myAccount',
-					type:'get',
-					data:{rowId:$('#userLoginRowId').val()},
-					success:function(data){
-						if(data){
-							$('#marketMainContainerId').html(data);
-						}
-					}
-				});
+				 if(data){
+					 console.log($('#userLoginRowId').val());
+						$.ajax({
+							url:'myAccount',
+							type:'get',
+							data:{rowId:$('#userLoginRowId').val()},
+							success:function(result){
+								if(result){
+									$('#marketMainContainerId').html(result);
+								}
+							}
+						});
+				} 
 			}
 		});
 		return false;

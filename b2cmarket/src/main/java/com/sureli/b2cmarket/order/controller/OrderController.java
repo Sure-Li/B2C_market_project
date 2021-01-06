@@ -79,11 +79,25 @@ public class OrderController {
 	}
 	@ResponseBody
 	@PostMapping("/add")
-	public ModelAndView doAdd(double priceSum,Integer addressId,Integer orderPayMethod,ModelAndView modelAndView,HttpSession session){
+	public Integer doAdd(double priceSum,Integer addressId,Integer orderPayMethod,ModelAndView modelAndView,HttpSession session){
 		System.out.println("priceSum"+priceSum+"addressId"+addressId+"orderPayMethod"+orderPayMethod);
-		Order order = new Order(new SimpleDateFormat("yyyyMMdd").format(new Date())+ConfigUtil.numHandle(Order.orderCodeCount++), ServletUtil.getUserCodeBySession(session), priceSum, addressId.toString(), 1, orderPayMethod);
+		Order order = new Order(new SimpleDateFormat("yyyyMMdd").format(new Date())+ConfigUtil.numHandle(Order.orderCodeCount), ServletUtil.getUserCodeBySession(session), priceSum, addressId.toString(), 1, orderPayMethod);
+		Order.orderCodeCount++;
 		order.setCreateBy(ServletUtil.getUserBySession(session).getUserName());
-		Integer result = orderService.save(order);
-		return modelAndView;
+		return orderService.save(order);
+	}
+	@PostMapping("/pay/{rowId}")
+	public Integer doPay(@PathVariable Long rowId){
+		System.out.println(rowId);
+		Order order = orderService.findOne(rowId);
+		order.setOrderState(2);
+		return orderService.update(order);
+	}
+	@PostMapping("/cancel/{rowId}")
+	public Integer doCancel(@PathVariable Long rowId){
+		System.out.println(rowId+"cancel");
+		Order orderCancel = orderService.findOne(rowId);
+		orderCancel.setActiveFlag(ConfigUtil.ACTIVE_FLAG_NO);
+		return orderService.update(orderCancel);	
 	}
 }

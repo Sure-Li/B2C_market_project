@@ -81,8 +81,9 @@
 											<td>${order.addressId}</td>
 											<td>${order.orderState}</td>
 											<td>${order.orderPayMethod}</td>
-											<td><a href="order/edit/${order.rowId}" id="btn-edit">支付</a> <a href="order/delete/${order.rowId}" id="btn-delete">删除</a></td>
+											<td><a href="order/pay/${order.rowId}" id="btn-order-pay">支付</a> <a href="order/cancel/${order.rowId}" id="btn-order-cancel">删除</a></td>
 										</tr>
+										<br>
 									</c:if>
 								</c:forEach>
 							</c:if>
@@ -317,5 +318,47 @@
 													});
 											return false;
 										});
+						
+						$(document).off('click', '#btn-order-pay').on('click','#btn-order-pay',function() {
+							console.log($(this).attr('href'));
+							$.ajax({
+								type : 'post',
+								url : $(this).attr('href'),
+								success : function(data) {
+									console.log(data);
+									if (data) {
+										initMycountPage();
+									}
+								}
+							});
+							return false;
+						});
+						$(document).off('click', '#btn-order-cancel').on('click','#btn-order-cancel',function() {
+							console.log($(this).attr('href'));
+							$.ajax({
+								type : 'post',
+								url : $(this).attr('href'),
+								success : function(data) {
+									console.log(data);
+									if (data) {
+										initMycountPage();
+									}
+								}
+							});
+							return false;
+						});
+						function initMycountPage() {
+							console.log($('#userLoginRowId').val());
+							$.ajax({
+								url:'myAccount',
+								type:'get',
+								data:{rowId:$('#userLoginRowId').val()},
+								success:function(result){
+									if(result){
+										$('#marketMainContainerId').html(result);
+									}
+								}
+							});
+						}
 					});
 </script>
