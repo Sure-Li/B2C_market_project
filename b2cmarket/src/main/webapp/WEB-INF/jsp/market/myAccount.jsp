@@ -114,7 +114,18 @@
 													信用卡
 												</c:if>
 											</td>
-											<td><a href="order/pay/${order.rowId}" id="btn-order-pay">支付</a> <a href="order/cancel/${order.rowId}" id="btn-order-cancel">删除</a></td>
+											<td>
+											<c:if test="${order.orderState==1}">
+													<a href="order/pay/${order.rowId}" id="btn-order-pay">支付</a>
+											        </c:if>
+												<c:if test="${order.orderState==3}">
+											        <a href="order/getgoods/${order.rowId}" id="btn-order-pay">收货</a>
+												</c:if>
+												<c:if test="${order.orderState==4}">
+													<a href="order/evaluate/${order.rowId}" id="btn-order-pay">评价</a>
+												</c:if>
+											 
+											<a href="order/cancel/${order.rowId}" id="btn-order-cancel">删除</a></td>
 										</tr>
 									</c:if>
 								</c:forEach>

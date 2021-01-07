@@ -27,7 +27,7 @@ import com.sureli.b2cmarket.util.ConfigUtil;
 
 /**
  * @ClassName:UserServiceImpl
- * @Description:(这里用一句话描述这个类的作用)
+ * @Description:(用户的服务类)
  */
 @Service
 public class UserServiceImpl implements UserService {

@@ -96,7 +96,9 @@ public class OrderController {
 	public Integer doPay(@PathVariable Long rowId){
 		System.out.println(rowId);
 		Order order = orderService.findOne(rowId);
-		order.setOrderState(2);
+		if (order.getOrderState()==1) {
+			order.setOrderState(2);
+		}		
 		return orderService.update(order);
 	}
 	@PostMapping("/cancel/{rowId}")
@@ -104,4 +106,32 @@ public class OrderController {
 		System.out.println(rowId+"cancel");
 		return orderService.delete(rowId);	
 	}
+	@PostMapping("/delivergoods/{rowId}")
+	public Integer doDeliverGoods(@PathVariable Long rowId){
+		System.out.println(rowId);
+		Order order = orderService.findOne(rowId);
+		if (order.getOrderState()==2) {
+			order.setOrderState(3);
+		}		
+		return orderService.update(order);
+	}
+	@PostMapping("/evaluate/{rowId}")
+	public Integer doEvaluate(@PathVariable Long rowId){
+		System.out.println(rowId);
+		Order order = orderService.findOne(rowId);
+		if (order.getOrderState()==4) {
+			order.setOrderState(5);
+		}		
+		return orderService.update(order);
+	}
+	@PostMapping("/getgoods/{rowId}")
+	public Integer doGetGoods(@PathVariable Long rowId){
+		System.out.println(rowId);
+		Order order = orderService.findOne(rowId);
+		if (order.getOrderState()==3) {
+			order.setOrderState(4);
+		}		
+		return orderService.update(order);
+	}
+	
 }
