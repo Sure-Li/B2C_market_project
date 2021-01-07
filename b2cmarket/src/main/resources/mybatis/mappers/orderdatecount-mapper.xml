@@ -19,17 +19,21 @@
 		(`year_data`, `month_data`,
 		`day_data`, `order_count`, `active_flag`,
 		`create_by`, `create_date`,
-		`update_by`, `update_date`) VALUES ('1',
-		'1', '1', '1', '1', '1',
-		'2021-01-07 20:50:02', '1', '2021-01-07
-		20:50:05')
+		`update_by`, `update_date`) VALUES
+		(#{yearData},#{monthData},#{dayData},#{orderCount},#{activeFlag},#{createBy},#{createDate},
+		#{updateBy},
+		#{updateDate})
 	</insert>
 	<update id="update">
 		UPDATE `b2c_market`.`tb_order_date_count` SET
-		`month_data` = '2' , `day_data` = '2' , `order_count` = '2' ,
-		`active_flag` = '2' , `create_by` = '2' , `create_date` = '2021-01-06
-		20:50:02' , `update_by` = '2' , `update_date` = '2021-01-06 20:50:05'
-		WHERE `row_id` = '1';
+		`year_data` = #{yearData},`month_data` = #{monthData} , `day_data` =
+		#{dayData} , `order_count` = #{orderCount} ,
+		`active_flag` =
+		#{activeFlag} , `create_by` = #{createBy} ,
+		`create_date` =
+		#{createDate} , `update_by` = #{updateBy} ,
+		`update_date` =
+		#{updateDate} WHERE `row_id` = #{rowId};
 	</update>
 	<select id="findOne" resultType="OrderDateCount">
 		<include refid="baseSelect"></include>

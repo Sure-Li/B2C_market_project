@@ -8,7 +8,9 @@ package com.sureli.b2cmarket.order.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -25,6 +27,8 @@ import com.sureli.b2cmarket.codecount.pojo.CodeCount;
 import com.sureli.b2cmarket.codecount.service.CodeCountService;
 import com.sureli.b2cmarket.order.pojo.Order;
 import com.sureli.b2cmarket.order.service.OrderService;
+import com.sureli.b2cmarket.orderdatecount.pojo.OrderDateCount;
+import com.sureli.b2cmarket.orderdatecount.service.OrderDateCountService;
 import com.sureli.b2cmarket.util.ConfigUtil;
 import com.sureli.b2cmarket.util.ServletUtil;
 
@@ -39,12 +43,21 @@ public class OrderController {
 	private OrderService orderService;
 	@Autowired
 	private CodeCountService codeCountService;
+	@Autowired
+	private OrderDateCountService orderDateCountService;
 	@GetMapping("/list")
 	public ModelAndView getUserList(Order searchOrder, ModelAndView modelAndView) {
+		Map<Long, Integer> orderDateCountMap = new LinkedHashMap<Long, Integer>();
+		List<OrderDateCount> orderDateCountList = orderDateCountService.findAll();
+		for (OrderDateCount orderDateCount : orderDateCountList) {
+			orderDateCountMap.put(Long.parseLong(""+orderDateCount.getYearData()+orderDateCount.getMonthData()+orderDateCount.getDayData()), orderDateCount.getOrderCount());
+		}
+		System.out.println("orderDateCountList"+orderDateCountList);
 		List<Order> orderList = orderService.findBySearch(searchOrder);
 		System.out.println(searchOrder);
 		System.out.println(orderList);
 		modelAndView.addObject("orderList", orderList);
+		modelAndView.addObject("orderDateCountMap", orderDateCountMap);
 		modelAndView.setViewName("admin/order/order_list");
 		return modelAndView;
 	}
