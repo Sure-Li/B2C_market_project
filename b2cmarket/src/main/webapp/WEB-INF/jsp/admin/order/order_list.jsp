@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:if test="${!empty orderList}">
+<input type="hidden" value="${orderList}" id="order-data-count-data-id">
 	<c:forEach items="${orderList}" var="order">
 		<c:if test="${order.activeFlag==1}">
 			<tr>
@@ -86,4 +87,34 @@ $(document).ready(function(){
 		});
 	}
 });
+</script>
+<script type="text/javascript" src="js/chartjs/dist/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart').getContext('2d');
+var test_chart = new Chart(ctx, {
+    // 要创建的图表类型
+    type: 'line',
+
+    // 数据集
+    data: {
+        labels: $('#order-data-count-data-id').val()/* ["January", "February", "March", "April", "May", "June", "July"] */,
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            /* data: [0, 10, 5, 2, 20, 30, 45], */
+        }]
+    },
+
+    // 配置选项
+    options: {}
+});
+var datas = [23,10,5,22,20,30,1000,5,6,6,7,8,9];
+$.each(datas,function(index,obj){
+	console.log(obj);
+	test_chart.data.datasets[0].data[index] = obj;
+});
+test_chart.update();
+$('#myChart').attr('style',"width: 50%;height: 80%;float: right")
+
 </script>

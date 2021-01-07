@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.sureli.b2cmarket.orderdatecount.dao.OrderDateCountDao">
+	<sql id="baseColum"> `year_data`, `month_data`,
+		`day_data`, `order_count`,
+		`active_flag`, `create_by`, `create_date`,
+		`update_by`, `update_date`
+	</sql>
+	<sql id="baseSelect">
+		SELECT ROW_ID,
+		<include refid="baseColum"></include>
+		FROM tb_order_date_count WHERE active_flag = 1
+	</sql>
+	<insert id="save">
+		INSERT INTO `b2c_market`.`tb_order_date_count`
+		(`year_data`, `month_data`,
+		`day_data`, `order_count`, `active_flag`,
+		`create_by`, `create_date`,
+		`update_by`, `update_date`) VALUES ('1',
+		'1', '1', '1', '1', '1',
+		'2021-01-07 20:50:02', '1', '2021-01-07
+		20:50:05')
+	</insert>
+	<update id="update">
+		UPDATE `b2c_market`.`tb_order_date_count` SET
+		`month_data` = '2' , `day_data` = '2' , `order_count` = '2' ,
+		`active_flag` = '2' , `create_by` = '2' , `create_date` = '2021-01-06
+		20:50:02' , `update_by` = '2' , `update_date` = '2021-01-06 20:50:05'
+		WHERE `row_id` = '1';
+	</update>
+	<select id="findOne" resultType="OrderDateCount">
+		<include refid="baseSelect"></include>
+		And row_id = #{rowId}
+	</select>
+	<select id="findAll" resultType="OrderDateCount">
+		<include refid="baseSelect"></include>
+	</select>
+
+</mapper>
