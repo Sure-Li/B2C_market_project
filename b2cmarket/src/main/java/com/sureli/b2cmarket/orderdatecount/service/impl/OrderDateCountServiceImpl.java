@@ -8,9 +8,11 @@ package com.sureli.b2cmarket.orderdatecount.service.impl;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sureli.b2cmarket.codecountparam.CodeCountParam;
 import com.sureli.b2cmarket.orderdatecount.dao.OrderDateCountDao;
 import com.sureli.b2cmarket.orderdatecount.pojo.OrderDateCount;
 import com.sureli.b2cmarket.orderdatecount.service.OrderDateCountService;
@@ -51,6 +53,27 @@ public class OrderDateCountServiceImpl implements OrderDateCountService {
 	@Override
 	public List<Integer> findMonthDateByYear(Integer year) {
 		return orderDateCountDao.findMonthDateByYear(year);
+	}
+	/** 
+	 * @Title: findAllByYear 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param year
+	 * @return  
+	 */  
+	@Override
+	public List<CodeCountParam> findAllByYear(Integer year) {
+		return orderDateCountDao.findAllByYear(year);
+	}
+	/** 
+	 * @Title: findAllByYearAndMonth 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param year
+	 * @param month
+	 * @return  
+	 */  
+	@Override
+	public List<CodeCountParam> findAllByYearAndMonth(Integer year, Integer month) {
+		return orderDateCountDao.findAllByYearAndMonth(year,month);
 	}
 
 }

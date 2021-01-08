@@ -10,10 +10,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sureli.b2cmarket.codecountparam.CodeCountParam;
 import com.sureli.b2cmarket.orderdatecount.pojo.OrderDateCount;
 import com.sureli.b2cmarket.orderdatecount.service.OrderDateCountService;
 
@@ -36,8 +38,7 @@ public class OrderDateCountController {
 		return modelAndView;
 	}
 	@GetMapping("list")
-	public ModelAndView getOrderDateCount(OrderDateCount orderDateCountGet, ModelAndView modelAndView){
-		System.out.println("orderDateCountGet"+orderDateCountGet);
+	public ModelAndView getOrderDateCount( ModelAndView modelAndView){
 		List<OrderDateCount> orderDateCountList = orderDateCountService.findAll();
 		StringBuilder keyString = new StringBuilder();
 		StringBuilder valueString = new StringBuilder();
@@ -45,6 +46,7 @@ public class OrderDateCountController {
 		for (OrderDateCount orderDateCount : orderDateCountList) {
 			keyString.append((""+orderDateCount.getYearData()+orderDateCount.getMonthData()+orderDateCount.getDayData()));
 			valueString.append(orderDateCount.getOrderCount());
+			keyString.append("日");
 			if (i<orderDateCountList.size()-1) {
 				keyString.append(",");
 				valueString.append(",");
@@ -54,7 +56,55 @@ public class OrderDateCountController {
 		System.out.println("orderDateCountList"+orderDateCountList);
 		modelAndView.addObject("keyString", keyString.toString());
 		modelAndView.addObject("valueString",valueString.toString());
-		modelAndView.addObject("labelString", "数据趋势");
+		modelAndView.addObject("labelString", "总数据趋势");
+		modelAndView.setViewName("admin/orderdatecount/orderdatecount_list");
+		return modelAndView;
+	}
+	@GetMapping("list/{year}")
+	public ModelAndView getOrderDateCountWithYear(@PathVariable Integer year, ModelAndView modelAndView){
+		List<CodeCountParam> codeCountParamList = orderDateCountService.findAllByYear(year);
+		System.out.println(codeCountParamList);
+		StringBuilder keyString = new StringBuilder();
+		StringBuilder valueString = new StringBuilder();
+		int i = 0;
+		for (CodeCountParam codeCountParam : codeCountParamList) {
+			keyString.append(codeCountParam.getKeyString());
+			valueString.append(codeCountParam.getValueString());
+			keyString.append("月");
+			if (i<codeCountParamList.size()-1) {
+				keyString.append(",");
+				valueString.append(",");
+			}
+			i++;
+		}
+		System.out.println("codeCountParamList"+codeCountParamList);
+		modelAndView.addObject("keyString", keyString.toString());
+		modelAndView.addObject("valueString",valueString.toString());
+		modelAndView.addObject("labelString", "月数据趋势");
+		modelAndView.setViewName("admin/orderdatecount/orderdatecount_list");
+		return modelAndView;
+	}
+	@GetMapping("list/{year}/{month}")
+	public ModelAndView getOrderDateCountWithYearAndMonth(@PathVariable Integer year,@PathVariable Integer month, ModelAndView modelAndView){
+		List<CodeCountParam> codeCountParamList = orderDateCountService.findAllByYearAndMonth(year,month);
+		System.out.println(codeCountParamList);
+		StringBuilder keyString = new StringBuilder();
+		StringBuilder valueString = new StringBuilder();
+		int i = 0;
+		for (CodeCountParam codeCountParam : codeCountParamList) {
+			keyString.append(codeCountParam.getKeyString());
+			valueString.append(codeCountParam.getValueString());
+			keyString.append("日");
+			if (i<codeCountParamList.size()-1) {
+				keyString.append(",");
+				valueString.append(",");
+			}
+			i++;
+		}
+		System.out.println("codeCountParamList"+codeCountParamList);
+		modelAndView.addObject("keyString", keyString.toString());
+		modelAndView.addObject("valueString",valueString.toString());
+		modelAndView.addObject("labelString", "日数据趋势");
 		modelAndView.setViewName("admin/orderdatecount/orderdatecount_list");
 		return modelAndView;
 	}

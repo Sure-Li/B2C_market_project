@@ -8,9 +8,11 @@ package com.sureli.b2cmarket.orderdatecount.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.sureli.b2cmarket.base.dao.BaseDao;
+import com.sureli.b2cmarket.codecountparam.CodeCountParam;
 import com.sureli.b2cmarket.orderdatecount.pojo.OrderDateCount;
 
 /** 
@@ -41,5 +43,22 @@ public interface OrderDateCountDao extends BaseDao<OrderDateCount> {
 	 * @return  
 	 */ 
 	List<Integer> findMonthDateByYear(Integer year);
+
+	/** 
+	 * @Title: findAllByYear 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param year
+	 * @return  
+	 */ 
+	List<CodeCountParam> findAllByYear(Integer year);
+
+	/** 
+	 * @Title: findAllByYearAndMonth 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param year
+	 * @param month
+	 * @return  
+	 */ 
+	List<CodeCountParam> findAllByYearAndMonth(@Param("year") Integer year,@Param("month")  Integer month);
 
 }

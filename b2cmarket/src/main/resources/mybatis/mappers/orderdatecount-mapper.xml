@@ -50,6 +50,14 @@
 		SELECT DISTINCT month_data
 		FROM tb_order_date_count WHERE active_flag = 1 and year_data = #{year}
 	</select>
+	<select id="findAllByYear" resultType="CodeCountParam">
+		SELECT DISTINCT month_data as keyString,SUM(order_count) as valueString
+		FROM tb_order_date_count WHERE active_flag = 1 AND year_data = #{year} GROUP BY month_data
+	</select>
 	
+	<select id="findAllByYearAndMonth" resultType="CodeCountParam">
+		SELECT DISTINCT day_data as keyString,order_count as valueString
+		FROM tb_order_date_count WHERE active_flag = 1 AND year_data = #{year} and month_data = #{month}  ORDER BY day_data
+	</select>
 
 </mapper>

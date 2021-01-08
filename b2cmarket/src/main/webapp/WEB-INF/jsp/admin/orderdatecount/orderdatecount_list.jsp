@@ -22,8 +22,8 @@ $(document).ready(function(){
 					labels : keyArray/* ["January", "February", "March", "April", "May", "June", "July"] */,
 					datasets : [ {
 						label : $('.orderDateCount-label-class').val(),
-						backgroundColor : 'rgb(255, 99, 132)',
-						borderColor : 'rgb(255, 99, 132)',
+						backgroundColor : 'rgb(254, 29, 112)',
+						borderColor : 'rgb(0, 65, 123)',
 						data : valueArray
 					} ]
 				},
