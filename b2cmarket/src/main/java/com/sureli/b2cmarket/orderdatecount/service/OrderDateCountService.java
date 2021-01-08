@@ -23,4 +23,19 @@ public interface OrderDateCountService {
 	 */ 
 	List<OrderDateCount> findAll();
 
+	/** 
+	 * @Title: findAllYear 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @return  
+	 */ 
+	List<Integer> findAllYear();
+
+	/** 
+	 * @Title: findMonthDateByYear 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param year
+	 * @return  
+	 */ 
+	List<Integer> findMonthDateByYear(Integer year);
+
 }

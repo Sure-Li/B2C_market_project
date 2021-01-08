@@ -20,6 +20,7 @@
 			</span>
 		</div>
 		<div class="left">
+			<a href="orderdateCountManage">订单数据</a><br> 
 			<a href="userManage">用户管理</a><br> 
 			<a href="orderManage">订单管理</a><br>
 			<a href="catalogueManage">商品目录管理</a><br>
@@ -35,4 +36,5 @@
 <script type="text/javascript" src="js/uploadfile/jquery.uploadifive.js"></script>
 <script type="text/javascript" src="js/page/admin/index.js"></script>
 <script type="text/javascript" src="js/jquery-treetable/jquery.treetable.js"></script>
+<script type="text/javascript" src="js/chartjs/dist/Chart.min.js"></script>
 </html>

@@ -32,5 +32,25 @@ public class OrderDateCountServiceImpl implements OrderDateCountService {
 	public List<OrderDateCount> findAll() {
 		return orderDateCountDao.findAll();
 	}
+	/** 
+	 * @Title: findAllYear 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @return  
+	 */  
+	@Override
+	public List<Integer> findAllYear() {
+		// TODO Auto-generated method stub
+		return orderDateCountDao.findAllYear();
+	}
+	/** 
+	 * @Title: findMonthDateByYear 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param year
+	 * @return  
+	 */  
+	@Override
+	public List<Integer> findMonthDateByYear(Integer year) {
+		return orderDateCountDao.findMonthDateByYear(year);
+	}
 
 }

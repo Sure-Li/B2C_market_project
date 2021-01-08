@@ -6,9 +6,15 @@
  */
 package com.sureli.b2cmarket.admin.controller;
 
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.sureli.b2cmarket.orderdatecount.service.OrderDateCountService;
 
 /**
  * @ClassName:AdminController
@@ -16,6 +22,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class AdminController {
+	@Autowired
+	private OrderDateCountService orderDateCountService;
+	
 
 	@RequestMapping("userManage")
 	public ModelAndView goUserManageIndex(ModelAndView modelAndView) {
@@ -37,6 +46,15 @@ public class AdminController {
 	@RequestMapping("catalogueManage")
 	public ModelAndView goCatalogueManageIndex(ModelAndView modelAndView) {
 		modelAndView.setViewName("admin/catalogue/catalogue_index");
+		return modelAndView;
+	}
+	
+	@RequestMapping("orderdateCountManage")
+	public ModelAndView goOrderDateCountManageIndex(ModelAndView modelAndView) {
+		//年
+		List<Integer> yearDataList = orderDateCountService.findAllYear();
+		modelAndView.addObject("yearDataList", yearDataList);
+		modelAndView.setViewName("admin/orderdatecount/orderdatecount_index");
 		return modelAndView;
 	}
 

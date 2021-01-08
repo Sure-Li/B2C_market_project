@@ -42,5 +42,14 @@
 	<select id="findAll" resultType="OrderDateCount">
 		<include refid="baseSelect"></include>
 	</select>
+	<select id="findAllYear" resultType="java.lang.Integer">
+		SELECT DISTINCT year_data
+		FROM tb_order_date_count WHERE active_flag = 1
+	</select>
+	<select id="findMonthDateByYear" resultType="java.lang.Integer">
+		SELECT DISTINCT month_data
+		FROM tb_order_date_count WHERE active_flag = 1 and year_data = #{year}
+	</select>
+	
 
 </mapper>
