@@ -32,10 +32,10 @@ public class TaskServiceImpl implements TaskService {
 
 	/**
 	 * @Title: autoJob
-	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @Description:(用于每天零点清零订单号)
 	 */
 	@Override
-	@Scheduled(cron = "0 0 12 * * ?")
+	@Scheduled(cron = "0 0 0 * * ?")
 	public void autoJob() {
 		CodeCount codeCountget = codeCountDao.findOne(1L);
 		codeCountget.setCodeCount(0);

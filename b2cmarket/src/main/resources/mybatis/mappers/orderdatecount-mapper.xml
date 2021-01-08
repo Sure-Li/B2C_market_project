@@ -59,5 +59,10 @@
 		SELECT DISTINCT day_data as keyString,order_count as valueString
 		FROM tb_order_date_count WHERE active_flag = 1 AND year_data = #{year} and month_data = #{month}  ORDER BY day_data
 	</select>
+	<select id="findOneByDate" resultType="OrderDateCount">
+		<include refid="baseSelect"></include>
+		and `year_data` = #{yearData} and `month_data` = #{monthData} and `day_data` =
+		#{dayData} 
+	</select>
 
 </mapper>

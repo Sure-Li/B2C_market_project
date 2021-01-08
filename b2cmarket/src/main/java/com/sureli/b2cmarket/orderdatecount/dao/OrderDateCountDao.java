@@ -61,4 +61,12 @@ public interface OrderDateCountDao extends BaseDao<OrderDateCount> {
 	 */ 
 	List<CodeCountParam> findAllByYearAndMonth(@Param("year") Integer year,@Param("month")  Integer month);
 
+	/** 
+	 * @Title: findOneByDate 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param orderDateCount
+	 * @return  
+	 */ 
+	OrderDateCount findOneByDate(OrderDateCount orderDateCount);
+
 }

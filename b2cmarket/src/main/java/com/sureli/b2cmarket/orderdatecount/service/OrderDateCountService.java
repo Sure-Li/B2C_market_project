@@ -56,4 +56,26 @@ public interface OrderDateCountService {
 	 */ 
 	List<CodeCountParam> findAllByYearAndMonth(Integer year, Integer month);
 
+	/** 
+	 * @Title: save 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param orderDateCount  
+	 */ 
+	Integer save(OrderDateCount orderDateCount);
+
+	/** 
+	 * @Title: findOneByDate 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param orderDateCount
+	 * @return  
+	 */ 
+	OrderDateCount findOneByDate(OrderDateCount orderDateCount);
+
+	/** 
+	 * @Title: update 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param orderDateCountGet  
+	 */ 
+	Integer update(OrderDateCount orderDateCountGet);
+
 }

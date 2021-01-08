@@ -42,6 +42,8 @@ public class OrderController {
 	private OrderService orderService;
 	@Autowired
 	private CodeCountService codeCountService;
+	@Autowired
+	private OrderDateCountService OrderDateCountService;
 	@GetMapping("/list")
 	public ModelAndView getUserList(Order searchOrder, ModelAndView modelAndView) {
 		 
@@ -89,7 +91,23 @@ public class OrderController {
 	@PostMapping("/add")
 	public Integer doAdd(double priceSum,Integer addressId,Integer orderPayMethod,ModelAndView modelAndView,HttpSession session){
 		System.out.println("priceSum"+priceSum+"addressId"+addressId+"orderPayMethod"+orderPayMethod);
-		Order order = new Order(new SimpleDateFormat("yyyyMMdd").format(new Date())+ConfigUtil.numHandle(codeCountService.getCodeCount(1L)), ServletUtil.getUserCodeBySession(session), priceSum, addressId.toString(), 1, orderPayMethod);
+		int orderCodeCount = codeCountService.getCodeCount(1L);
+		Order order = new Order(new SimpleDateFormat("yyyyMMdd").format(new Date())+ConfigUtil.numHandle(orderCodeCount), ServletUtil.getUserCodeBySession(session), priceSum, addressId.toString(), 1, orderPayMethod);
+		//当天订单第一单 所以要创建codeDateCount 记录
+		if(orderCodeCount==0) {
+			OrderDateCount orderDateCount = new OrderDateCount(Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date())), Integer.parseInt(new SimpleDateFormat("MM").format(new Date())), Integer.parseInt(new SimpleDateFormat("dd").format(new Date())),1 );
+			orderDateCount.setActiveFlag(ConfigUtil.ACTIVE_FLAG_YES);
+			orderDateCount.setCreateBy(ServletUtil.getUserBySession(session).getUserName());
+			orderDateCount.setCreateDate(new Date());
+			OrderDateCountService.save(orderDateCount);
+		}else {
+			OrderDateCount orderDateCount = new OrderDateCount(Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date())), Integer.parseInt(new SimpleDateFormat("MM").format(new Date())), Integer.parseInt(new SimpleDateFormat("dd").format(new Date())),1 );
+			OrderDateCount orderDateCountGet = OrderDateCountService.findOneByDate(orderDateCount);
+			orderDateCountGet.setOrderCount(orderDateCountGet.getOrderCount()+1);
+			orderDateCountGet.setUpdateBy(ServletUtil.getUserBySession(session).getUserName());
+			orderDateCountGet.setUpdateDate(new Date());
+			OrderDateCountService.update(orderDateCountGet);
+		}
 		CodeCount codeCount = new CodeCount();
 		codeCount.setRowId(1L);
 		codeCountService.update(codeCount);
