@@ -42,5 +42,6 @@ public class TaskServiceImpl implements TaskService {
 		codeCountDao.update(codeCountget);
 		System.out.println("当前时间" + DateUtil.buildLongData() + ConfigUtil.numHandle(Order.orderCodeCount));
 	}
-
+	//此处可以做到让任务自动在12点清算每天的订单数 但是感觉有点鸡肋 
+	//	因为我是每次生成订单的时候便会判断是订单统计记录++还是创建新的订单统计记录
 }
