@@ -199,7 +199,7 @@
 													<button class="addToCart btn-button" type="button" id="btn-add-cart-id" data-rowId="${commodity.rowId}" title="Add to Cart">
 														<i class="fa fa-shopping-basket"></i>
 													</button>
-													<button class="wishlist btn-button" type="button" title="Add to Wish List" onclick="wishlist.add('101');">
+													<button class="wishlist btn-button" type="button" id="btn-add-wishlist-id" data-rowId="${commodity.rowId}"  title="Add to Wish List" onclick="wishlist.add('101');">
 														<i class="fa fa-heart"></i>
 													</button>
 													<button class="compare btn-button" type="button" title="Compare this Product" onclick="compare.add('101');">
@@ -236,6 +236,21 @@
 			var rowId = $(this).attr('data-rowId');
 			$.ajax({
 				url:'cart/add',
+				type:'post',
+				data:{rowId:rowId},
+				success:function(data){
+					if(data){
+						console.log(data);
+					}
+				}
+				
+			});
+			return false;
+		});
+		$(document).off('click','#btn-add-wishlist-id').on('click','#btn-add-wishlist-id', function() {
+			var rowId = $(this).attr('data-rowId');
+			$.ajax({
+				url:'wishlist/add',
 				type:'post',
 				data:{rowId:rowId},
 				success:function(data){

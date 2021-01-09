@@ -6,6 +6,7 @@
  */
 package com.sureli.b2cmarket.market.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -27,6 +27,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sureli.b2cmarket.address.pojo.Address;
 import com.sureli.b2cmarket.address.service.AddressService;
+import com.sureli.b2cmarket.address.wishlist.pojo.WishList;
+import com.sureli.b2cmarket.address.wishlist.service.WishListService;
 import com.sureli.b2cmarket.area.pojo.Area;
 import com.sureli.b2cmarket.area.service.AreaService;
 import com.sureli.b2cmarket.cart.pojo.Cart;
@@ -62,6 +64,8 @@ public class MarketController {
 	private CommodityService commodityService;
 	@Autowired
 	private OrderService orderService;
+	@Autowired
+	private WishListService wishListService;
 	
 	/**
 	 * 
@@ -91,6 +95,28 @@ public class MarketController {
 	@GetMapping("login")
 	public ModelAndView goLogin(ModelAndView modelAndView) {
 		modelAndView.setViewName("market/login");
+		return modelAndView;
+	}
+	/**
+	 * 
+	 * @Title: goLogin
+	 * @Description:(跳转收藏页面)
+	 * @param modelAndView
+	 * @return
+	 */
+	@ResponseBody
+	@GetMapping("wishlist")
+	public ModelAndView goWishListn(ModelAndView modelAndView,HttpSession session) {
+		List<Commodity> commodityList = new ArrayList<Commodity>();
+		Commodity commodityGet = new Commodity();
+		List<WishList> wishListAll = wishListService.findAll(ServletUtil.getUserCodeBySession(session));
+		for (WishList wishList : wishListAll) {
+			commodityGet = commodityService.findOne(Long.parseLong(wishList.getCommodityId()));
+			commodityList.add(commodityGet);
+		}
+		System.out.println(commodityList);
+		modelAndView.addObject("commodityList", commodityList);
+		modelAndView.setViewName("market/wishlist");
 		return modelAndView;
 	}
 

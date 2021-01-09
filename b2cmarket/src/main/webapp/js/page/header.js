@@ -69,5 +69,16 @@ $(document).ready(function() {
 			}
 		});
 	});
+	$('#header-wishlist-id').off('mouseenter').on('mouseenter', function() {
+		$.ajax({
+			url:'wishlist/wishlistcount',
+			type:'get',
+			success:function(data){
+			console.log(data);
+				$('#header-wishlist-id').attr('title','Wish List ('+data+')');
+			}
+		});
+	});
+	
 
 });	

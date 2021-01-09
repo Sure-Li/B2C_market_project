@@ -25,6 +25,19 @@ $(document).ready(function() {
 		});
 		return false;
 	});
+	$('#header-wishlist-id').off('click').on('click',function(){
+		console.log("header-wishlist-id");	
+		$.ajax({
+			url:$(this).attr('href'),
+			type:'get',
+			success:function(data){
+				if(data){
+					$('#marketMainContainerId').html(data);
+				}
+			}
+		});
+		return false;
+	});
 	$('#userLoginStateNameId').off('click').on('click',function(){
 		console.log('userLoginStateNameId');
 		console.log($('#userLoginRowId').val());
