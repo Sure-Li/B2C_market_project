@@ -220,6 +220,23 @@ public class MarketController {
 		modelAndView.setViewName("market/category");
 		return modelAndView;
 	}
+	/**
+	 * 
+	 * @Title: category
+	 * @Description:(跳转商品目录页面)
+	 * @param modelAndView
+	 * @return
+	 */
+	
+	@ResponseBody
+	@GetMapping("category/catagoryCommodity/{catalogueId}")
+	public ModelAndView goCategoryCommodity(@PathVariable String catalogueId, ModelAndView modelAndView) {
+		List<Commodity> getList = marketService.getCommodityListByCatalogueId(catalogueId);
+		System.out.println("getlist     " + getList);
+		modelAndView.addObject("commodityList", getList);
+		modelAndView.setViewName("market/category");
+		return modelAndView;
+	}
 
 	/**
 	 * 

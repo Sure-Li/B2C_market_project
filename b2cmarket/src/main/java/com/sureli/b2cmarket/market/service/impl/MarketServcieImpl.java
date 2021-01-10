@@ -71,4 +71,17 @@ public class MarketServcieImpl implements MarketService {
 	public Commodity findOne(Long rowId) {
 		return commodityDao.findOne(rowId);
 	}
+
+	/** 
+	 * @Title: getCommodityListByCatalogueId 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param catalogueId
+	 * @return  
+	 */  
+	@Override
+	public List<Commodity> getCommodityListByCatalogueId(String catalogueId) {
+		Commodity commodity = new Commodity();
+		commodity.setCatalogueId(catalogueId);
+		return commodityDao.findBySearch(commodity);
+	}
 }

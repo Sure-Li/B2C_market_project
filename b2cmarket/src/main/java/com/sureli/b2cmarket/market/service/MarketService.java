@@ -45,4 +45,12 @@ public interface MarketService {
 	 */ 
 	Commodity findOne(Long rowId);
 
+	/** 
+	 * @Title: getCommodityListByCatalogueId 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param catalogueId
+	 * @return  
+	 */ 
+	List<Commodity> getCommodityListByCatalogueId(String catalogueId);
+
 }

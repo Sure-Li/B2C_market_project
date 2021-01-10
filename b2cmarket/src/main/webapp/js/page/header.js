@@ -79,6 +79,18 @@ $(document).ready(function() {
 			}
 		});
 	});
+	$(document).off('click','#category-rowId-id').on('click','#category-rowId-id', function() {
+		$.ajax({
+			url:$(this).attr('href'),
+			type:'get',
+			success:function(data){
+			console.log(data);
+				$('#marketMainContainerId').html(data);
+			}
+		});
+		return false;
+	});
+	
 	
 
 });	

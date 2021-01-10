@@ -243,7 +243,7 @@
 													<c:if test="${!empty catalogueList}">
 														<c:forEach items="${catalogueList}" var="catalogue">
 															<li class="item-vertical" style="display: true;">
-																<p class="close-menu"></p> <a href="#" class="clearfix"> <img src="image/catalog/menu/icons/ico6.png" alt="icon"> <span>${catalogue.catalogueName }</span>
+																<p class="close-menu"></p> <a href="category/catagoryCommodity/${catalogue.rowId}" id="category-rowId-id" class="clearfix"> <img src="image/catalog/menu/icons/ico6.png" alt="icon"> <span >${catalogue.catalogueName}</span>
 															</a>
 															</li>
 
