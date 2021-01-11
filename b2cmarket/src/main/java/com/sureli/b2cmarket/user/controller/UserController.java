@@ -122,7 +122,7 @@ public class UserController {
 			session.setAttribute(ConfigUtil.SESSION_USER_CART_PRICE_SUM, cartPriceSum);
 
 		} else {
-
+			cartCommodityMap = null;
 		}
 		session.setAttribute(ConfigUtil.SESSION_USER_CART_MAP, cartCommodityMap);
 		session.setAttribute(ConfigUtil.SESSION_USER_CART_PRICE_SUM, cartPriceSum);

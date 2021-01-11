@@ -82,7 +82,16 @@
 					alert('请不要重复提交你的请求!');
 				},
 				700 :function(){//自定义AJAX状态码(700:未登录)
-					window.location.href='login';
+				layer.msg("请先登录后再进行操作");
+					$.ajax({
+							url:'login',
+							type:'get',
+							success:function(data){
+							if(data){
+								$('#marketMainContainerId').html(data);
+							}
+						}
+					});
 				}
 			}
 		}, opt);

@@ -2917,7 +2917,7 @@ body {
 
 	<script type="text/javascript" src="js/page/market.js"></script>
 	<script type="text/javascript" src="js/bootstrapValidator/bootstrapValidator.js"></script>
-
+	<script type="text/javascript" src="js/page/app-ajax.js"></script>
 
 
 
