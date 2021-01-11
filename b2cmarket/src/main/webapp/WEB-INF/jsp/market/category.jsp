@@ -213,6 +213,9 @@
 								</c:if>
 							</c:forEach>
 						</c:if>
+						<c:if test="${empty commodityList}">
+						<font style="color: red;">暂无商品</font>
+						</c:if>
 					</div>
 
 				</div>

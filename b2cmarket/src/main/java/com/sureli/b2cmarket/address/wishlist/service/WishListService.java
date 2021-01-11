@@ -39,4 +39,20 @@ public interface WishListService {
 	 */ 
 	Integer doAdd(WishList wishList);
 
+	/** 
+	 * @Title: findOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */ 
+	WishList findOne(String rowId);
+
+	/** 
+	 * @Title: update 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param wishListGet
+	 * @return  
+	 */ 
+	Integer update(WishList wishListGet);
+
 }

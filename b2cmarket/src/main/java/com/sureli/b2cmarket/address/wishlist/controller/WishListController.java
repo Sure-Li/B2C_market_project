@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sureli.b2cmarket.address.wishlist.pojo.WishList;
 import com.sureli.b2cmarket.address.wishlist.service.WishListService;
+import com.sureli.b2cmarket.util.ConfigUtil;
 import com.sureli.b2cmarket.util.ServletUtil;
 
 /**
@@ -38,10 +39,20 @@ public class WishListController {
 
 	@PostMapping("add")
 	public Integer doAdd(String rowId, HttpSession session) {
-		WishList wishList = new WishList(ServletUtil.getUserCodeBySession(session), rowId);
-		wishList.setCreateBy(ServletUtil.getUserBySession(session).getUserName());
-		wishList.setCreateDate(new Date());
-		return wishListService.doAdd(wishList);
+		WishList wishListGet = wishListService.findOne(rowId);
+		if(wishListGet != null) {
+			if(wishListGet.getActiveFlag()==ConfigUtil.ACTIVE_FLAG_YES) {
+				wishListGet.setActiveFlag(ConfigUtil.ACTIVE_FLAG_NO);
+			}else {
+				wishListGet.setActiveFlag(ConfigUtil.ACTIVE_FLAG_YES);
+			}
+		}else {
+			WishList wishList = new WishList(ServletUtil.getUserCodeBySession(session), rowId);
+			wishList.setCreateBy(ServletUtil.getUserBySession(session).getUserName());
+			wishList.setCreateDate(new Date());
+			return wishListService.doAdd(wishList);
+		}
+		return wishListService.update(wishListGet);
 	}
 
 	@GetMapping("wishlistcount")

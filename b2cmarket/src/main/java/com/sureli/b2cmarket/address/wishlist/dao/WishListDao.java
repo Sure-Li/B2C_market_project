@@ -35,4 +35,12 @@ public interface WishListDao extends BaseDao<WishList> {
 	 */ 
 	WishList findOneByCommodityId(Long rowId);
 
+	/** 
+	 * @Title: findOneByCommodityId 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */ 
+	WishList findOneByCommodityId(String rowId);
+
 }

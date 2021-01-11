@@ -58,5 +58,25 @@ public class WishListServiceImpl implements WishListService {
 		wishList.setActiveFlag(ConfigUtil.ACTIVE_FLAG_YES);
 		return wishListDao.save(wishList);
 	}
+	/** 
+	 * @Title: findOne 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param rowId
+	 * @return  
+	 */  
+	@Override
+	public WishList findOne(String rowId) {
+		return wishListDao.findOneByCommodityId(rowId);
+	}
+	/** 
+	 * @Title: update 
+	 * @Description:(这里用一句话描述这个方法的作用)
+	 * @param wishListGet
+	 * @return  
+	 */  
+	@Override
+	public Integer update(WishList wishListGet) {
+		return wishListDao.update(wishListGet);
+	}
 
 }
